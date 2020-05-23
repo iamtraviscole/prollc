@@ -1,0 +1,67 @@
+:root {
+  --color-logo-blue: #002868;
+  --color-logo-red: #E0162B;
+  --color-primary: #3c81f0;
+  --color-primary-dark: #2354a3;
+  --color-secondary: #da4151;
+  --color-secondary-dark: #a12f3b;
+  --color-text-primary: black;
+  --color-text-secondary: white;
+  --color-text-placeholder: #999999;
+  --color-background-primary: white;
+  --color-background-secondary: #d8e5f9;
+  --color-border-primary: #b5c1d2;
+  --color-border-primary-dark: #6d747e;
+  --color-success: #2CCE6A;
+  --color-success-light: #B2F4CB;
+  --color-error: #FF6A57;
+  --color-error-light: #FFCEC7;
+
+  --font-fam-primary: 'Lato', sans-serif;
+}
+
+body {
+  background: var(--color-background-primary);
+  font-family: var(--font-fam-primary);
+  color: var(--color-text-primary);
+  letter-spacing: .1px;
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text-primary);
+}
+
+input {
+  display: inline-block;
+  outline: none;
+  border: 1px solid var(--color-border-primary);
+
+  &::placeholder {
+    color: var(--color-text-placeholder);
+  }
+
+  &:focus {
+    border: 1px solid var(--color-border-primary-dark);
+  }
+}
+
+button {
+  letter-spacing: .1px;
+}
