@@ -18,7 +18,7 @@ function SEO({ description, lang, meta, title }) {
           siteMetadata {
             title
             description
-            author
+            keywords
           }
         }
       }
@@ -40,6 +40,10 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
+          name: `keywords`,
+          content: site.siteMetadata.keywords.join(`,`),
+        },
+        {
           property: `og:title`,
           content: title,
         },
@@ -50,22 +54,6 @@ function SEO({ description, lang, meta, title }) {
         {
           property: `og:type`,
           content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
         },
       ].concat(meta)}
     />
