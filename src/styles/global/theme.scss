@@ -1,11 +1,12 @@
 :root {
   --color-logo-blue: #002868;
   --color-logo-red: #E0162B;
-  --color-primary: #3c81f0;
-  --color-primary-dark: #2354a3;
-  --color-secondary: #da4151;
-  --color-secondary-dark: #a12f3b;
+  --color-primary: #2c69cc;
+  --color-primary-dark: #2053a4;
+  --color-secondary: #da3547;
+  --color-secondary-dark: #b12837;
   --color-text-primary: black;
+  --color-text-primary-light: #666666;
   --color-text-secondary: white;
   --color-text-placeholder: #999999;
   --color-background-primary: white;
@@ -28,19 +29,20 @@ body {
 }
 
 h1, h2, h3 {
-  font-weight: 500;
+  font-weight: 700;
+  letter-spacing: .25px;
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 30px;
 }
 
 h2 {
-  font-size: 22px;
+  font-size: 26px;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 a {
