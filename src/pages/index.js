@@ -1,21 +1,42 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import BackgroundImage from 'gatsby-background-image'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+import '../styles/index.scss'
 
-export default IndexPage
+const Home = (props) => {
+  const data = useStaticQuery(graphql`
+    query ContractImageQuery {
+      file(relativePath: {eq: "contract.jpg"}) {
+        childImageSharp {
+          fluid(jpegQuality: 100) {
+           ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
+  return (
+    <Layout>
+      <SEO title='Home' />
+      <BackgroundImage
+        Tag='div'
+        className='index__image-ctr'
+        fluid={data.file.childImageSharp.fluid}
+      >
+        <div className='index__intro-ctr'>
+          <div className='index__intro-inner-ctr'>
+            <h1>Tu primer paso hacio el sueño americano</h1>
+            <button>View Plans</button>
+          </div>
+        </div>
+      </BackgroundImage>
+    </Layout>
+  )
+}
+
+export default Home
