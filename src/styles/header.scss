@@ -1,0 +1,33 @@
+.header {
+  width: 100%;
+  background: green;
+  background: var(--color-background-primary);
+
+  &__logo-nav-ctr {
+    box-sizing: content-box;
+    margin: 0 auto;
+    height: 100px;
+    max-width: 840px;
+    padding: 0 30px;
+    overflow: hidden;
+  }
+
+  &__logo-ctr {
+    float: left;
+    position: relative;
+    top: 20px;
+
+    > svg {
+      display: block;
+      height: 60px;
+    }
+  }
+
+  &__nav-ctr {
+    float: right;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+}

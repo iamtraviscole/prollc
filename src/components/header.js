@@ -1,42 +1,37 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React, { useState, useEffect } from 'react'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+import Logo from '../images/svgs/prollc-logo.svg'
+import Nav from './nav'
+import MobileNav from './mobileNav'
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+import '../styles/header.scss'
 
-Header.defaultProps = {
-  siteTitle: ``,
+const Header = (props) => {
+  const [windowWidth, setWindowWidth] = useState(null)
+
+  const resizeListener = () => setWindowWidth(window.innerWidth)
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth)
+    window.addEventListener('resize', resizeListener)
+    return () => window.removeEventListener('resize', resizeListener)
+  }, [])
+
+  let displayNav = <Nav />
+  if (windowWidth < 700) displayNav = <MobileNav />
+
+  return (
+    <header className='header'>
+      <div className='header__logo-nav-ctr'>
+        <div className='header__logo-ctr'>
+          <Logo />
+        </div>
+        <div className='header__nav-ctr'>
+          {displayNav}
+        </div>
+      </div>
+    </header>
+  )
 }
 
 export default Header
