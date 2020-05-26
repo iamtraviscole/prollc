@@ -24,8 +24,11 @@ import '../../styles/plans/basic.scss'
 
 const BasicPlan = (props) => {
   const [currentStep, setCurrentStep] = useState({component: FileState})
+  const [previousSteps, setPreviousSteps] = useState([])
 
   const handleNextClick = (e) => {
+    setPreviousSteps([...previousSteps, currentStep.component])
+
     // TODO: validation at each step
     switch (currentStep.component) {
       case FileState: {
@@ -92,7 +95,12 @@ const BasicPlan = (props) => {
       }
       default:
         setCurrentStep({component: FileState})
+        setPreviousSteps([])
     }
+  }
+
+  const handlePreviousClick = () => {
+    setCurrentStep({component: previousSteps.pop()})
   }
 
   const formik = useFormik({
@@ -157,6 +165,7 @@ const BasicPlan = (props) => {
           <CurrentStepComponent handleChange={formik.handleChange} />
         </form>
         <div className='basic__button-ctr'>
+          {previousSteps.length > 0 && <button onClick={handlePreviousClick}>Previous</button>}
           <button onClick={handleNextClick}>Next</button>
         </div>
       </div>
