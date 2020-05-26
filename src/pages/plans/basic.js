@@ -4,6 +4,21 @@ import { useFormik } from 'formik'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import FileState from '../../components/plans/fileState'
+import ContactDetails from '../../components/plans/contactDetails'
+import CompanyNames from '../../components/plans/companyNames'
+import Denomination from '../../components/plans/denomination'
+import Industry from '../../components/plans/industry'
+import EmployeeCount from '../../components/plans/employeeCount'
+import ProAddress from '../../components/plans/proAddress'
+import CompanyAddress from '../../components/plans/companyAddress'
+import MemberCount from '../../components/plans/memberCount'
+import MemberDetails from '../../components/plans/memberDetails'
+import ManagerCount from '../../components/plans/managerCount'
+import ManagerDetails from '../../components/plans/managerDetails'
+import ProRegisteredAgent from '../../components/plans/proRegisteredAgent'
+import RegisteredAgentDetails from '../../components/plans/registeredAgentDetails'
+import Expedited from '../../components/plans/expedited'
+import Payment from '../../components/plans/payment'
 
 import '../../styles/plans/basic.scss'
 
@@ -11,7 +26,73 @@ const BasicPlan = (props) => {
   const [currentStep, setCurrentStep] = useState({component: FileState})
 
   const handleNextClick = (e) => {
-    console.log('next clicked')
+    // TODO: validation at each step
+    switch (currentStep.component) {
+      case FileState: {
+        setCurrentStep({component: ContactDetails})
+        break
+      }
+      case ContactDetails: {
+        setCurrentStep({component: CompanyNames})
+        break
+      }
+      case CompanyNames: {
+        setCurrentStep({component: Denomination})
+        break
+      }
+      case Denomination: {
+        setCurrentStep({component: Industry})
+        break
+      }
+      case Industry: {
+        setCurrentStep({component: EmployeeCount})
+        break
+      }
+      case EmployeeCount: {
+        setCurrentStep({component: ProAddress})
+        break
+      }
+      case ProAddress: {
+        setCurrentStep({component: CompanyAddress})
+        // TODO: if ProAddress = true, skip to MemberCount
+        break
+      }
+      case CompanyAddress: {
+        setCurrentStep({component: MemberCount})
+        break
+      }
+      case MemberCount: {
+        setCurrentStep({component: MemberDetails})
+        break
+      }
+      case MemberDetails: {
+        setCurrentStep({component: ManagerCount})
+        break
+      }
+      case ManagerCount: {
+        setCurrentStep({component: ManagerDetails})
+        break
+      }
+      case ManagerDetails: {
+        setCurrentStep({component: ProRegisteredAgent})
+        break
+      }
+      case ProRegisteredAgent: {
+        setCurrentStep({component: RegisteredAgentDetails})
+        // TODO: if ProRegisteredAgent = true, skip to Expedited
+        break
+      }
+      case RegisteredAgentDetails: {
+        setCurrentStep({component: Expedited})
+        break
+      }
+      case Expedited: {
+        setCurrentStep({component: Payment})
+        break
+      }
+      default:
+        setCurrentStep({component: FileState})
+    }
   }
 
   const formik = useFormik({
@@ -46,6 +127,17 @@ const BasicPlan = (props) => {
       managerCount: 0,
       managerDetails: [],
       proRegisteredAgent: false,
+      registeredAgentDetails: {
+        firstName: '',
+        middleName: '',
+        lastName: '',
+        street: '',
+        suite: '',
+        city: '',
+        state: '',
+        zipcode: '',
+        country: ''
+      },
       expedited: false
     },
     onSubmit: async values => {
