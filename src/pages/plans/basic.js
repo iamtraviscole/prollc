@@ -157,17 +157,23 @@ const BasicPlan = (props) => {
 
   const CurrentStepComponent = currentStep.component
 
+  const previousButton = previousSteps.length > 0
+    ? <button onClick={handlePreviousClick}>Previous</button>
+    : null
+
   return (
     <Layout pageTitle='Basic Plan'>
       <SEO title='Basic Plan' />
       <div className='basic'>
         <form className='basic__form' onSubmit={formik.handleSubmit}>
           <CurrentStepComponent handleChange={formik.handleChange} />
+          <div className='basic__btn-ctr'>
+            {previousButton}
+            <button onClick={handleNextClick}>
+              Next
+            </button>
+          </div>
         </form>
-        <div className='basic__button-ctr'>
-          {previousSteps.length > 0 && <button onClick={handlePreviousClick}>Previous</button>}
-          <button onClick={handleNextClick}>Next</button>
-        </div>
       </div>
       <div style={{width: '200px', position: 'absolute', top: '200px', left: '0'}}>{JSON.stringify(formik.values, null, '\t')}</div>
     </Layout>
