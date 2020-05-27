@@ -1,0 +1,26 @@
+.contactDetails {
+  display: inline-block;
+
+  &__input-ctr {
+    display: block;
+    margin: 0 auto 15px auto;
+    width: 250px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    > label {
+      display: block;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--color-text-primary);
+      text-align: left;
+      margin-bottom: 4px;
+    }
+
+    > input {
+      width: 100%;
+    }
+  }
+}
