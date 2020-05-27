@@ -105,7 +105,7 @@ const BasicPlan = (props) => {
 
   const formik = useFormik({
     initialValues: {
-      fileState: '',
+      fileState: 'Florida',
       contactDetails: {
         firstName: '',
         middleName: '',
@@ -158,7 +158,7 @@ const BasicPlan = (props) => {
   const CurrentStepComponent = currentStep.component
 
   const previousButton = previousSteps.length > 0
-    ? <button onClick={handlePreviousClick}>Previous</button>
+    ? <button type='button' onClick={handlePreviousClick}>Previous</button>
     : null
 
   return (
@@ -166,10 +166,13 @@ const BasicPlan = (props) => {
       <SEO title='Basic Plan' />
       <div className='basic'>
         <form className='basic__form' onSubmit={formik.handleSubmit}>
-          <CurrentStepComponent handleChange={formik.handleChange} />
+          <CurrentStepComponent
+            handleChange={formik.handleChange}
+            values={formik.values}
+          />
           <div className='basic__btn-ctr'>
             {previousButton}
-            <button onClick={handleNextClick}>
+            <button type='button' onClick={handleNextClick}>
               Next
             </button>
           </div>
