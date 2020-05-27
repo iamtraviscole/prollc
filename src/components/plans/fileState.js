@@ -9,7 +9,7 @@ const FileState = (props) => {
 
   return (
     <div className='fileState'>
-    <StepHeader title='File State' />
+      <StepHeader title='File State' />
       <fieldset>
         <div className='fileState__input-ctr'>
           <input
