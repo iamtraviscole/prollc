@@ -24,6 +24,7 @@
 body {
   background: var(--color-background-primary);
   font-family: var(--font-fam-primary);
+  font-weight: 400;
   color: var(--color-text-primary);
   letter-spacing: .1px;
 }
@@ -50,17 +51,21 @@ a {
   color: var(--color-text-primary);
 }
 
-input {
+input[type='text'] {
   display: inline-block;
   outline: none;
   border: 1px solid var(--color-border-primary);
+  padding: 8px;
+  border-radius: 3px;
+  font-family: var(--font-fam-primary);
+  font-size: 16px;
 
   &::placeholder {
     color: var(--color-text-placeholder);
   }
 
   &:focus {
-    border: 1px solid var(--color-border-primary-dark);
+    border: 1px solid var(--color-primary);
   }
 }
 
