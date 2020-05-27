@@ -1,11 +1,13 @@
 import React from 'react'
 
+import StepHeader from './stepHeader'
+
 import '../../styles/plans/fileState.scss'
 
 const FileState = (props) => {
   return (
     <div className='fileState'>
-      <h2>File State</h2>
+    <StepHeader title='File State' />
       <fieldset>
         <div className='fileState__input-ctr'>
           <input defaultChecked
