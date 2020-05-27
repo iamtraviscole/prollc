@@ -118,7 +118,7 @@ const BasicPlan = (props) => {
         name2: '',
         name3: ''
       },
-      denomination: '',
+      denomination: 'LLC',
       industry: '',
       employeeCount: 0,
       proAddress: false,
