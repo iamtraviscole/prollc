@@ -1,0 +1,32 @@
+.denomination {
+  display: inline-block;
+
+  &__name-example {
+    margin-bottom: 25px;
+    font-size: 18px;
+    color: var(--color-primary);
+  }
+
+  > fieldset {
+    display: inline-block;
+    padding: 15px;
+    border: 1px solid var(--color-border-primary);
+    border-radius: 3px;
+  }
+
+  &__input-ctr {
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-align: left;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    > input[type='radio'] {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+
+}
