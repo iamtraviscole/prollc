@@ -122,7 +122,7 @@ const BasicPlan = (props) => {
       industry: '',
       industryOther: '',
       employeeCount: 0,
-      proAddress: false,
+      proAddress: 'No',
       companyAddress: {
         street: '',
         suite: '',
@@ -135,7 +135,7 @@ const BasicPlan = (props) => {
       memberDetails: [],
       managerCount: 0,
       managerDetails: [],
-      proRegisteredAgent: false,
+      proRegisteredAgent: 'No',
       registeredAgentDetails: {
         firstName: '',
         middleName: '',
@@ -147,7 +147,7 @@ const BasicPlan = (props) => {
         zipcode: '',
         country: ''
       },
-      expedited: false
+      expedited: 'No'
     },
     onSubmit: async values => {
       console.log('submit clicked')
