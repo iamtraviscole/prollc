@@ -120,6 +120,7 @@ const BasicPlan = (props) => {
       },
       denomination: 'LLC',
       industry: '',
+      industryOther: '',
       employeeCount: 0,
       proAddress: false,
       companyAddress: {
@@ -161,6 +162,8 @@ const BasicPlan = (props) => {
     ? <button type='button' onClick={handlePreviousClick}>Previous</button>
     : null
 
+  console.log(formik.values)
+
   return (
     <Layout pageTitle='Basic Plan'>
       <SEO title='Basic Plan' />
@@ -168,6 +171,7 @@ const BasicPlan = (props) => {
         <form className='basic__form' onSubmit={formik.handleSubmit}>
           <CurrentStepComponent
             handleChange={formik.handleChange}
+            handleBlur={formik.handleBlur}
             values={formik.values}
           />
           <div className='basic__btn-ctr'>
@@ -178,7 +182,6 @@ const BasicPlan = (props) => {
           </div>
         </form>
       </div>
-      <div style={{width: '200px', position: 'absolute', top: '200px', left: '0'}}>{JSON.stringify(formik.values, null, '\t')}</div>
     </Layout>
   )
 }
