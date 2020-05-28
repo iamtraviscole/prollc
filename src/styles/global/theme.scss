@@ -52,7 +52,7 @@ a {
   color: var(--color-text-primary);
 }
 
-input[type='text'] {
+input {
   display: inline-block;
   outline: none;
   border: 1px solid var(--color-border-primary);
@@ -63,6 +63,7 @@ input[type='text'] {
 
   &::placeholder {
     color: var(--color-text-placeholder);
+    font-weight: 300;
   }
 
   &:focus {
