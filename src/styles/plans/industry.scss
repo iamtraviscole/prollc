@@ -1,0 +1,28 @@
+.industry {
+  display: inline-block;
+
+  > select {
+    height: 40px;
+    width: 200px;
+    line-height: 40px;
+    font-size: 16px;
+    background: var(--color-background-primary);
+    border: 1px solid var(--color-border-primary);
+  }
+
+  &__other-ctr {
+    > label {
+      display: block;
+      font-size: 13px;
+      font-weight: 300;
+      text-align: left;
+      margin: 25px 0 4px 0;
+    }
+
+    > input {
+      margin-top: 25px;
+      width: 200px;
+    }
+  }
+
+}
