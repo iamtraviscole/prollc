@@ -1,0 +1,77 @@
+.companyAddress {
+  display: inline-block;
+
+  &__input-outer-ctr {
+    margin: 0 auto;
+    max-width: 515px;
+
+    & div:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &__input-ctr {
+    display: inline-block;
+    margin: 0 15px 15px 0;
+    width: 250px;
+
+    &.street {
+      width: 300px;
+    }
+
+    &.suite {
+      width: 200px;
+    }
+
+    &.zipcode {
+      width: 200px;
+    }
+
+    &.country {
+      width: 300px;
+    }
+
+    > label {
+      display: block;
+      font-size: 13px;
+      font-weight: 300;
+      text-align: left;
+      margin-bottom: 4px;
+    }
+
+    > input {
+      width: 100%;
+    }
+  }
+
+}
+
+@media (max-width: 650px) {
+  .companyAddress {
+
+    &__input-outer-ctr {
+      margin: 0 auto;
+      max-width: 250px;
+    }
+
+    &__input-ctr {
+      margin-right: 0;
+
+      &.street {
+        width: 250px
+      }
+
+      &.suite {
+        width: 250px;
+      }
+
+      &.zipcode {
+        width: 250px;
+      }
+
+      &.country {
+        width: 250px;
+      }
+    }
+  }
+}
