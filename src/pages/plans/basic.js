@@ -11,10 +11,8 @@ import Industry from '../../components/plans/industry'
 import EmployeeCount from '../../components/plans/employeeCount'
 import ProAddress from '../../components/plans/proAddress'
 import CompanyAddress from '../../components/plans/companyAddress'
-import MemberCount from '../../components/plans/memberCount'
-import MemberDetails from '../../components/plans/memberDetails'
-import ManagerCount from '../../components/plans/managerCount'
-import ManagerDetails from '../../components/plans/managerDetails'
+import Members from '../../components/plans/members'
+import Managers from '../../components/plans/managers'
 import ProRegisteredAgent from '../../components/plans/proRegisteredAgent'
 import RegisteredAgentDetails from '../../components/plans/registeredAgentDetails'
 import Expedited from '../../components/plans/expedited'
@@ -61,22 +59,14 @@ const BasicPlan = (props) => {
         break
       }
       case CompanyAddress: {
-        setCurrentStep({component: MemberCount})
+        setCurrentStep({component: Members})
         break
       }
-      case MemberCount: {
-        setCurrentStep({component: MemberDetails})
+      case Members: {
+        setCurrentStep({component: Managers})
         break
       }
-      case MemberDetails: {
-        setCurrentStep({component: ManagerCount})
-        break
-      }
-      case ManagerCount: {
-        setCurrentStep({component: ManagerDetails})
-        break
-      }
-      case ManagerDetails: {
+      case Managers: {
         setCurrentStep({component: ProRegisteredAgent})
         break
       }
@@ -101,6 +91,39 @@ const BasicPlan = (props) => {
 
   const handlePreviousClick = () => {
     setCurrentStep({component: previousSteps.pop()})
+  }
+
+  const initialMemberDetails = []
+  for (let i = 0; i < 5; i++) {
+    initialMemberDetails.push({
+      corporateMember: false,
+      companyName: '',
+      firstName: '',
+      middleName: '',
+      lastName: '',
+      street: '',
+      suite: '',
+      city: '',
+      state: '',
+      zipcode: '',
+      country: '',
+      manager: false
+    })
+  }
+
+  const initialManagerDetails = []
+  for (let i = 0; i < 5; i++) {
+    initialManagerDetails.push({
+      firstName: '',
+      middleName: '',
+      lastName: '',
+      street: '',
+      suite: '',
+      city: '',
+      state: '',
+      zipcode: '',
+      country: ''
+    })
   }
 
   const formik = useFormik({
@@ -131,10 +154,10 @@ const BasicPlan = (props) => {
         zipcode: '',
         country: ''
       },
-      memberCount: 0,
-      memberDetails: [],
+      memberCount: 1,
+      memberDetails: initialMemberDetails,
       managerCount: 0,
-      managerDetails: [],
+      managerDetails: initialManagerDetails,
       proRegisteredAgent: 'No',
       registeredAgentDetails: {
         firstName: '',
