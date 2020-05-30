@@ -160,6 +160,8 @@ const BasicPlan = (props) => {
       managerDetails: initialManagerDetails,
       proRegisteredAgent: 'No',
       registeredAgentDetails: {
+        corporateRegisteredAgent: false,
+        companyName: '',
         firstName: '',
         middleName: '',
         lastName: '',
