@@ -13,7 +13,6 @@ const EmployeeCount = (props) => {
       />
       <input type='number'
         name='employeeCount'
-        id='employee__count'
         min='0'
         value={props.values.employeeCount}
         onChange={props.handleChange}
