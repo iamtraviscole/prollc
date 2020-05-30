@@ -23,7 +23,7 @@ const Industry = (props) => {
     <div className='industry'>
       <StepHeader title='Industry' />
       <select
-        name="industry"
+        name='industry'
         onChange={props.handleChange}
         onBlur={props.handleBlur}
         value={values.industry}
