@@ -54,8 +54,9 @@ const BasicPlan = (props) => {
         break
       }
       case ProAddress: {
-        setCurrentStep({component: CompanyAddress})
-        // TODO: if ProAddress = true, skip to MemberCount
+        formik.values.proAddress === 'Yes'
+          ? setCurrentStep({component: Members})
+          : setCurrentStep({component: CompanyAddress})
         break
       }
       case CompanyAddress: {
@@ -71,8 +72,9 @@ const BasicPlan = (props) => {
         break
       }
       case ProRegisteredAgent: {
-        setCurrentStep({component: RegisteredAgentDetails})
-        // TODO: if ProRegisteredAgent = true, skip to Expedited
+        formik.values.proRegisteredAgent === 'Yes'
+          ? setCurrentStep({component: Expedited})
+          : setCurrentStep({component: RegisteredAgentDetails})
         break
       }
       case RegisteredAgentDetails: {
