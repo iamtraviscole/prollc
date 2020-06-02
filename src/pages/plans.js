@@ -210,7 +210,7 @@ const Plans = (props) => {
             </div>
             <Link className='plans__select-btn' to='/plans/pro'>Select</Link>
           </div>
-          <p className='asterisk'>* Cuenta Virtual: más $699 (Virtual bank account opening)</p>
+          <p className='asterisk'>* Cuenta Virtual: más $699</p>
         </div>
       </div>
     </Layout>
