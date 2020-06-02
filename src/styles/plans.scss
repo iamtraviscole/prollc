@@ -1,0 +1,127 @@
+.plans {
+  display: block;
+  max-width: 840px;
+  margin: 0 auto;
+
+  &__plan-outer-ctr {
+    position: relative;
+    display: inline-block;
+    margin-right: 30px;
+    width: 260px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    p.asterisk {
+      position: absolute;
+      bottom: -28px;
+      left: 0;
+      font-style: italic;
+      font-size: 12px;
+    }
+  }
+
+  &__plan-ctr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--color-background-secondary);
+    border: 1px solid var(--color-border-secondary);
+    border-radius: 3px;
+    padding: 12px;
+  }
+
+  &__plan-price {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0 11px 0;
+    margin-bottom: 25px;
+    color: var(--color-text-secondary);
+    background: var(--color-primary);
+    border-radius: 3px;
+    font-size: 26px;
+    font-weight: 700;
+
+    > span {
+      position: absolute;
+      top: 8px;
+      left: 92px;
+      font-size: 12px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-border-secondary);
+    }
+  }
+
+  &__plan-header {
+    margin-top: -15px;
+    padding: 25px 0;
+    text-align: center;
+
+    > h2 {
+      font-size: 32px;
+    }
+  }
+
+  &__plan-feature {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    height: 50px;
+    border-bottom: 1px solid var(--color-border-secondary);
+
+    &.not-included {
+      color: var(--color-text-placeholder);
+    }
+  }
+
+  &__check-icon {
+    padding-right: 10px;
+
+    > svg {
+      width: 18px;
+      fill: var(--color-primary);
+    }
+  }
+
+  &__x-icon {
+    padding-right: 12px;
+
+    > svg {
+      width: 16px;
+      fill: var(--color-error-light);
+    }
+  }
+
+  &__select-btn {
+    margin: 35px auto 20px auto;
+    padding: 15px 35px;
+    font-size: 20px;
+    color: var(--color-text-secondary);
+    background: var(--color-secondary);
+    border-radius: 3px;
+
+    &:hover {
+      background: var(--color-text-primary);
+    }
+  }
+
+}
+
+  @media (max-width: 840px) {
+    .plans {
+
+      &__plan-outer-ctr {
+        display: block;
+        margin: 0 auto 50px auto;
+
+        &:last-of-type {
+          margin: 0 auto 50px auto;
+        }
+      }
+    }
+
+  }
