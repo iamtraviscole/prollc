@@ -23,7 +23,7 @@ import Payment from '../../components/plans/payment'
 import '../../styles/plans/pro.scss'
 
 const ProPlan = (props) => {
-  const [currentStep, setCurrentStep] = useState({component: SElection})
+  const [currentStep, setCurrentStep] = useState({component: FileState})
   const [previousSteps, setPreviousSteps] = useState([])
 
   const handleNextClick = (e) => {
@@ -105,8 +105,8 @@ const ProPlan = (props) => {
   for (let i = 0; i < 5; i++) {
     initialMemberDetails.push({
       corporateMember: false,
-      companyName: 'asdfas',
-      firstName: 'asdfas',
+      companyName: '',
+      firstName: '',
       secondName: '',
       lastName: '',
       street: '',
