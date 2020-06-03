@@ -1,0 +1,136 @@
+.banking {
+  display: inline-block;
+
+  > h3 {
+    font-size: 18px;
+    color: var(--color-primary);
+    margin-bottom: 25px;
+  }
+
+  &__present-ctr {
+    margin: 25px 0 50px 0;
+
+    > fieldset {
+      display: inline-block;
+      padding: 25px;
+      border: 1px solid var(--color-border-primary);
+      border-radius: 3px;
+    }
+  }
+
+  &__present-input-ctr {
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-align: left;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    > input[type='radio'] {
+      margin-right: 10px;
+    }
+  }
+
+  &__person-ctr {
+    display: block;
+    margin: 25px 0 50px 0;
+  }
+
+  &__person-input-ctr {
+    display: inline-block;
+    margin: 0 15px 15px 0;
+    width: 300px;
+
+    &.name {
+      width: 195px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+
+    > label {
+      display: block;
+      font-size: 13px;
+      font-weight: 300;
+      text-align: left;
+      margin-bottom: 4px;
+    }
+
+    > input {
+      width: 100%;
+    }
+  }
+
+  &__bank-ctr {
+
+    > select {
+      height: 40px;
+      width: 200px;
+      line-height: 40px;
+      font-size: 16px;
+      background: var(--color-background-primary);
+      border: 1px solid var(--color-border-primary);
+    }
+
+    .banking__bank-other-ctr {
+      > label {
+        display: block;
+        font-size: 13px;
+        font-weight: 300;
+        text-align: left;
+        margin: 25px 0 4px 0;
+      }
+
+      > input {
+        margin-top: 25px;
+        width: 200px;
+      }
+    }
+  }
+
+  &__other-options-ctr {
+    margin-top: 25px;
+
+    > fieldset {
+      display: inline-block;
+      padding: 25px;
+      border: 1px solid var(--color-border-primary);
+      border-radius: 3px;
+    }
+  }
+
+  &__other-options-input-ctr {
+    margin-bottom: 15px;
+    font-size: 16px;
+    text-align: left;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    > input[type='radio'] {
+      margin-right: 10px;
+    }
+  }
+
+}
+
+@media (max-width: 750px) {
+  .banking {
+
+    &__person-ctr {
+      margin: 0 auto 50px auto;
+      max-width: 195px;
+    }
+
+    &__person-input-ctr {
+
+      &.name {
+        width: 195px;
+      }
+    }
+  }
+
+}
