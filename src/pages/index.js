@@ -31,7 +31,7 @@ const Home = (props) => {
         <div className='index__intro-ctr'>
           <div className='index__intro-inner-ctr'>
             <h1>Tu primer paso hacio el sueño americano</h1>
-              <Link className='index__view-plans-link' to='plans'>View Plans</Link>  
+              <Link className='index__view-plans-link' to='/plans'>View Plans</Link>  
           </div>
         </div>
       </BackgroundImage>
