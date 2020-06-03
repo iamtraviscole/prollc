@@ -172,7 +172,7 @@ const CompletePlan = (props) => {
       },
       ein: {
         firstName: '',
-        secondNAme: '',
+        secondName: '',
         lastName: '',
         ssn: '',
         itin: '',
