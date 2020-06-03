@@ -25,9 +25,9 @@ const ContactDetails = (props) => {
         <input
           type='text'
           id='contactDetails__input-middle'
-          name='contactDetails.middleName'
+          name='contactDetails.secondName'
           onChange={props.handleChange}
-          value={values.middleName}
+          value={values.secondName}
         />
       </div>
       <div className='contactDetails__input-ctr'>

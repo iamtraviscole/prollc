@@ -27,9 +27,9 @@ const Managers = (props) => {
             <input
               type='text'
               id='managers__details-input-middle'
-              name={`managerDetails[${i}].middleName`}
+              name={`managerDetails[${i}].secondName`}
               onChange={props.handleChange}
-              value={props.values.managerDetails[i].middleName}
+              value={props.values.managerDetails[i].secondName}
             />
           </div>
           <div className='managers__details-input-ctr name'>

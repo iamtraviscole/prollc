@@ -25,9 +25,9 @@ const ProRegisteredAgent = (props) => {
             <input
               type='text'
               id='proRegisteredAgent__details-input-middle'
-              name='registeredAgentDetails.middleName'
+              name='registeredAgentDetails.secondName'
               onChange={props.handleChange}
-              value={registeredAgentDetails.middleName}
+              value={registeredAgentDetails.secondName}
             />
           </div>
           <div className='proRegisteredAgent__details-input-ctr name'>

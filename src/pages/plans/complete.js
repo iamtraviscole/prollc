@@ -97,7 +97,7 @@ const CompletePlan = (props) => {
       corporateMember: false,
       companyName: '',
       firstName: '',
-      middleName: '',
+      secondName: '',
       lastName: '',
       street: '',
       suite: '',
@@ -113,7 +113,7 @@ const CompletePlan = (props) => {
   for (let i = 0; i < 5; i++) {
     initialManagerDetails.push({
       firstName: '',
-      middleName: '',
+      secondName: '',
       lastName: '',
       street: '',
       suite: '',
@@ -129,7 +129,7 @@ const CompletePlan = (props) => {
       fileState: 'Florida',
       contactDetails: {
         firstName: '',
-        middleName: '',
+        secondName: '',
         lastName: '',
         email: '',
         phone: ''
@@ -161,7 +161,7 @@ const CompletePlan = (props) => {
         corporateRegisteredAgent: false,
         companyName: '',
         firstName: '',
-        middleName: '',
+        secondName: '',
         lastName: '',
         street: '',
         suite: '',

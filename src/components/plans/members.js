@@ -25,9 +25,9 @@ const Members = (props) => {
           <input
             type='text'
             id='members__details-input-middle'
-            name={`memberDetails[${i}].middleName`}
+            name={`memberDetails[${i}].secondName`}
             onChange={props.handleChange}
-            value={props.values.memberDetails[i].middleName}
+            value={props.values.memberDetails[i].secondName}
           />
         </div>
         <div className='members__details-input-ctr name'>
