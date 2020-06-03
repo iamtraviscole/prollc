@@ -10,7 +10,6 @@ import Denomination from '../../components/plans/denomination'
 import Industry from '../../components/plans/industry'
 import EmployeeCount from '../../components/plans/employeeCount'
 import ProAddress from '../../components/plans/proAddress'
-import CompanyAddress from '../../components/plans/companyAddress'
 import Members from '../../components/plans/members'
 import Managers from '../../components/plans/managers'
 import ProRegisteredAgent from '../../components/plans/proRegisteredAgent'
@@ -56,12 +55,6 @@ const CompletePlan = (props) => {
         break
       }
       case ProAddress: {
-        formik.values.proAddress === 'Yes'
-          ? setCurrentStep({component: Members})
-          : setCurrentStep({component: CompanyAddress})
-        break
-      }
-      case CompanyAddress: {
         setCurrentStep({component: Members})
         break
       }

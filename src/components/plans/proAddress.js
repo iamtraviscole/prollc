@@ -5,7 +5,8 @@ import StepHeader from './stepHeader'
 import '../../styles/plans/proAddress.scss'
 
 const ProAddress = (props) => {
-  const value = props.values.proAddress
+  const proAddress = props.values.proAddress
+  const companyAddress = props.values.companyAddress
 
   return (
     <div className='proAddress'>
@@ -17,7 +18,7 @@ const ProAddress = (props) => {
             name='proAddress'
             id='proAddress__no'
             value='No'
-            checked={value === 'No'}
+            checked={proAddress === 'No'}
             onChange={props.handleChange}
            />
           <label htmlFor='proAddress__no'>
@@ -30,7 +31,7 @@ const ProAddress = (props) => {
             name='proAddress'
             id='proAddress__yes'
             value='Yes'
-            checked={value === 'Yes'}
+            checked={proAddress === 'Yes'}
             onChange={props.handleChange}
           />
           <label htmlFor='proAddress__yes'>
@@ -38,6 +39,77 @@ const ProAddress = (props) => {
           </label>
         </div>
       </fieldset>
+      {proAddress === 'No' &&
+        <div className='proAddress__address-ctr'>
+          <h3>Your Company Address</h3>
+          <div className='proAddress__address-input-outer-ctr'>
+            <div className='proAddress__address-input-ctr street'>
+              <label htmlFor='proAddress__address-input-street'>Street *</label>
+              <input
+                type='text'
+                id='proAddress__address-input-street'
+                name='companyAddress.street'
+                onChange={props.handleChange}
+                value={companyAddress.street}
+              />
+            </div>
+            <div className='proAddress__address-input-ctr suite'>
+              <label htmlFor='proAddress__address-input-suite'>Suite / Office / Apt</label>
+              <input
+                type='text'
+                id='proAddress__address-input-suite'
+                name='companyAddress.suite'
+                onChange={props.handleChange}
+                value={companyAddress.suite}
+              />
+            </div>
+          </div>
+          <div className='proAddress__address-input-outer-ctr'>
+            <div className='proAddress__address-input-ctr'>
+              <label htmlFor='proAddress__address-input-city'>City *</label>
+              <input
+                type='text'
+                id='proAddress__address-input-city'
+                name='companyAddress.city'
+                onChange={props.handleChange}
+                value={companyAddress.city}
+              />
+            </div>
+            <div className='proAddress__address-input-ctr'>
+              <label htmlFor='proAddress__address-input-state'>State *</label>
+              <input
+                type='text'
+                id='proAddress__address-input-state'
+                name='companyAddress.state'
+                onChange={props.handleChange}
+                value={companyAddress.state}
+              />
+            </div>
+          </div>
+          <div className='proAddress__address-input-outer-ctr'>
+            <div className='proAddress__address-input-ctr zipcode'>
+              <label htmlFor='proAddress__address-input-zipcode'>Zipcode *</label>
+              <input
+                type='text'
+                id='proAddress__address-input-zipcode'
+                name='companyAddress.zipcode'
+                onChange={props.handleChange}
+                value={companyAddress.zipcode}
+              />
+            </div>
+            <div className='proAddress__address-input-ctr country'>
+              <label htmlFor='proAddress__address-input-country'>Country *</label>
+              <input
+                type='text'
+                id='proAddress__address-input-country'
+                name='companyAddress.country'
+                onChange={props.handleChange}
+                value={companyAddress.country}
+              />
+            </div>
+          </div>
+        </div>
+      }
     </div>
   )
 }
