@@ -22,4 +22,114 @@
     }
   }
 
+  &__details-ctr {
+    margin-top: 50px;
+    
+    > h3 {
+      font-size: 18px;
+      color: var(--color-primary);
+      margin-bottom: 25px;
+    }
+  }
+
+  &__details-corporate-ctr {
+    > input {
+      margin-right: 5px;
+    }
+
+    font-weight: 300;
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  &__details-input-outer-ctr {
+    margin: 0 auto;
+    max-width: 615px;
+
+    & div:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &__details-input-ctr {
+    display: inline-block;
+    margin: 0 15px 15px 0;
+    width: 300px;
+
+    &.name {
+      width: 195px;
+    }
+
+    &.company {
+      width: 615px;
+    }
+
+    &.street {
+      width: 400px;
+    }
+
+    &.suite {
+      width: 200px;
+    }
+
+    &.zipcode {
+      width: 200px;
+    }
+
+    &.country {
+      width: 400px;
+    }
+
+    > label {
+      display: block;
+      font-size: 13px;
+      font-weight: 300;
+      text-align: left;
+      margin-bottom: 4px;
+    }
+
+    > input {
+      width: 100%;
+    }
+  }
+
+}
+
+@media (max-width: 750px) {
+  .proRegisteredAgent {
+
+    &__details-input-outer-ctr {
+      margin: 0 auto;
+      max-width: 250px;
+    }
+
+    &__details-input-ctr {
+      margin-right: 0;
+      width: 250px;
+
+      &.name {
+        width: 250px;
+      }
+
+      &.company {
+        width: 250px;
+      }
+
+      &.street {
+        width: 250px
+      }
+
+      &.suite {
+        width: 250px;
+      }
+
+      &.zipcode {
+        width: 250px;
+      }
+
+      &.country {
+        width: 250px;
+      }
+    }
+  }
 }

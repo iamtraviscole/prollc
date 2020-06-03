@@ -13,7 +13,6 @@ import ProAddress from '../../components/plans/proAddress'
 import Members from '../../components/plans/members'
 import Managers from '../../components/plans/managers'
 import ProRegisteredAgent from '../../components/plans/proRegisteredAgent'
-import RegisteredAgentDetails from '../../components/plans/registeredAgentDetails'
 import Expedited from '../../components/plans/expedited'
 import Payment from '../../components/plans/payment'
 
@@ -65,12 +64,6 @@ const BasicPlan = (props) => {
         break
       }
       case ProRegisteredAgent: {
-        formik.values.proRegisteredAgent === 'Yes'
-          ? setCurrentStep({component: Expedited})
-          : setCurrentStep({component: RegisteredAgentDetails})
-        break
-      }
-      case RegisteredAgentDetails: {
         setCurrentStep({component: Expedited})
         break
       }
