@@ -1,0 +1,73 @@
+.ein {
+  display: inline-block;
+
+  &__details-input-outer-ctr {
+    margin: 0 auto;
+    max-width: 615px;
+
+    h3 {
+      font-size: 18px;
+      color: var(--color-primary);
+      margin-bottom: 5px;
+    }
+
+    p {
+      margin-bottom: 25px;
+      font-weight: 300;
+    }
+  }
+
+  &__details-input-ctr {
+    display: inline-block;
+    margin: 0 15px 15px 0;
+    width: 300px;
+
+    &.name {
+      width: 195px;
+
+      &:last-of-type {
+         margin-right: 0;
+      }
+    }
+
+    &.id-num {
+      margin: 0 auto 15px auto;
+      display: block;
+    }
+
+    > label {
+      display: block;
+      font-size: 13px;
+      font-weight: 300;
+      text-align: left;
+      margin-bottom: 4px;
+    }
+
+    > input {
+      width: 100%;
+    }
+  }
+
+  &__id-number {
+    margin-top: 25px;
+  }
+
+}
+
+@media (max-width: 750px) {
+  .ein {
+
+    &__details-input-outer-ctr {
+      max-width: 250px;
+    }
+
+    &__details-input-ctr {
+      display: block;
+      max-width: 250px;
+
+      &.name {
+        width: 250px;
+      }
+    }
+  }
+}
