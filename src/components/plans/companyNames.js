@@ -11,7 +11,7 @@ const CompanyNames = (props) => {
     <div className='companyNames'>
       <StepHeader
         title='Company Names'
-        details='Order by preference'
+        details='Subject to availability, order by preference'
       />
       <div className='companyNames__input-ctr'>
         <label htmlFor='companyNames__input-name1'>Company Name 1 *</label>
