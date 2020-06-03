@@ -18,19 +18,6 @@ const Expedited = (props) => {
           <input
             type='radio'
             name='expedited'
-            id='expedited__input-yes'
-            value='Yes'
-            checked={value === 'Yes'}
-            onChange={props.handleChange}
-           />
-          <label htmlFor='expedited__input-yes'>
-            Yes ( + $39.00 )
-          </label>
-        </div>
-        <div className='expedited__input-ctr'>
-          <input
-            type='radio'
-            name='expedited'
             id='expedited__input-no'
             value='No'
             checked={value === 'No'}
@@ -38,6 +25,19 @@ const Expedited = (props) => {
           />
           <label htmlFor='expedited__input-no'>
             No
+          </label>
+        </div>
+        <div className='expedited__input-ctr'>
+          <input
+            type='radio'
+            name='expedited'
+            id='expedited__input-yes'
+            value='Yes'
+            checked={value === 'Yes'}
+            onChange={props.handleChange}
+           />
+          <label htmlFor='expedited__input-yes'>
+            Yes ( + $39.00 )
           </label>
         </div>
       </fieldset>

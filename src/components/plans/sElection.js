@@ -19,19 +19,6 @@ const SElection = (props) => {
           <input
             type='radio'
             name='sElection'
-            id='sElection__input-yes'
-            value='Yes'
-            checked={value === 'Yes'}
-            onChange={props.handleChange}
-           />
-          <label htmlFor='sElection__input-yes'>
-            Yes
-          </label>
-        </div>
-        <div className='sElection__input-ctr'>
-          <input
-            type='radio'
-            name='sElection'
             id='sElection__input-no'
             value='No'
             checked={value === 'No'}
@@ -39,6 +26,19 @@ const SElection = (props) => {
           />
           <label htmlFor='sElection__input-no'>
             No
+          </label>
+        </div>
+        <div className='sElection__input-ctr'>
+          <input
+            type='radio'
+            name='sElection'
+            id='sElection__input-yes'
+            value='Yes'
+            checked={value === 'Yes'}
+            onChange={props.handleChange}
+           />
+          <label htmlFor='sElection__input-yes'>
+            Yes
           </label>
         </div>
       </fieldset>
