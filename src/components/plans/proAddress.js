@@ -5,8 +5,7 @@ import StepHeader from './stepHeader'
 import '../../styles/plans/proAddress.scss'
 
 const ProAddress = (props) => {
-  const proAddress = props.values.proAddress
-  const companyAddress = props.values.companyAddress
+  const { proAddress, companyAddress } = props.values
 
   return (
     <div className='proAddress'>
