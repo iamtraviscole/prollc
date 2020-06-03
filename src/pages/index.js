@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 
 import Layout from '../components/layout'
@@ -31,7 +31,7 @@ const Home = (props) => {
         <div className='index__intro-ctr'>
           <div className='index__intro-inner-ctr'>
             <h1>Tu primer paso hacio el sueño americano</h1>
-            <button>View Plans</button>
+              <Link className='index__view-plans-link' to='plans'>View Plans</Link>  
           </div>
         </div>
       </BackgroundImage>

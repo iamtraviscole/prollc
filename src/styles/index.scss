@@ -26,19 +26,19 @@
       color: var(--color-text-secondary);
       margin-bottom: 30px;
     }
+  }
 
-    > button {
-      padding: 15px;
-      color: var(--color-text-secondary);
-      font-size: 22px;
-      font-weight: 700;
-      background: var(--color-secondary);
+  &__view-plans-link {
+    display: inline-block;
+    padding: 15px;
+    color: var(--color-text-secondary);
+    font-size: 22px;
+    font-weight: 700;
+    background: var(--color-secondary);
 
-
-      &:hover {
-        color: var(--color-secondary);
-        background: var(--color-background-primary);
-      }
+    &:hover {
+      color: var(--color-secondary);
+      background: var(--color-background-primary);
     }
   }
 
