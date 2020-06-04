@@ -1,11 +1,12 @@
 import React from 'react'
 
 import StepHeader from './stepHeader'
+import InputError from './inputError'
 
 import '../../styles/plans/contactDetails.scss'
 
 const ContactDetails = (props) => {
-  const values = props.values.contactDetails
+  const { contactDetails } = props.formik.values
 
   return (
     <div className='contactDetails'>
@@ -17,8 +18,10 @@ const ContactDetails = (props) => {
           id='contactDetails__input-first'
           name='contactDetails.firstName'
           onChange={props.handleChange}
-          value={values.firstName}
+          onBlur={props.handleBlur}
+          value={contactDetails.firstName}
         />
+        <InputError objName='contactDetails' valueName='firstName' formik={props.formik}/>
       </div>
       <div className='contactDetails__input-ctr'>
         <label htmlFor='contactDetails__input-middle'>Second Name</label>
@@ -27,7 +30,8 @@ const ContactDetails = (props) => {
           id='contactDetails__input-middle'
           name='contactDetails.secondName'
           onChange={props.handleChange}
-          value={values.secondName}
+          onBlur={props.handleBlur}
+          value={contactDetails.secondName}
         />
       </div>
       <div className='contactDetails__input-ctr'>
@@ -37,8 +41,10 @@ const ContactDetails = (props) => {
           id='contactDetails__input-last'
           name='contactDetails.lastName'
           onChange={props.handleChange}
-          value={values.lastName}
+          onBlur={props.handleBlur}
+          value={contactDetails.lastName}
         />
+        <InputError objName='contactDetails' valueName='lastName' formik={props.formik}/>
       </div>
       <div className='contactDetails__input-ctr'>
         <label htmlFor='contactDetails__input-email'>Email *</label>
@@ -47,8 +53,10 @@ const ContactDetails = (props) => {
           id='contactDetails__input-email'
           name='contactDetails.email'
           onChange={props.handleChange}
-          value={values.email}
+          onBlur={props.handleBlur}
+          value={contactDetails.email}
         />
+        <InputError objName='contactDetails' valueName='email' formik={props.formik}/>
       </div>
       <div className='contactDetails__input-ctr'>
         <label htmlFor='contactDetails__input-phone'>Phone *</label>
@@ -57,8 +65,10 @@ const ContactDetails = (props) => {
           id='contactDetails__input-phone'
           name='contactDetails.phone'
           onChange={props.handleChange}
-          value={values.phone}
+          onBlur={props.handleBlur}
+          value={contactDetails.phone}
         />
+        <InputError objName='contactDetails' valueName='phone' formik={props.formik}/>
       </div>
     </div>
   )
