@@ -5,9 +5,10 @@ import StepHeader from './stepHeader'
 import '../../styles/plans/members.scss'
 
 const Members = (props) => {
+  const { members } = props.formik.values
 
   const memberDetailsBlocks = []
-  for (let i = 0; i < props.values.memberCount && i < 5; i++ ) {
+  for (let i = 0; i < members.memberCount && i < 5; i++ ) {
     const personName = (
       <>
         <div className='members__details-input-ctr  name'>
@@ -15,9 +16,9 @@ const Members = (props) => {
           <input
             type='text'
             id='members__details-input-first'
-            name={`memberDetails[${i}].firstName`}
+            name={`members.memberDetails[${i}].firstName`}
             onChange={props.handleChange}
-            value={props.values.memberDetails[i].firstName}
+            value={members.memberDetails[i].firstName}
           />
         </div>
         <div className='members__details-input-ctr name'>
@@ -25,9 +26,9 @@ const Members = (props) => {
           <input
             type='text'
             id='members__details-input-middle'
-            name={`memberDetails[${i}].secondName`}
+            name={`members.memberDetails[${i}].secondName`}
             onChange={props.handleChange}
-            value={props.values.memberDetails[i].secondName}
+            value={members.memberDetails[i].secondName}
           />
         </div>
         <div className='members__details-input-ctr name'>
@@ -35,9 +36,9 @@ const Members = (props) => {
           <input
             type='text'
             id='members__details-input-last'
-            name={`memberDetails[${i}].lastName`}
+            name={`members.memberDetails[${i}].lastName`}
             onChange={props.handleChange}
-            value={props.values.memberDetails[i].lastName}
+            value={members.memberDetails[i].lastName}
           />
         </div>
       </>
@@ -50,9 +51,9 @@ const Members = (props) => {
           <input
             type='text'
             id='members__details-input-company-name'
-            name={`memberDetails[${i}].companyName`}
+            name={`members.memberDetails[${i}].companyName`}
             onChange={props.handleChange}
-            value={props.values.memberDetails[i].companyName}
+            value={members.memberDetails[i].companyName}
           />
         </div>
       </div>
@@ -65,15 +66,15 @@ const Members = (props) => {
           <input
             type='checkbox'
             id='members__details-input-corporate'
-            name={`memberDetails[${i}].corporateMember`}
+            name={`members.memberDetails[${i}].corporateMember`}
             onChange={props.handleChange}
-            checked={props.values.memberDetails[i].corporateMember}
-            value={props.values.memberDetails[i].corporateMember}
+            checked={members.memberDetails[i].corporateMember}
+            value={members.memberDetails[i].corporateMember}
           />
           <label htmlFor='members__details-input-corporate'> This member is a parent company</label>
         </div>
         <div className='members__details-input-outer-ctr'>
-          {props.values.memberDetails[i].corporateMember
+          {members.memberDetails[i].corporateMember
             ? companyName
             : personName}
         </div>
@@ -83,9 +84,9 @@ const Members = (props) => {
             <input
               type='text'
               id='members__details-input-street'
-              name={`memberDetails[${i}].street`}
+              name={`members.memberDetails[${i}].street`}
               onChange={props.handleChange}
-              value={props.values.memberDetails[i].street}
+              value={members.memberDetails[i].street}
             />
           </div>
           <div className='members__details-input-ctr suite'>
@@ -93,9 +94,9 @@ const Members = (props) => {
             <input
               type='text'
               id='members__details-input-suite'
-              name={`memberDetails[${i}].suite`}
+              name={`members.memberDetails[${i}].suite`}
               onChange={props.handleChange}
-              value={props.values.memberDetails[i].suite}
+              value={members.memberDetails[i].suite}
             />
           </div>
         </div>
@@ -105,9 +106,9 @@ const Members = (props) => {
             <input
               type='text'
               id='members__details-input-city'
-              name={`memberDetails[${i}].city`}
+              name={`members.memberDetails[${i}].city`}
               onChange={props.handleChange}
-              value={props.values.memberDetails[i].city}
+              value={members.memberDetails[i].city}
             />
           </div>
           <div className='members__details-input-ctr'>
@@ -115,9 +116,9 @@ const Members = (props) => {
             <input
               type='text'
               id='members__details-input-state'
-              name={`memberDetails[${i}].state`}
+              name={`members.memberDetails[${i}].state`}
               onChange={props.handleChange}
-              value={props.values.memberDetails[i].state}
+              value={members.memberDetails[i].state}
             />
           </div>
         </div>
@@ -127,9 +128,9 @@ const Members = (props) => {
             <input
               type='text'
               id='members__details-input-zipcode'
-              name={`memberDetails[${i}].zipcode`}
+              name={`members.memberDetails[${i}].zipcode`}
               onChange={props.handleChange}
-              value={props.values.memberDetails[i].zipcode}
+              value={members.memberDetails[i].zipcode}
             />
           </div>
           <div className='members__details-input-ctr country'>
@@ -137,9 +138,9 @@ const Members = (props) => {
             <input
               type='text'
               id='members__details-input-country'
-              name={`memberDetails[${i}].country`}
+              name={`members.memberDetails[${i}].country`}
               onChange={props.handleChange}
-              value={props.values.memberDetails[i].country}
+              value={members.memberDetails[i].country}
             />
           </div>
         </div>
@@ -158,11 +159,11 @@ const Members = (props) => {
           <h3>Number of members</h3>
         </div>
         <select
-          name='memberCount'
+          name='members.memberCount'
           id='members__count'
           onChange={props.handleChange}
           onBlur={props.handleBlur}
-          value={props.values.memberCount}
+          value={members.memberCount}
         >
           <option>1</option>
           <option>2</option>

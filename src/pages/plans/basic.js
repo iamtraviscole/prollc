@@ -160,8 +160,10 @@ const BasicPlan = (props) => {
         zipcode: '',
         country: ''
       },
-      memberCount: 1,
-      memberDetails: initialMemberDetails,
+      members: {
+        memberCount: 1,
+        memberDetails: initialMemberDetails
+      },
       managerCount: 0,
       managerDetails: initialManagerDetails,
       proRegisteredAgent: 'No',
