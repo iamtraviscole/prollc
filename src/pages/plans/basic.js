@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useFormik } from 'formik'
+import * as yup from 'yup'
 
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
@@ -19,8 +20,20 @@ import Payment from '../../components/plans/payment'
 import '../../styles/plans/basic.scss'
 
 const BasicPlan = (props) => {
-  const [currentStep, setCurrentStep] = useState({component: FileState})
+  const [currentStep, setCurrentStep] = useState({
+    component: FileState,
+    validate: 'fileState'
+  })
   const [previousSteps, setPreviousSteps] = useState([])
+
+  const basicValidation = yup.object().shape({
+    contactDetails: yup.object().shape({
+      firstName: yup.string().required('Required'),
+      lastName: yup.string().required('Required'),
+      email: yup.string().required('Required').email('Invalid email'),
+      phone: yup.string().required('Required')
+    })
+  })
 
   const handleNextClick = (e) => {
     setPreviousSteps([...previousSteps, currentStep.component])
@@ -28,7 +41,10 @@ const BasicPlan = (props) => {
     // TODO: validation at each step
     switch (currentStep.component) {
       case FileState: {
-        setCurrentStep({component: ContactDetails})
+        setCurrentStep({
+          component: ContactDetails,
+          validate: 'contactDetails'
+        })
         break
       }
       case ContactDetails: {
@@ -165,7 +181,7 @@ const BasicPlan = (props) => {
     onSubmit: async values => {
       console.log('submit clicked')
     },
-    validationSchema: null,
+    validationSchema: basicValidation,
     validateOnMount: true
   })
 
@@ -174,8 +190,6 @@ const BasicPlan = (props) => {
   const previousButton = previousSteps.length > 0
     ? <button type='button' onClick={handlePreviousClick}>Previous</button>
     : null
-
-  console.log(formik.values)
 
   return (
     <Layout pageTitle='Basic Plan'>
@@ -186,10 +200,14 @@ const BasicPlan = (props) => {
             handleChange={formik.handleChange}
             handleBlur={formik.handleBlur}
             values={formik.values}
+            formik={formik}
           />
           <div className='basic__btn-ctr'>
             {previousButton}
-            <button type='button' onClick={handleNextClick}>
+            <button
+              type='button'
+              onClick={handleNextClick}
+              disabled={formik.errors[currentStep.validate]}>
               Next
             </button>
           </div>

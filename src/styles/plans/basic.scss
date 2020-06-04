@@ -27,6 +27,11 @@
       &:last-of-type {
         margin-right: 0;
       }
+
+      &:disabled {
+        opacity: 50%;
+        cursor: not-allowed;
+      }
     }
   }
 
