@@ -151,8 +151,8 @@ const BasicPlan = (props) => {
         other: ''
       },
       employeeCount: 0,
-      proAddress: 'No',
       companyAddress: {
+        proAddress: 'No',
         street: '',
         suite: '',
         city: '',
