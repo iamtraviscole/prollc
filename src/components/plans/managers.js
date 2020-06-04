@@ -5,9 +5,10 @@ import StepHeader from './stepHeader'
 import '../../styles/plans/managers.scss'
 
 const Managers = (props) => {
+  const { managers, members } = props.formik.values
 
   const managerDetailsBlocks = []
-  for (let i = 0; i < props.values.managerCount && i < 5; i++ ) {
+  for (let i = 0; i < managers.managerCount && i < 5; i++ ) {
     managerDetailsBlocks.push(
       <div key={i} className='managers__details-block'>
         <h3>Additional manager {i+1} details</h3>
@@ -17,9 +18,9 @@ const Managers = (props) => {
             <input
               type='text'
               id='managers__details-input-first'
-              name={`managerDetails[${i}].firstName`}
+              name={`managers.managerDetails[${i}].firstName`}
               onChange={props.handleChange}
-              value={props.values.managerDetails[i].firstName}
+              value={managers.managerDetails[i].firstName}
             />
           </div>
           <div className='managers__details-input-ctr name'>
@@ -27,9 +28,9 @@ const Managers = (props) => {
             <input
               type='text'
               id='managers__details-input-middle'
-              name={`managerDetails[${i}].secondName`}
+              name={`managers.managerDetails[${i}].secondName`}
               onChange={props.handleChange}
-              value={props.values.managerDetails[i].secondName}
+              value={managers.managerDetails[i].secondName}
             />
           </div>
           <div className='managers__details-input-ctr name'>
@@ -37,9 +38,9 @@ const Managers = (props) => {
             <input
               type='text'
               id='managers__details-input-last'
-              name={`managerDetails[${i}].lastName`}
+              name={`managers.managerDetails[${i}].lastName`}
               onChange={props.handleChange}
-              value={props.values.managerDetails[i].lastName}
+              value={managers.managerDetails[i].lastName}
             />
           </div>
         </div>
@@ -49,9 +50,9 @@ const Managers = (props) => {
             <input
               type='text'
               id='managers__details-input-street'
-              name={`managerDetails[${i}].street`}
+              name={`managers.managerDetails[${i}].street`}
               onChange={props.handleChange}
-              value={props.values.managerDetails[i].street}
+              value={managers.managerDetails[i].street}
             />
           </div>
           <div className='managers__details-input-ctr suite'>
@@ -59,9 +60,9 @@ const Managers = (props) => {
             <input
               type='text'
               id='managers__details-input-suite'
-              name={`managerDetails[${i}].suite`}
+              name={`managers.managerDetails[${i}].suite`}
               onChange={props.handleChange}
-              value={props.values.managerDetails[i].suite}
+              value={managers.managerDetails[i].suite}
             />
           </div>
         </div>
@@ -71,9 +72,9 @@ const Managers = (props) => {
             <input
               type='text'
               id='managers__details-input-city'
-              name={`managerDetails[${i}].city`}
+              name={`managers.managerDetails[${i}].city`}
               onChange={props.handleChange}
-              value={props.values.managerDetails[i].city}
+              value={managers.managerDetails[i].city}
             />
           </div>
           <div className='managers__details-input-ctr'>
@@ -81,9 +82,9 @@ const Managers = (props) => {
             <input
               type='text'
               id='managers__details-input-state'
-              name={`managerDetails[${i}].state`}
+              name={`managers.managerDetails[${i}].state`}
               onChange={props.handleChange}
-              value={props.values.managerDetails[i].state}
+              value={managers.managerDetails[i].state}
             />
           </div>
         </div>
@@ -93,9 +94,9 @@ const Managers = (props) => {
             <input
               type='text'
               id='managers__details-input-zipcode'
-              name={`managerDetails[${i}].zipcode`}
+              name={`managers.managerDetails[${i}].zipcode`}
               onChange={props.handleChange}
-              value={props.values.managerDetails[i].zipcode}
+              value={managers.managerDetails[i].zipcode}
             />
           </div>
           <div className='managers__details-input-ctr country'>
@@ -103,9 +104,9 @@ const Managers = (props) => {
             <input
               type='text'
               id='managers__details-input-country'
-              name={`managerDetails[${i}].country`}
+              name={`managers.managerDetails[${i}].country`}
               onChange={props.handleChange}
-              value={props.values.managerDetails[i].country}
+              value={managers.managerDetails[i].country}
             />
           </div>
         </div>
@@ -113,7 +114,7 @@ const Managers = (props) => {
     )
   }
 
-  const displayMembers = props.values.memberDetails.map((member, i) => {
+  const displayMembers = members.memberDetails.map((member, i) => {
     if (member.companyName || member.firstName) {
       return (
         <div key={i} className='managers__member-inner-ctr'>
@@ -122,8 +123,8 @@ const Managers = (props) => {
             id={`managers__member[${i}]`}
             name={`memberDetails[${i}].manager`}
             onChange={props.handleChange}
-            checked={props.values.memberDetails[i].manager}
-            value={props.values.memberDetails[i].manager}
+            checked={members.memberDetails[i].manager}
+            value={members.memberDetails[i].manager}
           />
           <label htmlFor={`managers__member[${i}]`}>
             {`${member.companyName || member.firstName} ${member.lastName}`}
@@ -152,11 +153,11 @@ const Managers = (props) => {
           <h4>Number of additional managers</h4>
         </div>
         <select
-          name='managerCount'
+          name='managers.managerCount'
           id='managers__count'
           onChange={props.handleChange}
           onBlur={props.handleBlur}
-          value={props.values.managerCount}
+          value={managers.managerCount}
         >
           <option>0</option>
           <option>1</option>

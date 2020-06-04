@@ -134,11 +134,11 @@ const BasicPlan = (props) => {
     initialValues: {
       fileState: 'Florida',
       contactDetails: {
-        firstName: '',
+        firstName: 'a',
         secondName: '',
-        lastName: '',
-        email: '',
-        phone: ''
+        lastName: 's',
+        email: 'd@f.g',
+        phone: 'h'
       },
       companyNames: {
         name1: '',
@@ -164,8 +164,10 @@ const BasicPlan = (props) => {
         memberCount: 1,
         memberDetails: initialMemberDetails
       },
-      managerCount: 0,
-      managerDetails: initialManagerDetails,
+      managers: {
+        managerCount: 1,
+        managerDetails: initialManagerDetails
+      },
       proRegisteredAgent: 'No',
       registeredAgentDetails: {
         corporateRegisteredAgent: false,
