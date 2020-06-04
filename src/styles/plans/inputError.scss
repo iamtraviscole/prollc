@@ -1,0 +1,12 @@
+.inputError {
+
+  &__err-ctr {
+    margin-top: 2px;
+    text-align: right;
+
+    p {
+      font-size: 10px;
+      color: var(--color-error);
+    }
+  }
+}
