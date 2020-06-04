@@ -146,8 +146,10 @@ const BasicPlan = (props) => {
         name3: ''
       },
       denomination: 'LLC',
-      industry: '',
-      industryOther: '',
+      industry: {
+        industry: '',
+        other: ''
+      },
       employeeCount: 0,
       proAddress: 'No',
       companyAddress: {
