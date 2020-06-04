@@ -5,9 +5,9 @@ import StepHeader from './stepHeader'
 import '../../styles/plans/proRegisteredAgent.scss'
 
 const ProRegisteredAgent = (props) => {
-  const { proRegisteredAgent, registeredAgentDetails } = props.values
+  const { registeredAgent } = props.formik.values
 
-  let personOrCompanyName = !registeredAgentDetails.corporateRegisteredAgent
+  let personOrCompanyName = !registeredAgent.corporateRegisteredAgent
     ? (
         <>
           <div className='proRegisteredAgent__details-input-ctr  name'>
@@ -15,9 +15,9 @@ const ProRegisteredAgent = (props) => {
             <input
               type='text'
               id='proRegisteredAgent__details-input-first'
-              name='registeredAgentDetails.firstName'
+              name='registeredAgent.firstName'
               onChange={props.handleChange}
-              value={registeredAgentDetails.firstName}
+              value={registeredAgent.firstName}
             />
           </div>
           <div className='proRegisteredAgent__details-input-ctr name'>
@@ -25,9 +25,9 @@ const ProRegisteredAgent = (props) => {
             <input
               type='text'
               id='proRegisteredAgent__details-input-middle'
-              name='registeredAgentDetails.secondName'
+              name='registeredAgent.secondName'
               onChange={props.handleChange}
-              value={registeredAgentDetails.secondName}
+              value={registeredAgent.secondName}
             />
           </div>
           <div className='proRegisteredAgent__details-input-ctr name'>
@@ -35,9 +35,9 @@ const ProRegisteredAgent = (props) => {
             <input
               type='text'
               id='proRegisteredAgent__details-input-last'
-              name='registeredAgentDetails.lastName'
+              name='registeredAgent.lastName'
               onChange={props.handleChange}
-              value={registeredAgentDetails.lastName}
+              value={registeredAgent.lastName}
             />
           </div>
         </>
@@ -49,9 +49,9 @@ const ProRegisteredAgent = (props) => {
             <input
               type='text'
               id='proRegisteredAgent__details-input-company-name'
-              name='registeredAgentDetails.companyName'
+              name='registeredAgent.companyName'
               onChange={props.handleChange}
-              value={registeredAgentDetails.companyName}
+              value={registeredAgent.companyName}
             />
           </div>
         </div>
@@ -64,10 +64,10 @@ const ProRegisteredAgent = (props) => {
         <div className='proRegisteredAgent__input-ctr'>
           <input
             type='radio'
-            name='proRegisteredAgent'
+            name='registeredAgent.proRegisteredAgent'
             id='proRegisteredAgent__input-no'
             value='No'
-            checked={proRegisteredAgent === 'No'}
+            checked={registeredAgent.proRegisteredAgent === 'No'}
             onChange={props.handleChange}
           />
           <label htmlFor='proRegisteredAgent__input-no'>
@@ -77,10 +77,10 @@ const ProRegisteredAgent = (props) => {
         <div className='proRegisteredAgent__input-ctr'>
           <input
             type='radio'
-            name='proRegisteredAgent'
+            name='registeredAgent.proRegisteredAgent'
             id='proRegisteredAgent__input-yes'
             value='Yes'
-            checked={proRegisteredAgent === 'Yes'}
+            checked={registeredAgent.proRegisteredAgent === 'Yes'}
             onChange={props.handleChange}
            />
           <label htmlFor='proRegisteredAgent__input-yes'>
@@ -88,17 +88,17 @@ const ProRegisteredAgent = (props) => {
           </label>
         </div>
       </fieldset>
-      {proRegisteredAgent === 'No' &&
+      {registeredAgent.proRegisteredAgent === 'No' &&
         <div className='proRegisteredAgent__details-ctr'>
           <h3>Your Registered Agent details</h3>
           <div className='proRegisteredAgent__details-corporate-ctr'>
             <input
               type='checkbox'
               id='proRegisteredAgent__details-input-corporate'
-              name='registeredAgentDetails.corporateRegisteredAgent'
+              name='registeredAgent.corporateRegisteredAgent'
               onChange={props.handleChange}
-              checked={registeredAgentDetails.corporateRegisteredAgent}
-              value={registeredAgentDetails.corporateRegisteredAgent}
+              checked={registeredAgent.corporateRegisteredAgent}
+              value={registeredAgent.corporateRegisteredAgent}
             />
             <label htmlFor='proRegisteredAgent__details-input-corporate'>My Registered Agent is a company</label>
           </div>
@@ -111,9 +111,9 @@ const ProRegisteredAgent = (props) => {
               <input
                 type='text'
                 id='proRegisteredAgent__details-input-street'
-                name='registeredAgentDetails.street'
+                name='registeredAgent.street'
                 onChange={props.handleChange}
-                value={registeredAgentDetails.street}
+                value={registeredAgent.street}
               />
             </div>
             <div className='proRegisteredAgent__details-input-ctr suite'>
@@ -121,9 +121,9 @@ const ProRegisteredAgent = (props) => {
               <input
                 type='text'
                 id='proRegisteredAgent__details-input-suite'
-                name='registeredAgentDetails.suite'
+                name='registeredAgent.suite'
                 onChange={props.handleChange}
-                value={registeredAgentDetails.suite}
+                value={registeredAgent.suite}
               />
             </div>
           </div>
@@ -133,9 +133,9 @@ const ProRegisteredAgent = (props) => {
               <input
                 type='text'
                 id='proRegisteredAgent__details-input-city'
-                name='registeredAgentDetails.city'
+                name='registeredAgent.city'
                 onChange={props.handleChange}
-                value={registeredAgentDetails.city}
+                value={registeredAgent.city}
               />
             </div>
             <div className='proRegisteredAgent__details-input-ctr'>
@@ -143,9 +143,9 @@ const ProRegisteredAgent = (props) => {
               <input
                 type='text'
                 id='proRegisteredAgent__details-input-state'
-                name='registeredAgentDetails.state'
+                name='registeredAgent.state'
                 onChange={props.handleChange}
-                value={registeredAgentDetails.state}
+                value={registeredAgent.state}
               />
             </div>
           </div>
@@ -155,9 +155,9 @@ const ProRegisteredAgent = (props) => {
               <input
                 type='text'
                 id='proRegisteredAgent__details-input-zipcode'
-                name='registeredAgentDetails.zipcode'
+                name='registeredAgent.zipcode'
                 onChange={props.handleChange}
-                value={registeredAgentDetails.zipcode}
+                value={registeredAgent.zipcode}
               />
             </div>
             <div className='proRegisteredAgent__details-input-ctr country'>
@@ -165,9 +165,9 @@ const ProRegisteredAgent = (props) => {
               <input
                 type='text'
                 id='proRegisteredAgent__details-input-country'
-                name='registeredAgentDetails.country'
+                name='registeredAgent.country'
                 onChange={props.handleChange}
-                value={registeredAgentDetails.country}
+                value={registeredAgent.country}
               />
             </div>
           </div>
