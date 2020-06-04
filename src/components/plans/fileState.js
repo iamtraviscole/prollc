@@ -5,7 +5,7 @@ import StepHeader from './stepHeader'
 import '../../styles/plans/fileState.scss'
 
 const FileState = (props) => {
-  const value = props.values.fileState
+  const { fileState } = props.values
 
   return (
     <div className='fileState'>
@@ -17,8 +17,9 @@ const FileState = (props) => {
             name='fileState'
             id='fileState__input-florida'
             value='Florida'
-            checked={value === 'Florida'}
+            checked={fileState === 'Florida'}
             onChange={props.handleChange}
+            onBlur={props.handleBlur}
            />
           <label htmlFor='fileState__input-florida'>
             Florida
@@ -30,8 +31,9 @@ const FileState = (props) => {
             name='fileState'
             id='fileState__input-delaware'
             value='Delaware'
-            checked={value === 'Delaware'}
+            checked={fileState === 'Delaware'}
             onChange={props.handleChange}
+            onBlur={props.handleBlur}
           />
           <label htmlFor='fileState__input-delaware'>
             Delaware <span>( + $50 )</span>
