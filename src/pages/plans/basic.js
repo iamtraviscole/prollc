@@ -32,6 +32,26 @@ const BasicPlan = (props) => {
       lastName: yup.string().required('Required'),
       email: yup.string().required('Required').email('Invalid email'),
       phone: yup.string().required('Required')
+    }),
+    companyNames: yup.object().shape({
+      name1: yup.string()
+        .required('Required')
+        .test('test-name', 'Must be unique', function() {
+          const { name1, name2, name3 } = this.parent
+          return (name1 !== name2) && (name1 !== name3)
+        }),
+      name2: yup.string()
+        .required('Required')
+        .test('test-name', 'Must be unique', function() {
+          const { name1, name2, name3 } = this.parent
+          return (name2 !== name1) && (name2 !== name3)
+        }),
+      name3: yup.string()
+        .required('Required')
+        .test('test-name', 'Must be unique', function() {
+          const { name1, name2, name3 } = this.parent
+          return (name3 !== name1) && (name3 !== name2)
+        })
     })
   })
 
@@ -48,7 +68,10 @@ const BasicPlan = (props) => {
         break
       }
       case ContactDetails: {
-        setCurrentStep({component: CompanyNames})
+        setCurrentStep({
+          component: CompanyNames,
+          validate: 'companyNames'
+        })
         break
       }
       case CompanyNames: {
