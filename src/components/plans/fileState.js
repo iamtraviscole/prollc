@@ -5,7 +5,8 @@ import StepHeader from './stepHeader'
 import '../../styles/plans/fileState.scss'
 
 const FileState = (props) => {
-  const { fileState } = props.values
+  const { fileState } = props.formik.values
+  const { handleChange } = props.formik
 
   return (
     <div className='fileState'>
@@ -18,8 +19,7 @@ const FileState = (props) => {
             id='fileState__input-florida'
             value='Florida'
             checked={fileState === 'Florida'}
-            onChange={props.handleChange}
-            onBlur={props.handleBlur}
+            onChange={handleChange}
            />
           <label htmlFor='fileState__input-florida'>
             Florida
@@ -32,8 +32,7 @@ const FileState = (props) => {
             id='fileState__input-delaware'
             value='Delaware'
             checked={fileState === 'Delaware'}
-            onChange={props.handleChange}
-            onBlur={props.handleBlur}
+            onChange={handleChange}
           />
           <label htmlFor='fileState__input-delaware'>
             Delaware <span>( + $50 )</span>

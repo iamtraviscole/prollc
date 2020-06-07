@@ -5,7 +5,8 @@ import StepHeader from './stepHeader'
 import '../../styles/plans/speakToAttorney.scss'
 
 const SpeakToAttorney = (props) => {
-  const { speakToAttorney } = props.values
+  const { speakToAttorney } = props.formik.values
+  const { handleChange } = props.formik
 
   return (
     <div className='speakToAttorney'>
@@ -18,7 +19,7 @@ const SpeakToAttorney = (props) => {
             id='speakToAttorney__input-yes'
             value='Yes'
             checked={speakToAttorney === 'Yes'}
-            onChange={props.handleChange}
+            onChange={handleChange}
            />
           <label htmlFor='speakToAttorney__input-yes'>
             Yes ( included )
@@ -31,7 +32,7 @@ const SpeakToAttorney = (props) => {
             id='speakToAttorney__input-no'
             value='No'
             checked={speakToAttorney === 'No'}
-            onChange={props.handleChange}
+            onChange={handleChange}
           />
           <label htmlFor='speakToAttorney__input-no'>
             No

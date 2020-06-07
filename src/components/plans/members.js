@@ -6,6 +6,7 @@ import '../../styles/plans/members.scss'
 
 const Members = (props) => {
   const { members } = props.formik.values
+  const { handleChange, handleBlur } = props.formik
 
   const memberDetailsBlocks = []
   for (let i = 0; i < members.memberCount && i < 4; i++ ) {
@@ -17,7 +18,7 @@ const Members = (props) => {
             type='text'
             id='members__details-input-first'
             name={`members.memberDetails[${i}].firstName`}
-            onChange={props.handleChange}
+            onChange={handleChange}
             value={members.memberDetails[i].firstName}
           />
         </div>
@@ -27,7 +28,7 @@ const Members = (props) => {
             type='text'
             id='members__details-input-middle'
             name={`members.memberDetails[${i}].secondName`}
-            onChange={props.handleChange}
+            onChange={handleChange}
             value={members.memberDetails[i].secondName}
           />
         </div>
@@ -37,7 +38,7 @@ const Members = (props) => {
             type='text'
             id='members__details-input-last'
             name={`members.memberDetails[${i}].lastName`}
-            onChange={props.handleChange}
+            onChange={handleChange}
             value={members.memberDetails[i].lastName}
           />
         </div>
@@ -52,7 +53,7 @@ const Members = (props) => {
             type='text'
             id='members__details-input-company-name'
             name={`members.memberDetails[${i}].companyName`}
-            onChange={props.handleChange}
+            onChange={handleChange}
             value={members.memberDetails[i].companyName}
           />
         </div>
@@ -67,7 +68,7 @@ const Members = (props) => {
             type='checkbox'
             id='members__details-input-corporate'
             name={`members.memberDetails[${i}].corporateMember`}
-            onChange={props.handleChange}
+            onChange={handleChange}
             checked={members.memberDetails[i].corporateMember}
             value={members.memberDetails[i].corporateMember}
           />
@@ -85,7 +86,7 @@ const Members = (props) => {
               type='text'
               id='members__details-input-street'
               name={`members.memberDetails[${i}].street`}
-              onChange={props.handleChange}
+              onChange={handleChange}
               value={members.memberDetails[i].street}
             />
           </div>
@@ -95,7 +96,7 @@ const Members = (props) => {
               type='text'
               id='members__details-input-suite'
               name={`members.memberDetails[${i}].suite`}
-              onChange={props.handleChange}
+              onChange={handleChange}
               value={members.memberDetails[i].suite}
             />
           </div>
@@ -107,7 +108,7 @@ const Members = (props) => {
               type='text'
               id='members__details-input-city'
               name={`members.memberDetails[${i}].city`}
-              onChange={props.handleChange}
+              onChange={handleChange}
               value={members.memberDetails[i].city}
             />
           </div>
@@ -117,7 +118,7 @@ const Members = (props) => {
               type='text'
               id='members__details-input-state'
               name={`members.memberDetails[${i}].state`}
-              onChange={props.handleChange}
+              onChange={handleChange}
               value={members.memberDetails[i].state}
             />
           </div>
@@ -129,7 +130,7 @@ const Members = (props) => {
               type='text'
               id='members__details-input-zipcode'
               name={`members.memberDetails[${i}].zipcode`}
-              onChange={props.handleChange}
+              onChange={handleChange}
               value={members.memberDetails[i].zipcode}
             />
           </div>
@@ -139,7 +140,7 @@ const Members = (props) => {
               type='text'
               id='members__details-input-country'
               name={`members.memberDetails[${i}].country`}
-              onChange={props.handleChange}
+              onChange={handleChange}
               value={members.memberDetails[i].country}
             />
           </div>
@@ -161,8 +162,8 @@ const Members = (props) => {
         <select
           name='members.memberCount'
           id='members__count'
-          onChange={props.handleChange}
-          onBlur={props.handleBlur}
+          onChange={handleChange}
+          onBlur={handleBlur}
           value={members.memberCount}
         >
           <option>1</option>

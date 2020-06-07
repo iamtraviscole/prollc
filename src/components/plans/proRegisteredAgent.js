@@ -6,6 +6,7 @@ import '../../styles/plans/proRegisteredAgent.scss'
 
 const ProRegisteredAgent = (props) => {
   const { registeredAgent } = props.formik.values
+  const { handleChange } = props.formik
 
   let personOrCompanyName = !registeredAgent.corporateRegisteredAgent
     ? (
@@ -16,7 +17,7 @@ const ProRegisteredAgent = (props) => {
               type='text'
               id='proRegisteredAgent__details-input-first'
               name='registeredAgent.firstName'
-              onChange={props.handleChange}
+              onChange={handleChange}
               value={registeredAgent.firstName}
             />
           </div>
@@ -26,7 +27,7 @@ const ProRegisteredAgent = (props) => {
               type='text'
               id='proRegisteredAgent__details-input-middle'
               name='registeredAgent.secondName'
-              onChange={props.handleChange}
+              onChange={handleChange}
               value={registeredAgent.secondName}
             />
           </div>
@@ -36,7 +37,7 @@ const ProRegisteredAgent = (props) => {
               type='text'
               id='proRegisteredAgent__details-input-last'
               name='registeredAgent.lastName'
-              onChange={props.handleChange}
+              onChange={handleChange}
               value={registeredAgent.lastName}
             />
           </div>
@@ -50,7 +51,7 @@ const ProRegisteredAgent = (props) => {
               type='text'
               id='proRegisteredAgent__details-input-company-name'
               name='registeredAgent.companyName'
-              onChange={props.handleChange}
+              onChange={handleChange}
               value={registeredAgent.companyName}
             />
           </div>
@@ -68,7 +69,7 @@ const ProRegisteredAgent = (props) => {
             id='proRegisteredAgent__input-no'
             value='No'
             checked={registeredAgent.proRegisteredAgent === 'No'}
-            onChange={props.handleChange}
+            onChange={handleChange}
           />
           <label htmlFor='proRegisteredAgent__input-no'>
             I have a Registered Agent already
@@ -81,7 +82,7 @@ const ProRegisteredAgent = (props) => {
             id='proRegisteredAgent__input-yes'
             value='Yes'
             checked={registeredAgent.proRegisteredAgent === 'Yes'}
-            onChange={props.handleChange}
+            onChange={handleChange}
            />
           <label htmlFor='proRegisteredAgent__input-yes'>
             I want ProLLC to be my Registered Agent ( FREE for 1 year )
@@ -96,7 +97,7 @@ const ProRegisteredAgent = (props) => {
               type='checkbox'
               id='proRegisteredAgent__details-input-corporate'
               name='registeredAgent.corporateRegisteredAgent'
-              onChange={props.handleChange}
+              onChange={handleChange}
               checked={registeredAgent.corporateRegisteredAgent}
               value={registeredAgent.corporateRegisteredAgent}
             />
@@ -112,7 +113,7 @@ const ProRegisteredAgent = (props) => {
                 type='text'
                 id='proRegisteredAgent__details-input-street'
                 name='registeredAgent.street'
-                onChange={props.handleChange}
+                onChange={handleChange}
                 value={registeredAgent.street}
               />
             </div>
@@ -122,7 +123,7 @@ const ProRegisteredAgent = (props) => {
                 type='text'
                 id='proRegisteredAgent__details-input-suite'
                 name='registeredAgent.suite'
-                onChange={props.handleChange}
+                onChange={handleChange}
                 value={registeredAgent.suite}
               />
             </div>
@@ -134,7 +135,7 @@ const ProRegisteredAgent = (props) => {
                 type='text'
                 id='proRegisteredAgent__details-input-city'
                 name='registeredAgent.city'
-                onChange={props.handleChange}
+                onChange={handleChange}
                 value={registeredAgent.city}
               />
             </div>
@@ -144,7 +145,7 @@ const ProRegisteredAgent = (props) => {
                 type='text'
                 id='proRegisteredAgent__details-input-state'
                 name='registeredAgent.state'
-                onChange={props.handleChange}
+                onChange={handleChange}
                 value={registeredAgent.state}
               />
             </div>
@@ -156,7 +157,7 @@ const ProRegisteredAgent = (props) => {
                 type='text'
                 id='proRegisteredAgent__details-input-zipcode'
                 name='registeredAgent.zipcode'
-                onChange={props.handleChange}
+                onChange={handleChange}
                 value={registeredAgent.zipcode}
               />
             </div>
@@ -166,7 +167,7 @@ const ProRegisteredAgent = (props) => {
                 type='text'
                 id='proRegisteredAgent__details-input-country'
                 name='registeredAgent.country'
-                onChange={props.handleChange}
+                onChange={handleChange}
                 value={registeredAgent.country}
               />
             </div>

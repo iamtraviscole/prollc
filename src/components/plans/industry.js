@@ -6,6 +6,7 @@ import '../../styles/plans/industry.scss'
 
 const Industry = (props) => {
   const { industry } = props.formik.values
+  const { handleChange, handleBlur } = props.formik
 
   const displayOther = industry.industry === 'Other' ? (
       <div className='industry__other-ctr'>
@@ -14,7 +15,7 @@ const Industry = (props) => {
           name='industry.other'
           id='industry__other'
           placeholder='Specify other'
-          onChange={props.handleChange}
+          onChange={handleChange}
           value={industry.other}
         />
       </div>
@@ -25,8 +26,8 @@ const Industry = (props) => {
       <StepHeader title='Industry' />
       <select
         name='industry.industry'
-        onChange={props.handleChange}
-        onBlur={props.handleBlur}
+        onChange={handleChange}
+        onBlur={handleBlur}
         value={industry.industry}
       >
         <option value=''>Choose Industry</option>

@@ -5,7 +5,8 @@ import StepHeader from './stepHeader'
 import '../../styles/plans/sElection.scss'
 
 const SElection = (props) => {
-  const value = props.values.sElection
+  const { sElection } = props.formik.values
+  const { handleChange } = props.formik
 
   return (
     <div className='sElection'>
@@ -21,8 +22,8 @@ const SElection = (props) => {
             name='sElection'
             id='sElection__input-no'
             value='No'
-            checked={value === 'No'}
-            onChange={props.handleChange}
+            checked={sElection === 'No'}
+            onChange={handleChange}
           />
           <label htmlFor='sElection__input-no'>
             No
@@ -34,8 +35,8 @@ const SElection = (props) => {
             name='sElection'
             id='sElection__input-yes'
             value='Yes'
-            checked={value === 'Yes'}
-            onChange={props.handleChange}
+            checked={sElection === 'Yes'}
+            onChange={handleChange}
            />
           <label htmlFor='sElection__input-yes'>
             Yes

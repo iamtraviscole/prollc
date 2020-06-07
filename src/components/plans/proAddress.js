@@ -5,7 +5,8 @@ import StepHeader from './stepHeader'
 import '../../styles/plans/proAddress.scss'
 
 const ProAddress = (props) => {
-  const { proAddress, companyAddress } = props.values
+  const { companyAddress } = props.formik.values
+  const { handleChange } = props.formik
 
   return (
     <div className='proAddress'>
@@ -14,11 +15,11 @@ const ProAddress = (props) => {
         <div className='proAddress__input-ctr'>
           <input
             type='radio'
-            name='proAddress'
+            name='companyAddress.proAddress'
             id='proAddress__no'
             value='No'
-            checked={proAddress === 'No'}
-            onChange={props.handleChange}
+            checked={companyAddress.proAddress === 'No'}
+            onChange={handleChange}
            />
           <label htmlFor='proAddress__no'>
             I already have an address for my company
@@ -27,18 +28,18 @@ const ProAddress = (props) => {
         <div className='proAddress__input-ctr'>
           <input
             type='radio'
-            name='proAddress'
+            name='companyAddress.proAddress'
             id='proAddress__yes'
             value='Yes'
-            checked={proAddress === 'Yes'}
-            onChange={props.handleChange}
+            checked={companyAddress.proAddress === 'Yes'}
+            onChange={handleChange}
           />
           <label htmlFor='proAddress__yes'>
             I want ProLLC to provide me with an address <span>( + $59 )</span>
           </label>
         </div>
       </fieldset>
-      {proAddress === 'No' &&
+      {companyAddress.proAddress === 'No' &&
         <div className='proAddress__address-ctr'>
           <h3>Your Company Address</h3>
           <div className='proAddress__address-input-outer-ctr'>
@@ -48,9 +49,11 @@ const ProAddress = (props) => {
                 type='text'
                 id='proAddress__address-input-street'
                 name='companyAddress.street'
-                onChange={props.handleChange}
+                onChange={handleChange}
                 value={companyAddress.street}
               />
+              <div className='proAddress__address-error-ctr'>
+              </div>
             </div>
             <div className='proAddress__address-input-ctr suite'>
               <label htmlFor='proAddress__address-input-suite'>Suite / Office / Apt</label>
@@ -58,7 +61,7 @@ const ProAddress = (props) => {
                 type='text'
                 id='proAddress__address-input-suite'
                 name='companyAddress.suite'
-                onChange={props.handleChange}
+                onChange={handleChange}
                 value={companyAddress.suite}
               />
             </div>
@@ -70,7 +73,7 @@ const ProAddress = (props) => {
                 type='text'
                 id='proAddress__address-input-city'
                 name='companyAddress.city'
-                onChange={props.handleChange}
+                onChange={handleChange}
                 value={companyAddress.city}
               />
             </div>
@@ -80,7 +83,7 @@ const ProAddress = (props) => {
                 type='text'
                 id='proAddress__address-input-state'
                 name='companyAddress.state'
-                onChange={props.handleChange}
+                onChange={handleChange}
                 value={companyAddress.state}
               />
             </div>
@@ -92,7 +95,7 @@ const ProAddress = (props) => {
                 type='text'
                 id='proAddress__address-input-zipcode'
                 name='companyAddress.zipcode'
-                onChange={props.handleChange}
+                onChange={handleChange}
                 value={companyAddress.zipcode}
               />
             </div>
@@ -102,7 +105,7 @@ const ProAddress = (props) => {
                 type='text'
                 id='proAddress__address-input-country'
                 name='companyAddress.country'
-                onChange={props.handleChange}
+                onChange={handleChange}
                 value={companyAddress.country}
               />
             </div>

@@ -5,7 +5,8 @@ import StepHeader from './stepHeader'
 import '../../styles/plans/banking.scss'
 
 const Managers = (props) => {
-  const { banking } = props.values
+  const { banking } = props.formik.values
+  const { handleChange } = props.formik
 
   const displayOther = banking.bank === 'Other' ? (
       <div className='banking__bank-other-ctr'>
@@ -14,7 +15,7 @@ const Managers = (props) => {
           name='banking.bankOther'
           id='banking__bank-other'
           placeholder='Specify other'
-          onChange={props.handleChange}
+          onChange={handleChange}
           value={banking.bankOther}
         />
       </div>
@@ -33,7 +34,7 @@ const Managers = (props) => {
                 id='banking__present-input-yes'
                 value='Yes'
                 checked={banking.presentInUS === 'Yes'}
-                onChange={props.handleChange}
+                onChange={handleChange}
                />
               <label htmlFor='banking__present-input-yes'>Yes</label>
             </div>
@@ -44,7 +45,7 @@ const Managers = (props) => {
                 id='banking__present-input-no'
                 value='No'
                 checked={banking.presentInUS === 'No'}
-                onChange={props.handleChange}
+                onChange={handleChange}
               />
               <label htmlFor='banking__present-input-no'>No</label>
             </div>
@@ -60,7 +61,7 @@ const Managers = (props) => {
                 type='text'
                 id='banking__person-input-first'
                 name='banking.firstName'
-                onChange={props.handleChange}
+                onChange={handleChange}
                 value={banking.firstName}
               />
             </div>
@@ -70,7 +71,7 @@ const Managers = (props) => {
                 type='text'
                 id='banking__person-input-second'
                 name='banking.secondName'
-                onChange={props.handleChange}
+                onChange={handleChange}
                 value={banking.secondName}
               />
             </div>
@@ -80,7 +81,7 @@ const Managers = (props) => {
                 type='text'
                 id='banking__person-input-last'
                 name='banking.lastName'
-                onChange={props.handleChange}
+                onChange={handleChange}
                 value={banking.lastName}
               />
             </div>
@@ -89,7 +90,7 @@ const Managers = (props) => {
           <div className='banking__bank-ctr'>
             <select
               name='banking.bank'
-              onChange={props.handleChange}
+              onChange={handleChange}
               onBlur={props.handleBlur}
               value={banking.bank}
             >
@@ -114,7 +115,7 @@ const Managers = (props) => {
                   id='banking__other-options-input-virtual-bank'
                   value='Virtual Bank'
                   checked={banking.otherOptions === 'Virtual Bank'}
-                  onChange={props.handleChange}
+                  onChange={handleChange}
                  />
                 <label htmlFor='banking__other-options-input-virtual-bank'>
                   Virtual Bank (+ $699 and requires $25,000 minimum deposit)
@@ -128,7 +129,7 @@ const Managers = (props) => {
                   id='banking__other-options-input-bank-service'
                   value='Bank Account Service'
                   checked={banking.otherOptions === 'Bank Account Service'}
-                  onChange={props.handleChange}
+                  onChange={handleChange}
                  />
                 <label htmlFor='banking__other-options-input-bank-service'>
                   Bank Account Service (+ $1,100)

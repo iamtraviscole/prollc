@@ -5,7 +5,8 @@ import StepHeader from './stepHeader'
 import '../../styles/plans/ein.scss'
 
 const CompanyNames = (props) => {
-  const values = props.values.ein
+  const { ein } = props.formik.values
+  const { handleChange } = props.formik
 
   return (
     <div className='ein'>
@@ -19,8 +20,8 @@ const CompanyNames = (props) => {
             type='text'
             id='ein__details-input-first'
             name='ein.firstName'
-            onChange={props.handleChange}
-            value={values.firstName}
+            onChange={handleChange}
+            value={ein.firstName}
           />
         </div>
         <div className='ein__details-input-ctr name'>
@@ -29,8 +30,8 @@ const CompanyNames = (props) => {
             type='text'
             id='ein__details-input-middle'
             name='ein.secondName'
-            onChange={props.handleChange}
-            value={values.secondName}
+            onChange={handleChange}
+            value={ein.secondName}
           />
         </div>
         <div className='ein__details-input-ctr name'>
@@ -39,8 +40,8 @@ const CompanyNames = (props) => {
             type='text'
             id='ein__details-input-last'
             name='ein.lastName'
-            onChange={props.handleChange}
-            value={values.lastName}
+            onChange={handleChange}
+            value={ein.lastName}
           />
         </div>
       </div>
@@ -52,9 +53,9 @@ const CompanyNames = (props) => {
             type='text'
             id='ein__details-input-ssn'
             name='ein.ssn'
-            onChange={props.handleChange}
-            value={values.ssn}
-            disabled={values.itin || values.ein}
+            onChange={handleChange}
+            value={ein.ssn}
+            disabled={ein.itin || ein.ein}
           />
         </div>
         <div className='ein__details-input-ctr id-num'>
@@ -63,9 +64,9 @@ const CompanyNames = (props) => {
             type='text'
             id='ein__details-input-itin'
             name='ein.itin'
-            onChange={props.handleChange}
-            value={values.itin}
-            disabled={values.ssn || values.ein}
+            onChange={handleChange}
+            value={ein.itin}
+            disabled={ein.ssn || ein.ein}
           />
         </div>
         <div className='ein__details-input-ctr id-num'>
@@ -74,9 +75,9 @@ const CompanyNames = (props) => {
             type='text'
             id='ein__details-input-ein'
             name='ein.ein'
-            onChange={props.handleChange}
-            value={values.ein}
-            disabled={values.ssn || values.itin}
+            onChange={handleChange}
+            value={ein.ein}
+            disabled={ein.ssn || ein.itin}
           />
         </div>
       </div>
