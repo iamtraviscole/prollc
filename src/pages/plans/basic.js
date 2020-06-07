@@ -191,6 +191,7 @@ const BasicPlan = (props) => {
       case Expedited: {
         setPrevious()
         setCurrentStep({component: Payment})
+        
         break
       }
       default:
@@ -318,12 +319,7 @@ const BasicPlan = (props) => {
       <SEO title='Basic Plan' />
       <div className='basic'>
         <form className='basic__form' onSubmit={formik.handleSubmit}>
-          <CurrentStepComponent
-            handleChange={formik.handleChange}
-            handleBlur={formik.handleBlur}
-            values={formik.values}
-            formik={formik}
-          />
+          <CurrentStepComponent formik={formik} />
           <div className='basic__btn-ctr'>
             {validationErrors.length > 0 &&
               <div className='basic__errors-ctr'>{displayValidationErrors}</div>}
