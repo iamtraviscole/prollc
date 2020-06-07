@@ -1,7 +1,12 @@
 .employeeCount {
   display: inline-block;
 
-  > input {
-    width: 100px;
+  &__input-ctr {
+    display: inline-block;
+    
+    > input {
+      width: 100px;
+    }
   }
+
 }
