@@ -25,7 +25,7 @@ import Payment from '../../components/plans/payment'
 import '../../styles/plans/pro.scss'
 
 const ProPlan = (props) => {
-  const [currentStep, setCurrentStep] = useState({component: SElection})
+  const [currentStep, setCurrentStep] = useState({component: FileState})
   const [previousSteps, setPreviousSteps] = useState([])
   const [validationErrors, setValidationErrors] = useState([])
 

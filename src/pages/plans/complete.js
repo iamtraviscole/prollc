@@ -23,7 +23,7 @@ import Payment from '../../components/plans/payment'
 import '../../styles/plans/complete.scss'
 
 const CompletePlan = (props) => {
-  const [currentStep, setCurrentStep] = useState({component: ProRegisteredAgent})
+  const [currentStep, setCurrentStep] = useState({component: FileState})
   const [previousSteps, setPreviousSteps] = useState([])
   const [validationErrors, setValidationErrors] = useState([])
 
@@ -213,7 +213,7 @@ const CompletePlan = (props) => {
       case Expedited: {
         setPrevious()
         setCurrentStep({component: Payment})
-        
+
         break
       }
       default:
