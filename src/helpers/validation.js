@@ -15,19 +15,19 @@ export const companyNames = (
       .required('name 1 required')
       .test('companyName1', 'name 1 must be unique', function() {
         const { name1, name2, name3 } = this.parent
-        return (name1 !== name2) && (name1 !== name3)
+        return name1 ? (name1 !== name2) && (name1 !== name3) : true
     }),
     name2: yup.string()
       .required('name 2 required')
       .test('companyName2', 'name 2 must be unique', function() {
         const { name1, name2, name3 } = this.parent
-        return (name2 !== name1) && (name2 !== name3)
+        return name2 ? (name2 !== name1) && (name2 !== name3) : true
     }),
     name3: yup.string()
       .required('name 3 required')
       .test('companyName3', 'name 3 must be unique', function() {
         const { name1, name2, name3 } = this.parent
-        return (name3 !== name1) && (name3 !== name2)
+        return name3 ? (name3 !== name1) && (name3 !== name2) : true
     })
   })
 )
@@ -114,5 +114,19 @@ export const proRegisteredAgent = (
     state: yup.string().required('state required'),
     zipcode: yup.string().required('zipcode required'),
     country: yup.string().required('country required')
+  })
+)
+
+export const ein = (
+  yup.object().shape({
+    firstName: yup.string().required('first name required'),
+    lastName: yup.string().required('last name required')
+  })
+)
+
+export const banking = (
+  yup.object().shape({
+    firstName: yup.string().required('first name required'),
+    lastName: yup.string().required('last name required')
   })
 )
