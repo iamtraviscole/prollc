@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useFormik } from 'formik'
-import * as yup from 'yup'
+
+import * as validation from '../../helpers/validation.js'
 
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
@@ -20,108 +21,192 @@ import Payment from '../../components/plans/payment'
 import '../../styles/plans/basic.scss'
 
 const BasicPlan = (props) => {
-  const [currentStep, setCurrentStep] = useState({
-    component: FileState,
-    validate: 'fileState'
-  })
+  const [currentStep, setCurrentStep] = useState({component: FileState})
   const [previousSteps, setPreviousSteps] = useState([])
+  const [validationErrors, setValidationErrors] = useState([])
 
-  const basicValidation = yup.object().shape({
-    contactDetails: yup.object().shape({
-      firstName: yup.string().required('Required'),
-      lastName: yup.string().required('Required'),
-      email: yup.string().required('Required').email('Invalid email'),
-      phone: yup.string().required('Required')
-    }),
-    companyNames: yup.object().shape({
-      name1: yup.string()
-        .required('Required')
-        .test('test-name', 'Must be unique', function() {
-          const { name1, name2, name3 } = this.parent
-          return (name1 !== name2) && (name1 !== name3)
-        }),
-      name2: yup.string()
-        .required('Required')
-        .test('test-name', 'Must be unique', function() {
-          const { name1, name2, name3 } = this.parent
-          return (name2 !== name1) && (name2 !== name3)
-        }),
-      name3: yup.string()
-        .required('Required')
-        .test('test-name', 'Must be unique', function() {
-          const { name1, name2, name3 } = this.parent
-          return (name3 !== name1) && (name3 !== name2)
-        })
-    })
-  })
+  const handleNextClick = async (e) => {
+    const setPrevious = () => {
+      setPreviousSteps([...previousSteps, currentStep.component])
+    }
 
-  const handleNextClick = (e) => {
-    setPreviousSteps([...previousSteps, currentStep.component])
-
-    // TODO: validation at each step
     switch (currentStep.component) {
       case FileState: {
-        setCurrentStep({
-          component: ContactDetails,
-          validate: 'contactDetails'
-        })
+        setPrevious()
+        setCurrentStep({component: ContactDetails})
+
         break
       }
       case ContactDetails: {
-        setCurrentStep({
-          component: CompanyNames,
-          validate: 'companyNames'
+        validation.contactDetails
+        .validate(formik.values.contactDetails, {abortEarly: false})
+        .then(valid => {
+          setPrevious()
+          setValidationErrors([])
+          setCurrentStep({component: CompanyNames})
         })
+        .catch(err => {
+          setValidationErrors(err.errors)
+        })
+
         break
       }
       case CompanyNames: {
-        setCurrentStep({component: Denomination})
+        validation.companyNames
+        .validate(formik.values.companyNames, {abortEarly: false})
+        .then(valid => {
+          setPrevious()
+          setValidationErrors([])
+          setCurrentStep({component: Denomination})
+        })
+        .catch(err => {
+          setValidationErrors(err.errors)
+        })
+
         break
       }
       case Denomination: {
+        setPrevious()
         setCurrentStep({component: Industry})
+
         break
       }
       case Industry: {
-        setCurrentStep({component: EmployeeCount})
+        validation.industry
+        .validate(formik.values.industry, {abortEarly: false})
+        .then(valid => {
+          setPrevious()
+          setValidationErrors([])
+          setCurrentStep({component: EmployeeCount})
+        })
+        .catch(err => {
+          setValidationErrors(err.errors)
+        })
+
         break
       }
       case EmployeeCount: {
-        setCurrentStep({component: ProAddress})
+        validation.employeeCount
+        .validate(formik.values.employeeCount, {abortEarly: false})
+        .then(valid => {
+          setPrevious()
+          setValidationErrors([])
+          setCurrentStep({component: ProAddress})
+        })
+        .catch(err => {
+          setValidationErrors(err.errors)
+        })
+
         break
       }
       case ProAddress: {
-        setCurrentStep({component: Members})
+        if (formik.values.companyAddress.proAddress === 'No') {
+          validation.companyAddress
+          .validate(formik.values.companyAddress, {abortEarly: false})
+          .then(valid => {
+            setPrevious()
+            setValidationErrors([])
+            setCurrentStep({component: Members})
+          })
+          .catch(err => {
+            setValidationErrors(err.errors)
+          })
+        } else {
+          setPrevious()
+          setValidationErrors([])
+          setCurrentStep({component: Members})
+        }
+
         break
       }
       case Members: {
-        setCurrentStep({component: Managers})
+        const memberCount = +formik.values.members.memberCount
+        let memberErrors = []
+
+        if (Number.isInteger(memberCount)) {
+          for (let i = 0; i < memberCount; i++) {
+            await validation.memberDetails(i)
+            .validate(formik.values.members.memberDetails[i], {abortEarly: false})
+            .catch(err => {
+                memberErrors.push(...err.errors)
+            })
+          }
+        }
+
+        if (memberErrors.length) {
+          setValidationErrors(memberErrors)
+        } else {
+          setPrevious()
+          setValidationErrors([])
+          setCurrentStep({component: Managers})
+        }
+
         break
       }
       case Managers: {
-        setCurrentStep({component: ProRegisteredAgent})
+        const managerCount = +formik.values.managers.managerCount
+        let managerErrors = []
+
+        if (Number.isInteger(managerCount)) {
+          for (let i = 0; i < managerCount; i++) {
+            await validation.managerDetails(i)
+            .validate(formik.values.managers.managerDetails[i], {abortEarly: false})
+            .catch(err => {
+              console.log(err)
+                managerErrors.push(...err.errors)
+            })
+          }
+        }
+
+        if (managerErrors.length) {
+          setValidationErrors(managerErrors)
+        } else {
+          setPrevious()
+          setValidationErrors([])
+          setCurrentStep({component: ProRegisteredAgent})
+        }
+
         break
       }
       case ProRegisteredAgent: {
-        setCurrentStep({component: Expedited})
+        if (formik.values.registeredAgent.proRegisteredAgent === 'No') {
+          validation.proRegisteredAgent
+          .validate(formik.values.registeredAgent, {abortEarly: false})
+          .then(valid => {
+            setPrevious()
+            setValidationErrors([])
+            setCurrentStep({component: Expedited})
+          })
+          .catch(err => {
+            setValidationErrors(err.errors)
+          })
+        } else {
+          setPrevious()
+          setValidationErrors([])
+          setCurrentStep({component: Expedited})
+        }
+
         break
       }
       case Expedited: {
+        setPrevious()
         setCurrentStep({component: Payment})
         break
       }
       default:
-        setCurrentStep({component: FileState})
         setPreviousSteps([])
+        setCurrentStep({component: FileState})
+        setValidationErrors([])
     }
   }
 
   const handlePreviousClick = () => {
+    setValidationErrors([])
     setCurrentStep({component: previousSteps.pop()})
   }
 
-  const initialMemberDetails = []
-  for (let i = 0; i < 5; i++) {
+  let initialMemberDetails = []
+  for (let i = 0; i < 4; i++) {
     initialMemberDetails.push({
       corporateMember: false,
       companyName: '',
@@ -139,7 +224,7 @@ const BasicPlan = (props) => {
   }
 
   const initialManagerDetails = []
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 4; i++) {
     initialManagerDetails.push({
       firstName: '',
       secondName: '',
@@ -157,11 +242,11 @@ const BasicPlan = (props) => {
     initialValues: {
       fileState: 'Florida',
       contactDetails: {
-        firstName: 'a',
+        firstName: '',
         secondName: '',
-        lastName: 's',
-        email: 'd@f.g',
-        phone: 'h'
+        lastName: '',
+        email: '',
+        phone: ''
       },
       companyNames: {
         name1: '',
@@ -184,11 +269,11 @@ const BasicPlan = (props) => {
         country: ''
       },
       members: {
-        memberCount: 1,
+        memberCount: '1',
         memberDetails: initialMemberDetails
       },
       managers: {
-        managerCount: 1,
+        managerCount: '0',
         managerDetails: initialManagerDetails
       },
       registeredAgent: {
@@ -210,8 +295,10 @@ const BasicPlan = (props) => {
     onSubmit: async values => {
       console.log('submit clicked')
     },
-    validationSchema: basicValidation,
-    validateOnMount: true
+    validationSchema: null,
+    validateOnMount: false,
+    validateOnChange: false,
+    validateOnBlur: false
   })
 
   const CurrentStepComponent = currentStep.component
@@ -219,6 +306,12 @@ const BasicPlan = (props) => {
   const previousButton = previousSteps.length > 0
     ? <button type='button' onClick={handlePreviousClick}>Previous</button>
     : null
+
+  const displayValidationErrors = validationErrors.map((error, i) => (
+    <p key={i} className='basic__error'>{error}</p>
+  ))
+
+  console.log(formik)
 
   return (
     <Layout pageTitle='Basic Plan'>
@@ -232,13 +325,17 @@ const BasicPlan = (props) => {
             formik={formik}
           />
           <div className='basic__btn-ctr'>
+            {validationErrors.length > 0 &&
+              <div className='basic__errors-ctr'>{displayValidationErrors}</div>}
             {previousButton}
             <button
               type='button'
               onClick={handleNextClick}
-              disabled={formik.errors[currentStep.validate]}>
+            >
               Next
             </button>
+          </div>
+          <div className='basic__error-ctr'>
           </div>
         </form>
       </div>

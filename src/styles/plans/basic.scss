@@ -27,11 +27,33 @@
       &:last-of-type {
         margin-right: 0;
       }
+    }
+  }
 
-      &:disabled {
-        opacity: 50%;
-        cursor: not-allowed;
-      }
+  &__errors-ctr {
+    display: block;
+    margin: 0 auto 25px auto;
+    text-align: center;
+    color: var(--color-error);
+    overflow-y: scroll;
+    width: 225px;
+    max-height: 150px;
+    border-radius: 3px;
+  }
+
+  &__error {
+    font-size: 10px;
+    margin-bottom: 5px;
+    padding: 6px;
+    border: 1px solid var(--color-error);
+    border-radius: 3px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &::first-letter {
+      text-transform: uppercase;
     }
   }
 

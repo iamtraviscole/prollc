@@ -8,7 +8,7 @@ const Members = (props) => {
   const { members } = props.formik.values
 
   const memberDetailsBlocks = []
-  for (let i = 0; i < members.memberCount && i < 5; i++ ) {
+  for (let i = 0; i < members.memberCount && i < 4; i++ ) {
     const personName = (
       <>
         <div className='members__details-input-ctr  name'>
@@ -169,7 +169,6 @@ const Members = (props) => {
           <option>2</option>
           <option>3</option>
           <option>4</option>
-          <option>5</option>
           <option>5+</option>
         </select>
       </div>

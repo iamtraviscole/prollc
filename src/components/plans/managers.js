@@ -8,7 +8,7 @@ const Managers = (props) => {
   const { managers, members } = props.formik.values
 
   const managerDetailsBlocks = []
-  for (let i = 0; i < managers.managerCount && i < 5; i++ ) {
+  for (let i = 0; i < managers.managerCount && i < 4; i++ ) {
     managerDetailsBlocks.push(
       <div key={i} className='managers__details-block'>
         <h3>Additional manager {i+1} details</h3>
@@ -164,7 +164,6 @@ const Managers = (props) => {
           <option>2</option>
           <option>3</option>
           <option>4</option>
-          <option>5</option>
           <option>5+</option>
         </select>
       </div>
