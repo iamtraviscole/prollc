@@ -24,6 +24,11 @@ const BasicPlan = (props) => {
   const [currentStep, setCurrentStep] = useState({component: FileState})
   const [previousSteps, setPreviousSteps] = useState([])
   const [validationErrors, setValidationErrors] = useState([])
+  const [addonPrices, setAddonPrices] = useState({
+    fileState: 0,
+    proAddress: 0,
+    expedited: 0
+  })
 
   const handleNextClick = async (e) => {
     const setPrevious = () => {
@@ -191,7 +196,7 @@ const BasicPlan = (props) => {
       case Expedited: {
         setPrevious()
         setCurrentStep({component: Payment})
-        
+
         break
       }
       default:
@@ -211,15 +216,15 @@ const BasicPlan = (props) => {
     initialMemberDetails.push({
       corporateMember: false,
       companyName: '',
-      firstName: '',
+      firstName: 'a',
       secondName: '',
-      lastName: '',
-      street: '',
+      lastName: 's',
+      street: 'd',
       suite: '',
-      city: '',
-      state: '',
-      zipcode: '',
-      country: '',
+      city: 'f',
+      state: 'g',
+      zipcode: 'h',
+      country: 'i',
       manager: false
     })
   }
@@ -227,15 +232,15 @@ const BasicPlan = (props) => {
   const initialManagerDetails = []
   for (let i = 0; i < 4; i++) {
     initialManagerDetails.push({
-      firstName: '',
+      firstName: 'a',
       secondName: '',
-      lastName: '',
-      street: '',
-      suite: '',
-      city: '',
-      state: '',
-      zipcode: '',
-      country: ''
+      lastName: 's',
+      street: 'd',
+      suite: 'f',
+      city: 'g',
+      state: 'h',
+      zipcode: 'i',
+      country: 'j'
     })
   }
 
@@ -243,31 +248,31 @@ const BasicPlan = (props) => {
     initialValues: {
       fileState: 'Florida',
       contactDetails: {
-        firstName: '',
+        firstName: 'a',
         secondName: '',
-        lastName: '',
-        email: '',
-        phone: ''
+        lastName: 's',
+        email: 'd@d.c',
+        phone: 'f'
       },
       companyNames: {
-        name1: '',
-        name2: '',
-        name3: ''
+        name1: 'a',
+        name2: 'b',
+        name3: 'c'
       },
       denomination: 'LLC',
       industry: {
-        industry: '',
-        other: ''
+        industry: 'Other',
+        other: 'o'
       },
       employeeCount: 0,
       companyAddress: {
         proAddress: 'No',
-        street: '',
+        street: 'a',
         suite: '',
-        city: '',
-        state: '',
-        zipcode: '',
-        country: ''
+        city: 's',
+        state: 'd',
+        zipcode: 'f',
+        country: 'g'
       },
       members: {
         memberCount: '1',
@@ -280,16 +285,16 @@ const BasicPlan = (props) => {
       registeredAgent: {
         proRegisteredAgent: 'No',
         corporateRegisteredAgent: false,
-        companyName: '',
-        firstName: '',
-        secondName: '',
-        lastName: '',
-        street: '',
+        companyName: 'a',
+        firstName: 's',
+        secondName: 'd',
+        lastName: 'f',
+        street: 'g',
         suite: '',
-        city: '',
-        state: '',
-        zipcode: '',
-        country: ''
+        city: 'h',
+        state: 'i',
+        zipcode: 'j',
+        country: 'k'
       },
       expedited: 'No'
     },
@@ -313,13 +318,23 @@ const BasicPlan = (props) => {
   ))
 
   console.log(formik)
+  console.log(addonPrices)
 
   return (
     <Layout pageTitle='Basic Plan'>
       <SEO title='Basic Plan' />
       <div className='basic'>
+        <div>
+          Price: $ {74 + addonPrices.fileState + addonPrices.proAddress + addonPrices.expedited}
+        </div>
         <form className='basic__form' onSubmit={formik.handleSubmit}>
-          <CurrentStepComponent formik={formik} />
+          <CurrentStepComponent
+            formik={formik}
+            addonPrices={{
+              prices: addonPrices,
+              setPrices: setAddonPrices
+            }}
+          />
           <div className='basic__btn-ctr'>
             {validationErrors.length > 0 &&
               <div className='basic__errors-ctr'>{displayValidationErrors}</div>}
