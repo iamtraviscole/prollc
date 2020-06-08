@@ -26,6 +26,7 @@ const CompletePlan = (props) => {
   const [currentStep, setCurrentStep] = useState({component: FileState})
   const [previousSteps, setPreviousSteps] = useState([])
   const [validationErrors, setValidationErrors] = useState([])
+  const [progress, setProgress] = useState(0)
   const [addonPrices, setAddonPrices] = useState({
     fileState: 0,
     proAddress: 0,
@@ -37,10 +38,15 @@ const CompletePlan = (props) => {
       setPreviousSteps([...previousSteps, currentStep.component])
     }
 
+    const incProgress = () => {
+      setProgress(progress + 1)
+    }
+
     switch (currentStep.component) {
       case FileState: {
         setPrevious()
         setCurrentStep({component: ContactDetails})
+        incProgress()
 
         break
       }
@@ -51,6 +57,7 @@ const CompletePlan = (props) => {
           setPrevious()
           setValidationErrors([])
           setCurrentStep({component: CompanyNames})
+          incProgress()
         })
         .catch(err => {
           setValidationErrors(err.errors)
@@ -65,6 +72,7 @@ const CompletePlan = (props) => {
           setPrevious()
           setValidationErrors([])
           setCurrentStep({component: Denomination})
+          incProgress()
         })
         .catch(err => {
           setValidationErrors(err.errors)
@@ -75,6 +83,7 @@ const CompletePlan = (props) => {
       case Denomination: {
         setPrevious()
         setCurrentStep({component: Industry})
+        incProgress()
 
         break
       }
@@ -85,6 +94,7 @@ const CompletePlan = (props) => {
           setPrevious()
           setValidationErrors([])
           setCurrentStep({component: EmployeeCount})
+          incProgress()
         })
         .catch(err => {
           setValidationErrors(err.errors)
@@ -99,6 +109,7 @@ const CompletePlan = (props) => {
           setPrevious()
           setValidationErrors([])
           setCurrentStep({component: ProAddress})
+          incProgress()
         })
         .catch(err => {
           setValidationErrors(err.errors)
@@ -114,6 +125,7 @@ const CompletePlan = (props) => {
             setPrevious()
             setValidationErrors([])
             setCurrentStep({component: Members})
+            incProgress()
           })
           .catch(err => {
             setValidationErrors(err.errors)
@@ -122,6 +134,7 @@ const CompletePlan = (props) => {
           setPrevious()
           setValidationErrors([])
           setCurrentStep({component: Members})
+          incProgress()
         }
 
         break
@@ -146,6 +159,7 @@ const CompletePlan = (props) => {
           setPrevious()
           setValidationErrors([])
           setCurrentStep({component: Managers})
+          incProgress()
         }
 
         break
@@ -159,8 +173,7 @@ const CompletePlan = (props) => {
             await validation.managerDetails(i)
             .validate(formik.values.managers.managerDetails[i], {abortEarly: false})
             .catch(err => {
-              console.log(err)
-                managerErrors.push(...err.errors)
+              managerErrors.push(...err.errors)
             })
           }
         }
@@ -171,6 +184,7 @@ const CompletePlan = (props) => {
           setPrevious()
           setValidationErrors([])
           setCurrentStep({component: ProRegisteredAgent})
+          incProgress()
         }
 
         break
@@ -183,6 +197,7 @@ const CompletePlan = (props) => {
             setPrevious()
             setValidationErrors([])
             setCurrentStep({component: EIN})
+            incProgress()
           })
           .catch(err => {
             setValidationErrors(err.errors)
@@ -191,6 +206,7 @@ const CompletePlan = (props) => {
           setPrevious()
           setValidationErrors([])
           setCurrentStep({component: EIN})
+          incProgress()
         }
 
         break
@@ -202,6 +218,7 @@ const CompletePlan = (props) => {
           setPrevious()
           setValidationErrors([])
           setCurrentStep({component: SElection})
+          incProgress()
         })
         .catch(err => {
           setValidationErrors(err.errors)
@@ -225,12 +242,14 @@ const CompletePlan = (props) => {
         setPreviousSteps([])
         setCurrentStep({component: FileState})
         setValidationErrors([])
+        setProgress(0)
     }
   }
 
   const handlePreviousClick = () => {
     setValidationErrors([])
     setCurrentStep({component: previousSteps.pop()})
+    setProgress(progress - 1)
   }
 
   let initialMemberDetails = []
@@ -355,8 +374,17 @@ const CompletePlan = (props) => {
     <Layout pageTitle='Complete Plan'>
       <SEO title='Complete Plan' />
       <div className='complete'>
-        <div>
-          Price: $ {74 + addonPrices.fileState + addonPrices.proAddress + addonPrices.expedited}
+        <div className='complete__top-ctr'>
+          <div className='complete__progress-ctr'>
+            <p><span>Progress:</span>{Math.round((progress / 11) * 100)} %</p>
+          </div>
+          <div className='complete__price-ctr'>
+            <p>
+              <span>Price:</span>
+              ${74 + addonPrices.fileState + addonPrices.proAddress +
+                addonPrices.expedited}
+            </p>
+          </div>
         </div>
         <form className='complete__form' onSubmit={formik.handleSubmit}>
           <CurrentStepComponent
