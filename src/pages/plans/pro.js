@@ -28,6 +28,12 @@ const ProPlan = (props) => {
   const [currentStep, setCurrentStep] = useState({component: FileState})
   const [previousSteps, setPreviousSteps] = useState([])
   const [validationErrors, setValidationErrors] = useState([])
+  const [addonPrices, setAddonPrices] = useState({
+    fileState: 0,
+    proAddress: 0,
+    expedited: 0,
+    banking: 0
+  })
 
   const handleNextClick = async (e) => {
     const setPrevious = () => {
@@ -383,8 +389,18 @@ const ProPlan = (props) => {
     <Layout pageTitle='Pro Plan'>
       <SEO title='Complete Plan' />
       <div className='pro'>
+        <div>
+          Price: $ {74 + addonPrices.fileState + addonPrices.proAddress +
+            addonPrices.expedited + addonPrices.banking}
+        </div>
         <form className='pro__form' onSubmit={formik.handleSubmit}>
-          <CurrentStepComponent formik={formik} />
+          <CurrentStepComponent
+            formik={formik}
+            addonPrices={{
+              prices: addonPrices,
+              setPrices: setAddonPrices
+            }}
+          />
           <div className='pro__btn-ctr'>
             {validationErrors.length > 0 &&
               <div className='pro__errors-ctr'>{displayValidationErrors}</div>}
