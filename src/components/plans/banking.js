@@ -8,6 +8,8 @@ const Managers = (props) => {
   const { banking } = props.formik.values
   const { handleChange } = props.formik
 
+  // TODO: add price display logic
+
   const displayOther = banking.bank === 'Other' ? (
       <div className='banking__bank-other-ctr'>
         <input
