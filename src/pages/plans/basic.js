@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useFormik } from 'formik'
 
 import * as validation from '../../helpers/validation.js'
@@ -25,11 +25,17 @@ const BasicPlan = (props) => {
   const [previousSteps, setPreviousSteps] = useState([])
   const [validationErrors, setValidationErrors] = useState([])
   const [progress, setProgress] = useState(0)
+  const [showSubmit, setShowSubmit] = useState(false)
   const [addonPrices, setAddonPrices] = useState({
     fileState: 0,
     proAddress: 0,
     expedited: 0
   })
+
+  useEffect(() => {
+    if (currentStep.component === Payment) setShowSubmit(true)
+    else setShowSubmit(false)
+  }, [currentStep, showSubmit])
 
   const handleNextClick = async (e) => {
     const setPrevious = () => {
@@ -328,13 +334,21 @@ const BasicPlan = (props) => {
 
   const CurrentStepComponent = currentStep.component
 
-  const previousButton = previousSteps.length > 0
-    ? <button type='button' onClick={handlePreviousClick}>Previous</button>
-    : null
-
   const displayValidationErrors = validationErrors.map((error, i) => (
     <p key={i} className='basic__error'>{error}</p>
   ))
+
+  const displayButtons = showSubmit
+    ? <>
+      <button type='button' onClick={handlePreviousClick}>Previous</button>
+      <button type='submit'>Pay</button>
+      </>
+    : previousSteps.length > 0
+      ? <>
+        <button type='button' onClick={handlePreviousClick}>Previous</button>
+        <button type='button' onClick={handleNextClick}>Next</button>
+        </>
+      : <button type='button' onClick={handleNextClick}>Next</button>
 
   console.log(formik)
 
@@ -364,16 +378,8 @@ const BasicPlan = (props) => {
           />
           <div className='basic__btn-ctr'>
             {validationErrors.length > 0 &&
-              <div className='basic__errors-ctr'>{displayValidationErrors}</div>}
-            {previousButton}
-            <button
-              type='button'
-              onClick={handleNextClick}
-            >
-              Next
-            </button>
-          </div>
-          <div className='basic__error-ctr'>
+            <div className='basic__errors-ctr'>{displayValidationErrors}</div>}
+            {displayButtons}
           </div>
         </form>
       </div>
