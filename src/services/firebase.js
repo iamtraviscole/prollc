@@ -1,6 +1,7 @@
 // based on https://invertase.io/blog/firebase-with-gatsby
 import firebase from 'firebase/app'
 import 'firebase/firestore'
+import 'firebase/auth'
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
