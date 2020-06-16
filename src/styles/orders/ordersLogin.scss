@@ -1,0 +1,29 @@
+.ordersLogin {
+  display: inline-block;
+  margin: 50px auto 50px auto;
+
+  > h2 {
+    margin-bottom: 25px;
+  }
+
+  > input {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  &__submit {
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    background: none;
+    border-radius: 3px;
+    padding: 6px;
+    margin: 25px auto 0 auto;
+
+    &:hover {
+      border: 2px solid var(--color-border-primary);
+      color: var(--color-text-primary);
+      cursor: pointer;
+    }
+  }
+
+}

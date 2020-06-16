@@ -1,0 +1,61 @@
+.orders {
+  text-align: center;
+
+  &__nav-ctr {
+    background: var(--color-background-secondary);
+    height: 70px;
+    padding-top: 10px;
+  }
+
+  &__nav {
+    display: inline-block;
+    max-width: 860px;
+    padding: 0 10px;
+    width: 100%;
+  }
+
+  &__logo {
+
+    > a {
+      float: left;
+
+      > svg {
+        display: inline-block;
+        height: 48px;
+      }
+    }
+  }
+
+  &__user-ctr {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    justify-content: center;
+  }
+
+  &__user {
+    height: 25px;
+  }
+
+  &__user-btns-ctr {
+    height: 25px;
+
+    > button {
+      height: 25px;
+      font-size: 12px;
+      padding: 0 6px;
+      margin-right: 10px;
+      border: 1px solid var(--color-text-primary);
+      border-radius: 3px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__main {
+    margin: 0 auto;
+    max-width: 840px;
+  }
+}
