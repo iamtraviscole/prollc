@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useFormik } from 'formik'
+import useFirebase from '../../hooks/useFirebase'
 
 import * as validation from '../../helpers/validation.js'
 
@@ -36,6 +37,8 @@ const BasicPlan = (props) => {
     if (currentStep.component === Payment) setShowSubmit(true)
     else setShowSubmit(false)
   }, [currentStep, showSubmit])
+
+  const firebase = useFirebase()
 
   const handleNextClick = async (e) => {
     const setPrevious = () => {
@@ -325,6 +328,12 @@ const BasicPlan = (props) => {
     },
     onSubmit: async values => {
       console.log('submit clicked')
+      const db = firebase.firestore()
+      db.collection('orders').add({plan: 'Basic', ...formik.values}).then(res => {
+        console.log(res)
+      }).catch(err => {
+        console.log(err)
+      })
     },
     validationSchema: null,
     validateOnMount: false,
