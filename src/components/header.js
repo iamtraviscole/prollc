@@ -18,7 +18,7 @@ const Header = (props) => {
   }, [])
 
   let displayNav = <Nav />
-  if (windowWidth < 700) displayNav = <MobileNav />
+  if (windowWidth < 705) displayNav = <MobileNav />
 
   return (
     <header className='header'>
