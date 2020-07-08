@@ -5,7 +5,7 @@ import Resource from '../../components/resource'
 const LLCVsCorporation = (props) => {
   return (
     <Resource seoTitle='LLC vs. Corporación'>
-      <h1>¿Qué forma jurídica elijo para mi negocio?</h1>
+      <h1>LLC vs. Corporación ¿Qué forma jurídica elijo para mi negocio?</h1>
       <p>
         A la hora de arrancar un nuevo proyecto empresarial, una de las primeras
         preguntas que debemos hacernos es ¿qué forma jurídica debería escoger
