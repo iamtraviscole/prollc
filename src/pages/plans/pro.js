@@ -369,19 +369,15 @@ const ProPlan = (props) => {
         secondName: '',
         lastName: '',
         ssn: '',
-        itin: '',
-        ein: ''
+        itin: ''
 
       },
       sElection: 'No',
       banking: {
         presentInUS: 'Yes',
-        firstName: '',
-        secondName: '',
-        lastName: '',
         bank: '',
         bankOther: '',
-        otherOptions: ''
+        otherOptions: 'None'
       },
       speakToAttorney: 'Yes',
       expedited: 'No'
