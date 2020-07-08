@@ -415,7 +415,7 @@ const ProPlan = (props) => {
             <p>
               <span>Price:</span>
               ${74 + addonPrices.fileState + addonPrices.proAddress +
-                addonPrices.expedited}
+                addonPrices.expedited + addonPrices.banking}
             </p>
           </div>
         </div>
