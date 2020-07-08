@@ -122,7 +122,7 @@ const Managers = (props) => {
           <input
             type='checkbox'
             id={`managers__member[${i}]`}
-            name={`memberDetails[${i}].manager`}
+            name={`members.memberDetails[${i}].manager`}
             onChange={handleChange}
             checked={members.memberDetails[i].manager}
             value={members.memberDetails[i].manager}
