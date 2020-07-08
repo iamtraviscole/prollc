@@ -126,7 +126,6 @@ export const ein = (
 
 export const banking = (
   yup.object().shape({
-    firstName: yup.string().required('first name required'),
-    lastName: yup.string().required('last name required')
+    // TODO
   })
 )
