@@ -6,9 +6,29 @@ import '../../styles/plans/banking.scss'
 
 const Managers = (props) => {
   const { banking } = props.formik.values
-  const { handleChange } = props.formik
+  const { setPrices, prices } = props.addonPrices
 
-  // TODO: add price display logic
+  const handleChange = (e) => {
+    if (e.target.name === 'banking.presentInUS' && e.target.value === 'Yes') {
+      props.formik.setFieldValue('banking.otherOptions', 'None')
+    }
+
+    if (e.target.value === 'Virtual Bank') {
+      setPrices({
+        ...prices, banking: 699
+      })
+    } else if (e.target.value === 'Bank Account Service') {
+      setPrices({
+        ...prices, banking: 1100
+      })
+    } else {
+      setPrices({
+        ...prices, banking: 0
+      })
+    }
+
+    props.formik.handleChange(e)
+  }
 
   const displayOther = banking.bank === 'Other' ? (
       <div className='banking__bank-other-ctr'>
