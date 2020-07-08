@@ -46,7 +46,7 @@ const CompanyNames = (props) => {
         </div>
       </div>
       <div className='ein__details-input-outer-ctr'>
-        <p className='ein__id-number'>If available, please enter one of the following identification numbers for the responsible party. You may leave all three blank.</p>
+        <p className='ein__id-number'>If available, please enter one of the following identification numbers for the responsible party. You may leave both blank.</p>
         <div className='ein__details-input-ctr id-num'>
           <label htmlFor='ein__details-input-ssn'>SSN</label>
           <input
@@ -67,17 +67,6 @@ const CompanyNames = (props) => {
             onChange={handleChange}
             value={ein.itin}
             disabled={ein.ssn || ein.ein}
-          />
-        </div>
-        <div className='ein__details-input-ctr id-num'>
-          <label htmlFor='ein__details-input-ein'>EIN</label>
-          <input
-            type='text'
-            id='ein__details-input-ein'
-            name='ein.ein'
-            onChange={handleChange}
-            value={ein.ein}
-            disabled={ein.ssn || ein.itin}
           />
         </div>
       </div>
