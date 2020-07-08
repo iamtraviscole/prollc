@@ -342,8 +342,7 @@ const CompletePlan = (props) => {
         secondName: '',
         lastName: '',
         ssn: '',
-        itin: '',
-        ein: ''
+        itin: ''
 
       },
       sElection: 'No',
