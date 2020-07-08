@@ -192,7 +192,7 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Apertura de Cuenta Bancaria (presencia física necesaria) *
+              </span> Apertura de Cuenta Bancaria (presencia física necesaria)
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
@@ -210,7 +210,6 @@ const Plans = (props) => {
             </div>
             <Link className='plans__select-btn' to='/plans/pro'>Select</Link>
           </div>
-          <p className='asterisk'>* Cuenta Virtual: más $699</p>
         </div>
       </div>
     </Layout>
