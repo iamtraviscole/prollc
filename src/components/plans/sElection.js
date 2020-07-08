@@ -13,7 +13,12 @@ const SElection = (props) => {
       <StepHeader
         title='Would you like to make an S-Election?'
         // TODO: add modal for details
-        details='Click here for more details about S-Elections'
+        details={<>La Corporación S es una clasificación tributaria en la que la
+        compañía opta por pasar los ingresos, pérdidas, deducciones y créditos a
+        través de sus dueños, a efectos del impuesto federal.
+        Esto permite a las S-Corp evitar la doble imposición sobre los ingresos
+        de la corporación. No obstante, es una figura corporativa <span style={{fontWeight: 'bold'}}>solo
+        disponibles para residentes fiscales o ciudadanos estadounidenses.</span></>}
       />
       <fieldset>
         <div className='sElection__input-ctr'>
