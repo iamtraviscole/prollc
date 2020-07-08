@@ -26,7 +26,7 @@ const Managers = (props) => {
   return (
     <div className='banking'>
       <StepHeader title='Banking' />
-        <h3>Are you or any of your company members, friends, relatives, or colleagues present in the USA and authorized to open a bank account?</h3>
+        <h3>Are you physically present in the US?</h3>
         <div className='banking__present-ctr'>
           <fieldset>
             <div className='banking__present-input-ctr'>
@@ -55,39 +55,6 @@ const Managers = (props) => {
         </div>
         {banking.presentInUS === 'Yes' &&
           <>
-          <h3>Please enter their name</h3>
-          <div className='banking__person-ctr'>
-            <div className='banking__person-input-ctr  name'>
-              <label htmlFor='banking__person-input-first'>First Name *</label>
-              <input
-                type='text'
-                id='banking__person-input-first'
-                name='banking.firstName'
-                onChange={handleChange}
-                value={banking.firstName}
-              />
-            </div>
-            <div className='banking__person-input-ctr name'>
-              <label htmlFor='banking__person-input-middle'>Second Name</label>
-              <input
-                type='text'
-                id='banking__person-input-second'
-                name='banking.secondName'
-                onChange={handleChange}
-                value={banking.secondName}
-              />
-            </div>
-            <div className='banking__person-input-ctr name'>
-              <label htmlFor='banking__person-input-last'>Last Name *</label>
-              <input
-                type='text'
-                id='banking__person-input-last'
-                name='banking.lastName'
-                onChange={handleChange}
-                value={banking.lastName}
-              />
-            </div>
-          </div>
           <h3>Choose bank</h3>
           <div className='banking__bank-ctr'>
             <select
@@ -110,6 +77,19 @@ const Managers = (props) => {
           <h3>Other options</h3>
           <div className='banking__other-options-ctr'>
             <fieldset>
+              <div className='banking__other-options-input-ctr'>
+                <input
+                  type='radio'
+                  name='banking.otherOptions'
+                  id='banking__other-options-input-none'
+                  value='None'
+                  checked={banking.otherOptions === 'None'}
+                  onChange={handleChange}
+                 />
+                <label htmlFor='banking__other-options-input-none'>
+                  None
+                </label>
+              </div>
               <div className='banking__other-options-input-ctr'>
                 <input
                   type='radio'
