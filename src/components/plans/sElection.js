@@ -12,7 +12,6 @@ const SElection = (props) => {
     <div className='sElection'>
       <StepHeader
         title='Would you like to make an S-Election?'
-        // TODO: add modal for details
         details={<>La Corporación S es una clasificación tributaria en la que la
         compañía opta por pasar los ingresos, pérdidas, deducciones y créditos a
         través de sus dueños, a efectos del impuesto federal.
