@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useFormik } from 'formik'
 
 import * as validation from '../../helpers/validation.js'
@@ -27,11 +27,17 @@ const CompletePlan = (props) => {
   const [previousSteps, setPreviousSteps] = useState([])
   const [validationErrors, setValidationErrors] = useState([])
   const [progress, setProgress] = useState(0)
+  const [showSubmit, setShowSubmit] = useState(false)
   const [addonPrices, setAddonPrices] = useState({
     fileState: 0,
     proAddress: 0,
     expedited: 0
   })
+
+  useEffect(() => {
+    if (currentStep.component === Payment) setShowSubmit(true)
+    else setShowSubmit(false)
+  }, [currentStep, showSubmit])
 
   const handleNextClick = async (e) => {
     const setPrevious = () => {
@@ -229,12 +235,14 @@ const CompletePlan = (props) => {
       case SElection: {
         setPrevious()
         setCurrentStep({component: Expedited})
+        incProgress()
 
         break
       }
       case Expedited: {
         setPrevious()
         setCurrentStep({component: Payment})
+        incProgress()
 
         break
       }
@@ -359,13 +367,21 @@ const CompletePlan = (props) => {
 
   const CurrentStepComponent = currentStep.component
 
-  const previousButton = previousSteps.length > 0
-    ? <button type='button' onClick={handlePreviousClick}>Previous</button>
-    : null
-
   const displayValidationErrors = validationErrors.map((error, i) => (
     <p key={i} className='complete__error'>{error}</p>
   ))
+
+  const displayButtons = showSubmit
+    ? <>
+      <button type='button' onClick={handlePreviousClick}>Previous</button>
+      <button type='submit'>Pay</button>
+      </>
+    : previousSteps.length > 0
+      ? <>
+        <button type='button' onClick={handlePreviousClick}>Previous</button>
+        <button type='button' onClick={handleNextClick}>Next</button>
+        </>
+      : <button type='button' onClick={handleNextClick}>Next</button>
 
   console.log(formik.values)
 
@@ -375,7 +391,7 @@ const CompletePlan = (props) => {
       <div className='complete'>
         <div className='complete__top-ctr'>
           <div className='complete__progress-ctr'>
-            <p><span>Progress:</span>{Math.round((progress / 11) * 100)} %</p>
+            <p><span>Progress:</span>{Math.round((progress / 13) * 100)} %</p>
           </div>
           <div className='complete__price-ctr'>
             <p>
@@ -395,16 +411,8 @@ const CompletePlan = (props) => {
           />
           <div className='complete__btn-ctr'>
             {validationErrors.length > 0 &&
-              <div className='complete__errors-ctr'>{displayValidationErrors}</div>}
-            {previousButton}
-            <button
-              type='button'
-              onClick={handleNextClick}
-            >
-              Next
-            </button>
-          </div>
-          <div className='complete__error-ctr'>
+            <div className='complete__errors-ctr'>{displayValidationErrors}</div>}
+            {displayButtons}
           </div>
         </form>
       </div>
