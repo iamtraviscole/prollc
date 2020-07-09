@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useFormik } from 'formik'
 
 import * as validation from '../../helpers/validation.js'
@@ -29,12 +29,18 @@ const ProPlan = (props) => {
   const [previousSteps, setPreviousSteps] = useState([])
   const [validationErrors, setValidationErrors] = useState([])
   const [progress, setProgress] = useState(0)
+  const [showSubmit, setShowSubmit] = useState(false)
   const [addonPrices, setAddonPrices] = useState({
     fileState: 0,
     proAddress: 0,
     expedited: 0,
     banking: 0
   })
+
+  useEffect(() => {
+    if (currentStep.component === Payment) setShowSubmit(true)
+    else setShowSubmit(false)
+  }, [currentStep, showSubmit])
 
   const handleNextClick = async (e) => {
     const setPrevious = () => {
@@ -86,6 +92,7 @@ const ProPlan = (props) => {
       case Denomination: {
         setPrevious()
         setCurrentStep({component: Industry})
+        incProgress()
 
         break
       }
@@ -393,13 +400,21 @@ const ProPlan = (props) => {
 
   const CurrentStepComponent = currentStep.component
 
-  const previousButton = previousSteps.length > 0
-    ? <button type='button' onClick={handlePreviousClick}>Previous</button>
-    : null
+  const displayValidationErrors = validationErrors.map((error, i) => (
+    <p key={i} className='pro__error'>{error}</p>
+  ))
 
-    const displayValidationErrors = validationErrors.map((error, i) => (
-      <p key={i} className='pro__error'>{error}</p>
-    ))
+  const displayButtons = showSubmit
+    ? <>
+      <button type='button' onClick={handlePreviousClick}>Previous</button>
+      <button type='submit'>Pay</button>
+      </>
+    : previousSteps.length > 0
+      ? <>
+        <button type='button' onClick={handlePreviousClick}>Previous</button>
+        <button type='button' onClick={handleNextClick}>Next</button>
+        </>
+      : <button type='button' onClick={handleNextClick}>Next</button>
 
   console.log(formik.values)
 
@@ -409,7 +424,7 @@ const ProPlan = (props) => {
       <div className='pro'>
         <div className='pro__top-ctr'>
           <div className='pro__progress-ctr'>
-            <p><span>Progress:</span>{Math.round((progress / 11) * 100)} %</p>
+            <p><span>Progress:</span>{Math.round((progress / 15) * 100)} %</p>
           </div>
           <div className='pro__price-ctr'>
             <p>
@@ -429,16 +444,8 @@ const ProPlan = (props) => {
           />
           <div className='pro__btn-ctr'>
             {validationErrors.length > 0 &&
-              <div className='pro__errors-ctr'>{displayValidationErrors}</div>}
-            {previousButton}
-            <button
-              type='button'
-              onClick={handleNextClick}
-            >
-              Next
-            </button>
-          </div>
-          <div className='pro__error-ctr'>
+            <div className='pro__errors-ctr'>{displayValidationErrors}</div>}
+            {displayButtons}
           </div>
         </form>
       </div>
