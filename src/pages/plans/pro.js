@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useFormik } from 'formik'
 
 import * as validation from '../../helpers/validation.js'
+import calcPrice from '../../helpers/calcPrice.js'
 
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
@@ -30,12 +31,6 @@ const ProPlan = (props) => {
   const [validationErrors, setValidationErrors] = useState([])
   const [progress, setProgress] = useState(0)
   const [showSubmit, setShowSubmit] = useState(false)
-  const [addonPrices, setAddonPrices] = useState({
-    fileState: 0,
-    proAddress: 0,
-    expedited: 0,
-    banking: 0
-  })
 
   useEffect(() => {
     if (currentStep.component === Payment) setShowSubmit(true)
@@ -321,6 +316,7 @@ const ProPlan = (props) => {
 
   const formik = useFormik({
     initialValues: {
+      plan: 'Pro',
       fileState: 'Florida',
       contactDetails: {
         firstName: '',
@@ -429,19 +425,12 @@ const ProPlan = (props) => {
           <div className='pro__price-ctr'>
             <p>
               <span>Price:</span>
-              ${74 + addonPrices.fileState + addonPrices.proAddress +
-                addonPrices.expedited + addonPrices.banking}
+              ${calcPrice(formik.values)}
             </p>
           </div>
         </div>
         <form className='pro__form' onSubmit={formik.handleSubmit}>
-          <CurrentStepComponent
-            formik={formik}
-            addonPrices={{
-              prices: addonPrices,
-              setPrices: setAddonPrices
-            }}
-          />
+          <CurrentStepComponent formik={formik} />
           <div className='pro__btn-ctr'>
             {validationErrors.length > 0 &&
             <div className='pro__errors-ctr'>{displayValidationErrors}</div>}

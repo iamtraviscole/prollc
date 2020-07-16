@@ -6,20 +6,7 @@ import '../../styles/plans/expedited.scss'
 
 const Expedited = (props) => {
   const { expedited } = props.formik.values
-  const { setPrices, prices } = props.addonPrices
-
-  const handleChange = (e) => {
-    if (e.target.value === 'Yes') {
-      setPrices({
-        ...prices, expedited: 39
-      })
-    } else {
-      setPrices({
-        ...prices, expedited: 0
-      })
-    }
-    props.formik.handleChange(e)
-  }
+  const { handleChange } = props.formik
 
   return (
     <div className='expedited'>
@@ -35,7 +22,7 @@ const Expedited = (props) => {
             id='expedited__input-no'
             value='No'
             checked={expedited === 'No'}
-            onChange={e => handleChange(e)}
+            onChange={handleChange}
           />
           <label htmlFor='expedited__input-no'>
             No
@@ -48,7 +35,7 @@ const Expedited = (props) => {
             id='expedited__input-yes'
             value='Yes'
             checked={expedited === 'Yes'}
-            onChange={e => handleChange(e)}
+            onChange={handleChange}
            />
           <label htmlFor='expedited__input-yes'>
             Yes ( + $39.00 )

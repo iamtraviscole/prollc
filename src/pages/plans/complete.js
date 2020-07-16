@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useFormik } from 'formik'
 
 import * as validation from '../../helpers/validation.js'
+import calcPrice from '../../helpers/calcPrice.js'
 
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
@@ -28,11 +29,6 @@ const CompletePlan = (props) => {
   const [validationErrors, setValidationErrors] = useState([])
   const [progress, setProgress] = useState(0)
   const [showSubmit, setShowSubmit] = useState(false)
-  const [addonPrices, setAddonPrices] = useState({
-    fileState: 0,
-    proAddress: 0,
-    expedited: 0
-  })
 
   useEffect(() => {
     if (currentStep.component === Payment) setShowSubmit(true)
@@ -295,6 +291,7 @@ const CompletePlan = (props) => {
 
   const formik = useFormik({
     initialValues: {
+      plan: 'Complete',
       fileState: 'Florida',
       contactDetails: {
         firstName: '',
@@ -396,19 +393,12 @@ const CompletePlan = (props) => {
           <div className='complete__price-ctr'>
             <p>
               <span>Price:</span>
-              ${74 + addonPrices.fileState + addonPrices.proAddress +
-                addonPrices.expedited}
+              ${calcPrice(formik.values)}
             </p>
           </div>
         </div>
         <form className='complete__form' onSubmit={formik.handleSubmit}>
-          <CurrentStepComponent
-            formik={formik}
-            addonPrices={{
-              prices: addonPrices,
-              setPrices: setAddonPrices
-            }}
-          />
+          <CurrentStepComponent formik={formik} />
           <div className='complete__btn-ctr'>
             {validationErrors.length > 0 &&
             <div className='complete__errors-ctr'>{displayValidationErrors}</div>}

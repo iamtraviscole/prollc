@@ -7,20 +7,6 @@ import '../../styles/plans/proAddress.scss'
 const ProAddress = (props) => {
   const { companyAddress } = props.formik.values
   const { handleChange } = props.formik
-  const { setPrices, prices } = props.addonPrices
-
-  const handleChangePrice = (e) => {
-    if (e.target.value === 'Yes') {
-      setPrices({
-        ...prices, proAddress: 59
-      })
-    } else {
-      setPrices({
-        ...prices, proAddress: 0
-      })
-    }
-    handleChange(e)
-  }
 
   return (
     <div className='proAddress'>
@@ -33,7 +19,7 @@ const ProAddress = (props) => {
             id='proAddress__no'
             value='No'
             checked={companyAddress.proAddress === 'No'}
-            onChange={e => handleChangePrice(e)}
+            onChange={handleChange}
            />
           <label htmlFor='proAddress__no'>
             I already have an address for my company
@@ -46,7 +32,7 @@ const ProAddress = (props) => {
             id='proAddress__yes'
             value='Yes'
             checked={companyAddress.proAddress === 'Yes'}
-            onChange={e => handleChangePrice(e)}
+            onChange={handleChange}
           />
           <label htmlFor='proAddress__yes'>
             I want ProLLC to provide me with an address <span>( + $59 )</span>

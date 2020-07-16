@@ -3,6 +3,7 @@ import { useFormik } from 'formik'
 import useFirebase from '../../hooks/useFirebase'
 
 import * as validation from '../../helpers/validation.js'
+import calcPrice from '../../helpers/calcPrice.js'
 
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
@@ -27,11 +28,6 @@ const BasicPlan = (props) => {
   const [validationErrors, setValidationErrors] = useState([])
   const [progress, setProgress] = useState(0)
   const [showSubmit, setShowSubmit] = useState(false)
-  const [addonPrices, setAddonPrices] = useState({
-    fileState: 0,
-    proAddress: 0,
-    expedited: 0
-  })
 
   useEffect(() => {
     if (currentStep.component === Payment) setShowSubmit(true)
@@ -274,6 +270,7 @@ const BasicPlan = (props) => {
 
   const formik = useFormik({
     initialValues: {
+      plan: 'Basic',
       fileState: 'Florida',
       contactDetails: {
         firstName: 'a',
@@ -329,7 +326,7 @@ const BasicPlan = (props) => {
     onSubmit: async values => {
       console.log('submit clicked')
       const db = firebase.firestore()
-      db.collection('orders').add({plan: 'Basic', ...formik.values}).then(res => {
+      db.collection('orders').add({...formik.values}).then(res => {
         console.log(res)
       }).catch(err => {
         console.log(err)
@@ -372,19 +369,12 @@ const BasicPlan = (props) => {
           <div className='basic__price-ctr'>
             <p>
               <span>Price:</span>
-              ${74 + addonPrices.fileState + addonPrices.proAddress +
-                addonPrices.expedited}
+              ${calcPrice(formik.values)}
             </p>
           </div>
         </div>
         <form className='basic__form' onSubmit={formik.handleSubmit}>
-          <CurrentStepComponent
-            formik={formik}
-            addonPrices={{
-              prices: addonPrices,
-              setPrices: setAddonPrices
-            }}
-          />
+          <CurrentStepComponent formik={formik} />
           <div className='basic__btn-ctr'>
             {validationErrors.length > 0 &&
             <div className='basic__errors-ctr'>{displayValidationErrors}</div>}
