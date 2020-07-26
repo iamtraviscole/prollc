@@ -1,0 +1,113 @@
+.payment {
+  display: inline-block;
+  max-width: 100%;
+
+  &__review-ctr {
+    margin-bottom: 25px;
+
+    > h3 {
+      font-size: 18px;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+    }
+
+    > p {
+      font-size: 18px;
+      margin-bottom: 3px;
+    }
+  }
+
+  &__price-ctr {
+    margin-bottom: 50px;
+
+    > h3 {
+      font-size: 18px;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+    }
+
+    > p {
+      font-weight: bold;
+      font-size: 28px;
+    }
+  }
+
+  &__card-ctr {
+    max-width: 300px;
+    display: block;
+    word-wrap: break-word;
+    margin: 0 auto;
+    padding: 25px;
+    border: 1px solid var(--color-border-primary);
+    border-radius: 3px;
+
+    > h2 {
+      color: var(--color-primary);
+      margin-bottom: 15px;
+    }
+  }
+
+  &__input-ctr {
+    display: block;
+    margin: 0 auto 15px auto;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    > p {
+      display: block;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--color-text-primary);
+      text-align: left;
+      margin-bottom: 2px;
+    }
+  }
+
+  &__error {
+    margin-top: 10px;
+
+    > p {
+      color: var(--color-error);
+    }
+  }
+
+  &__pay-btn-ctr {
+    text-align: center;
+    margin-top: 25px;
+
+    > button {
+      color: var(--color-text-secondary);
+      background: var(--color-primary);
+      border: 2px solid var(--color-primary);
+      border-radius: 3px;
+      padding: 10px 10px;
+
+      &:hover {
+        border: 2px solid var(--color-primary-dark);
+        background: var(--color-primary-dark);
+      }
+
+      &:disabled {
+        background: red;
+      }
+    }
+  }
+
+  &__loading-ctr {
+    margin: 20px 0 40px 0;
+  }
+
+  .StripeElement {
+    display: block;
+    width: 100%;
+    outline: none;
+    border: 1px solid var(--color-border-primary);
+    padding: 8px;
+    margin: 0;
+    border-radius: 3px;
+    font-family: var(--font-fam-primary);
+    font-size: 20px;
+  }
+}
