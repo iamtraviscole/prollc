@@ -27,8 +27,6 @@ const STRIPE_ELEMENT_OPTIONS = {
   },
 }
 
-console.log({...STRIPE_ELEMENT_OPTIONS, placeholder: 'hey'})
-
 const Payment = (props) => {
   const { values } = props.formik
 
