@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { navigate } from 'gatsby'
 import axios from 'axios'
+import useFirebase from '../../hooks/useFirebase'
+import { firestore } from 'firebase/app'
 import {
   useStripe,
   useElements,
@@ -33,12 +35,12 @@ const Payment = (props) => {
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState(null)
 
+  const firebase = useFirebase()
+
   const stripe = useStripe()
   const elements = useElements()
 
   const handlePay = async (e) => {
-    setSubmitting(true)
-
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       // only need to pass one element to card, stripe automatically grabs the
@@ -60,12 +62,25 @@ const Payment = (props) => {
         )
         console.log('RES', res)
 
+        const { payment } = res.data
+
+        const orderDetails = {
+          ...values,
+          paymentId: payment.id,
+          price: (payment.amount / 100),
+          createdAt: firestore.FieldValue.serverTimestamp()
+        }
+
+        const db = firebase.firestore()
+        db.collection('orders').add(orderDetails)
+
         navigate('/success', {
           replace: true,
           state: {paymentId: res.id}
         })
       } catch (error) {
-        let { message } = error.response.data
+        console.error(error)
+        let message = error.response && error.response.data.message
         setError(message)
         setSubmitting(false)
 

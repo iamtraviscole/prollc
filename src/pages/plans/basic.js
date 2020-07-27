@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useFormik } from 'formik'
-import useFirebase from '../../hooks/useFirebase'
 
 import * as validation from '../../helpers/validation.js'
 import calcPrice from '../../helpers/calcPrice.js'
@@ -27,14 +26,6 @@ const BasicPlan = (props) => {
   const [previousSteps, setPreviousSteps] = useState([])
   const [validationErrors, setValidationErrors] = useState([])
   const [progress, setProgress] = useState(0)
-  const [showSubmit, setShowSubmit] = useState(false)
-
-  useEffect(() => {
-    if (currentStep.component === Payment) setShowSubmit(true)
-    else setShowSubmit(false)
-  }, [currentStep, showSubmit])
-
-  const firebase = useFirebase()
 
   const handleNextClick = async (e) => {
     const setPrevious = () => {
@@ -323,15 +314,6 @@ const BasicPlan = (props) => {
       },
       expedited: 'No'
     },
-    onSubmit: async values => {
-      console.log('submit clicked')
-      const db = firebase.firestore()
-      db.collection('orders').add({...formik.values}).then(res => {
-        console.log(res)
-      }).catch(err => {
-        console.log(err)
-      })
-    },
     validationSchema: null,
     validateOnMount: false,
     validateOnChange: false,
@@ -344,10 +326,9 @@ const BasicPlan = (props) => {
     <p key={i} className='basic__error'>{error}</p>
   ))
 
-  const displayButtons = showSubmit
+  const displayButtons = currentStep.component === Payment
     ? <>
       <button type='button' onClick={handlePreviousClick}>Previous</button>
-      <button type='submit'>Pay</button>
       </>
     : previousSteps.length > 0
       ? <>
@@ -355,8 +336,6 @@ const BasicPlan = (props) => {
         <button type='button' onClick={handleNextClick}>Next</button>
         </>
       : <button type='button' onClick={handleNextClick}>Next</button>
-
-  console.log(formik)
 
   return (
     <Layout pageTitle='Basic Plan'>
