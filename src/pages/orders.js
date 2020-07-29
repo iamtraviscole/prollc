@@ -18,6 +18,7 @@ const Orders = (props) => {
     password: ''
   })
   const [loading, setLoading] = useState(true)
+  const [resetPW, setResetPW] = useState(false)
 
   const firebase = useFirebase()
 
@@ -33,10 +34,12 @@ const Orders = (props) => {
     firebase.auth().signOut().catch(err => console.error(err))
   }
 
-  const handleChangePW = e => {
-    firebase.auth().sendPasswordResetEmail(user)
-    .then(() => console.log('sent pw change email'))
-    .catch(err => console.error(err))
+  const handleResetPW = e => {
+    if (!resetPW) {
+      firebase.auth().sendPasswordResetEmail(user).then(() =>
+        setResetPW(true)
+      )
+    }
   }
 
   return (
@@ -50,11 +53,15 @@ const Orders = (props) => {
           <div className='orders__user-ctr'>
             <div className='orders__user'>{user}</div>
             <div className='orders__user-btns-ctr'>
-              <button
-                className='orders__change-pw-btn'
-                onClick={handleChangePW}
-              > Change Password
-              </button>
+              {!resetPW
+                ? <button
+                  className='orders__change-pw-btn'
+                  onClick={handleResetPW}
+                  >
+                    Reset Password
+                  </button>
+                : <div className='orders__reset-sent'>reset email sent</div>
+              }
               <button
                 className='orders__logout-btn'
                 onClick={handleLogout}
@@ -67,7 +74,7 @@ const Orders = (props) => {
       </div>
       <div className='orders__main'>
         {loading
-        ? <Loading />
+        ? <div className='orders__loading-ctr'><Loading /></div>
         : user
           ? <Router>
             <AllOrders path='/orders' firebase={firebase} />

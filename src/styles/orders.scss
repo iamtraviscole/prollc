@@ -9,7 +9,7 @@
 
   &__nav {
     display: inline-block;
-    max-width: 860px;
+    max-width: 840px;
     padding: 0 10px;
     width: 100%;
   }
@@ -54,8 +54,19 @@
     }
   }
 
+  &__reset-sent {
+    display: inline;
+    margin-right: 10px;
+    font-size: 14px;
+    color: var(--color-success);
+  }
+
   &__main {
     margin: 0 auto;
     max-width: 840px;
+  }
+
+  &__loading-ctr {
+    margin-top: 50px;
   }
 }
