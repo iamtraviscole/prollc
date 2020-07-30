@@ -46,8 +46,15 @@ const Orders = (props) => {
     <div className='orders'>
       <div className='orders__nav-ctr'>
         <nav className='orders__nav'>
-          <div className='orders__logo'>
-            <Link to='/'><Logo /></Link>
+          <div className='orders__left-nav-ctr'>
+            {props.location.pathname === '/orders' &&
+              <Link to='/' className='logo-link'><Logo /></Link>
+            }
+            {props.location.pathname !== '/orders' &&
+              <Link to='/orders' className='search-orders-link'>
+                Search Orders
+              </Link>
+            }
           </div>
           {user &&
           <div className='orders__user-ctr'>
