@@ -1,0 +1,53 @@
+.about {
+  max-width: 840px;
+  margin: 0 auto;
+  
+  > h2 {
+    margin: 50px 0 25px 0;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  > p {
+    margin-bottom: 25px;
+  }
+
+  > ul {
+    margin-bottom: 50px;
+
+    > li {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__btn-ctr {
+    text-align: center;
+    margin-top: 50px;
+
+    > a {
+
+      > button {
+        font-weight: bold;
+        color: var(--color-primary);
+        border: 2px solid var(--color-primary);
+        border-radius: 3px;
+        padding: 10px 10px;
+
+        &:hover {
+          color: var(--color-primary-dark);
+          border: 2px solid var(--color-primary-dark);
+        }
+      }
+    }
+
+  }
+
+}
+
+@media (max-width: 840px) {
+  .about {
+    padding: 0 25px;
+  }
+}
