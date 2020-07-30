@@ -25,7 +25,7 @@ const Order = (props) => {
 
   if (loading) {
     return (
-      <div className='order'>
+      <div className='order__loading-ctr'>
         <Loading />
       </div>
     )
@@ -33,8 +33,11 @@ const Order = (props) => {
 
   if (!order) {
     return (
-      <div className='order'>
-        Order Not Found
+      <div className='order__not-found-ctr'>
+        <h1>Order Not Found</h1>
+        <div className='order__not-found-link-ctr'>
+          <Link to='/orders' className='all-orders-link'>Search Orders</Link>
+        </div>
       </div>
     )
   }

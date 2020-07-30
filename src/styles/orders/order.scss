@@ -54,4 +54,31 @@
     }
   }
 
+  &__loading-ctr {
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  &__not-found-ctr {
+    margin-top: 50px;
+    text-align: center;
+
+    > h1 {
+      font-size: 20px;
+    }
+  }
+
+  &__not-found-link-ctr {
+    margin: 25px 0;
+
+    > a {
+      display: inline-block;
+      font-weight: bold;
+      color: var(--color-primary);
+      border: 1px solid var(--color-primary);
+      border-radius: 3px;
+      padding: 5px;
+    }
+  }
+
 }
