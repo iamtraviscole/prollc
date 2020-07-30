@@ -84,4 +84,8 @@ button {
 p {
   line-height: 1.1;
   word-spacing: 1px;
+
+  > b {
+    font-weight: bold;
+  }
 }
