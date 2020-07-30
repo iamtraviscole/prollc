@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useFormik } from 'formik'
 
 import * as validation from '../../helpers/validation.js'
@@ -31,12 +31,6 @@ const ProPlan = (props) => {
   const [previousSteps, setPreviousSteps] = useState([])
   const [validationErrors, setValidationErrors] = useState([])
   const [progress, setProgress] = useState(0)
-  const [showSubmit, setShowSubmit] = useState(false)
-
-  useEffect(() => {
-    if (currentStep.component === Payment) setShowSubmit(true)
-    else setShowSubmit(false)
-  }, [currentStep, showSubmit])
 
   const handleNextClick = async (e) => {
     const setPrevious = () => {
@@ -299,10 +293,9 @@ const ProPlan = (props) => {
     <p key={i} className='pro__error'>{error}</p>
   ))
 
-  const displayButtons = showSubmit
+  const displayButtons = currentStep.component === Payment
     ? <>
       <button type='button' onClick={handlePreviousClick}>Previous</button>
-      <button type='submit'>Pay</button>
       </>
     : previousSteps.length > 0
       ? <>
