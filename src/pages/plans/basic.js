@@ -3,6 +3,7 @@ import { useFormik } from 'formik'
 
 import * as validation from '../../helpers/validation.js'
 import calcPrice from '../../helpers/calcPrice.js'
+import initialPlanValues from '../../helpers/initialPlanValues.js'
 
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
@@ -226,94 +227,9 @@ const BasicPlan = (props) => {
     setProgress(progress - 1)
   }
 
-  let initialMemberDetails = []
-  for (let i = 0; i < 4; i++) {
-    initialMemberDetails.push({
-      corporateMember: false,
-      companyName: '',
-      firstName: 'a',
-      secondName: '',
-      lastName: 's',
-      street: 'd',
-      suite: '',
-      city: 'f',
-      state: 'g',
-      zipcode: 'h',
-      country: 'i',
-      manager: false
-    })
-  }
-
-  const initialManagerDetails = []
-  for (let i = 0; i < 4; i++) {
-    initialManagerDetails.push({
-      firstName: 'a',
-      secondName: '',
-      lastName: 's',
-      street: 'd',
-      suite: 'f',
-      city: 'g',
-      state: 'h',
-      zipcode: 'i',
-      country: 'j'
-    })
-  }
-
   const formik = useFormik({
-    initialValues: {
-      plan: 'Basic',
-      fileState: 'Florida',
-      contactDetails: {
-        firstName: 'a',
-        secondName: '',
-        lastName: 's',
-        email: 'd@d.c',
-        phone: 'f'
-      },
-      companyNames: {
-        name1: 'a',
-        name2: 'b',
-        name3: 'c'
-      },
-      denomination: 'LLC',
-      industry: {
-        industry: 'Other',
-        other: 'o'
-      },
-      employeeCount: 0,
-      companyAddress: {
-        proAddress: 'No',
-        street: 'a',
-        suite: '',
-        city: 's',
-        state: 'd',
-        zipcode: 'f',
-        country: 'g'
-      },
-      members: {
-        memberCount: '1',
-        memberDetails: initialMemberDetails
-      },
-      managers: {
-        managerCount: '0',
-        managerDetails: initialManagerDetails
-      },
-      registeredAgent: {
-        proRegisteredAgent: 'No',
-        corporateRegisteredAgent: false,
-        companyName: 'a',
-        firstName: 's',
-        secondName: 'd',
-        lastName: 'f',
-        street: 'g',
-        suite: '',
-        city: 'h',
-        state: 'i',
-        zipcode: 'j',
-        country: 'k'
-      },
-      expedited: 'No'
-    },
+    initialValues: initialPlanValues('Basic'),
+    onSubmit: () => {}, // do nothing
     validationSchema: null,
     validateOnMount: false,
     validateOnChange: false,

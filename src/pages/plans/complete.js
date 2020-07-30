@@ -3,6 +3,7 @@ import { useFormik } from 'formik'
 
 import * as validation from '../../helpers/validation.js'
 import calcPrice from '../../helpers/calcPrice.js'
+import initialPlanValues from '../../helpers/initialPlanValues.js'
 
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
@@ -256,103 +257,8 @@ const CompletePlan = (props) => {
     setProgress(progress - 1)
   }
 
-  let initialMemberDetails = []
-  for (let i = 0; i < 4; i++) {
-    initialMemberDetails.push({
-      corporateMember: false,
-      companyName: '',
-      firstName: '',
-      secondName: '',
-      lastName: '',
-      street: '',
-      suite: '',
-      city: '',
-      state: '',
-      zipcode: '',
-      country: '',
-      manager: false
-    })
-  }
-
-  const initialManagerDetails = []
-  for (let i = 0; i < 4; i++) {
-    initialManagerDetails.push({
-      firstName: '',
-      secondName: '',
-      lastName: '',
-      street: '',
-      suite: '',
-      city: '',
-      state: '',
-      zipcode: '',
-      country: ''
-    })
-  }
-
   const formik = useFormik({
-    initialValues: {
-      plan: 'Complete',
-      fileState: 'Florida',
-      contactDetails: {
-        firstName: '',
-        secondName: '',
-        lastName: '',
-        email: '',
-        phone: ''
-      },
-      companyNames: {
-        name1: '',
-        name2: '',
-        name3: ''
-      },
-      denomination: 'LLC',
-      industry: {
-        industry: '',
-        other: ''
-      },
-      employeeCount: 0,
-      companyAddress: {
-        proAddress: 'No',
-        street: '',
-        suite: '',
-        city: '',
-        state: '',
-        zipcode: '',
-        country: ''
-      },
-      members: {
-        memberCount: '1',
-        memberDetails: initialMemberDetails
-      },
-      managers: {
-        managerCount: '0',
-        managerDetails: initialManagerDetails
-      },
-      registeredAgent: {
-        proRegisteredAgent: 'No',
-        corporateRegisteredAgent: false,
-        companyName: '',
-        firstName: '',
-        secondName: '',
-        lastName: '',
-        street: '',
-        suite: '',
-        city: '',
-        state: '',
-        zipcode: '',
-        country: ''
-      },
-      ein: {
-        firstName: '',
-        secondName: '',
-        lastName: '',
-        ssn: '',
-        itin: ''
-
-      },
-      sElection: 'No',
-      expedited: 'No'
-    },
+    initialValues: initialPlanValues('Complete'),
     onSubmit: async values => {
       console.log('submit clicked')
     },
