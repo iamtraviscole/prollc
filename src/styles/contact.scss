@@ -1,0 +1,99 @@
+.contact {
+  max-width: 840px;
+  margin: 0 auto;
+  text-align: center;
+
+  &__phone-ctr {
+    float: left;
+    width: 300px;
+  }
+
+  > h2 {
+    margin-bottom: 50px;
+  }
+
+  &__form-ctr {
+    float: right;
+    padding: 0 25px 25px 25px;
+    border: 1px solid var(--color-border-primary-light);
+    border-radius: 3px;
+    width: 500px;
+
+    > form {
+
+      > input {
+        display: block;
+        margin-top: 25px;
+        width: 100%;
+      }
+
+      > textarea {
+        display: block;
+        margin-top: 25px;
+        width: 100%;
+        min-height: 200px;
+        padding: 8px;
+        font-family: var(--font-fam-primary);
+        font-size: 16px;
+        resize: none;
+
+        &::placeholder {
+          font-weight: lighter;
+          font-size: 16px;
+          color: var(--color-text-placeholder);
+
+        }
+      }
+
+      > input[type=submit] {
+        margin: 25px 0 0 0;
+        font-weight: bold;
+        border: 2px solid var(--color-primary);
+        color: var(--color-primary);
+        background: none;
+        cursor: pointer;
+
+        &:hover {
+          border: 2px solid var(--color-primary-dark);
+          color: var(--color-primary-dark);
+        }
+      }
+    }
+  }
+
+  &__input-err {
+    font-size: 12px;
+    margin-top: 4px;
+    color: var(--color-error);
+  }
+
+  &__submit-success {
+
+    > p {
+      margin-top: 25px;
+      color: var(--color-success);
+    }
+  }
+}
+
+@media (max-width: 890px) {
+  .contact {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+
+    &__phone-ctr {
+      display: inline-block;
+      float: none;
+      width: 90%;
+      margin-bottom: 50px;
+    }
+
+    &__form-ctr {
+      display: inline-block;
+      float: none;
+      width: 90%;
+    }
+  }
+
+}
