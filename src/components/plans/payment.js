@@ -67,7 +67,7 @@ const Payment = (props) => {
           ...values,
           paymentId: payment.id,
           price: (payment.amount / 100),
-          createdAt: firestore.FieldValue.serverTimestamp()
+          paymentTime: payment.created
         }
 
         const db = firebase.firestore()
