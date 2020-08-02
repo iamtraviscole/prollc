@@ -46,7 +46,6 @@ const Payment = (props) => {
       // only need to pass one element to card, stripe automatically grabs the
       // rest of the card information (expiry, cvc, etc.)
       card: elements.getElement(CardNumberElement)
-      // card: elements.getElement(CardElement)
     })
 
     if (!error) {
@@ -54,7 +53,7 @@ const Payment = (props) => {
 
       try {
         const res = await axios.post(
-          'http://localhost:5001/prollc/us-central1/charge',
+          '/api/submitPlan',
           {
             id: id,
             values: values
