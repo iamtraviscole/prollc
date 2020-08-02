@@ -8,6 +8,7 @@ import AllOrders from '../components/orders/allOrders'
 import Order from '../components/orders/order'
 import Logo from '../images/svgs/prollc-logo.svg'
 import Loading from '../components/ui/loading'
+import SEO from '../components/seo'
 
 import '../styles/orders.scss'
 
@@ -44,6 +45,7 @@ const Orders = (props) => {
 
   return (
     <div className='orders'>
+      <SEO title='Orders' noindex />
       <div className='orders__nav-ctr'>
         <nav className='orders__nav'>
           <div className='orders__left-nav-ctr'>

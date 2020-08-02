@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, noindex }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -56,7 +56,9 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
       ].concat(meta)}
-    />
+    >
+      {noindex && <meta name='robots' content='noindex' />}
+    </Helmet>
   )
 }
 
