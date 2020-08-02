@@ -322,12 +322,13 @@ const Order = (props) => {
                 </div>
                 <div className='order__inline-group'>
                   <div className='order__inner-header'>second name</div>
-                  <p>{order.registeredAgent.secondName}</p>
+                  <p>{order.registeredAgent.secondName || '-'}</p>
                 </div>
                 <div className='order__inline-group'>
                   <div className='order__inner-header'>last name</div>
                   <p>{order.registeredAgent.lastName}</p>
                 </div>
+                <br />
               </>
           }
           <div className='order__inline-group'>
@@ -373,6 +374,7 @@ const Order = (props) => {
               <div className='order__inner-header'>last name</div>
               <p>{order.ein.lastName}</p>
             </div>
+            <br />
             <div className='order__inner-header'>ssn</div>
             <p>{order.ein.ssn}</p>
             <div className='order__inner-header'>itin</div>
