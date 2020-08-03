@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { navigate } from 'gatsby'
 import axios from 'axios'
 import useFirebase from '../../hooks/useFirebase'
-import { firestore } from 'firebase/app'
 import {
   useStripe,
   useElements,
