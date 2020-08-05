@@ -23,3 +23,13 @@
   }
 
 }
+
+@media (max-width: 840px) {
+  .resources {
+
+    &__resource-btns-ctr {
+      margin: 0 25px;
+    }
+  }
+
+}
