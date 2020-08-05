@@ -1,10 +1,66 @@
 .mobileNav {
 
-  > button {
+  &__nav-btn {
+
+    > button {
+
+      > svg {
+        display: block;
+        height: 25px;
+      }
+    }
+  }
+
+  &__modal {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-primary);
 
     > svg {
+      position: absolute;
+      top: 35px;
+      right: 35px;
+      fill: white;
       display: block;
       height: 25px;
+    }
+  }
+
+  &__modal-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: scroll;
+
+    > ul {
+
+      > li {
+        border: 2px solid var(--color-text-secondary);
+        border-radius: 3px;
+        margin-bottom: 10px;
+
+        &:hover {
+          background: var(--color-text-secondary);
+        }
+
+        > a {
+          display: block;
+          padding: 5px 10px;
+          color: var(--color-text-secondary);
+          font-weight: bold;
+
+          &:hover {
+            color: var(--color-text-primary);
+          }
+        }
+
+      }
     }
   }
 
