@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'gatsby'
 
 import Logo from '../images/svgs/prollc-logo.svg'
 import Nav from './nav'
@@ -24,7 +25,7 @@ const Header = (props) => {
     <header className='header'>
       <div className='header__logo-nav-ctr'>
         <div className='header__logo-ctr'>
-          <Logo />
+          <Link to='/'><Logo /></Link>
         </div>
         <div className='header__nav-ctr'>
           {displayNav}

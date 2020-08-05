@@ -16,9 +16,12 @@
     position: relative;
     top: 20px;
 
-    > svg {
-      display: block;
-      height: 60px;
+    > a {
+
+      > svg {
+        display: block;
+        height: 60px;
+      }
     }
   }
 
