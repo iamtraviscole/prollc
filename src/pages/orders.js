@@ -9,6 +9,8 @@ import AllOrders from '../components/orders/allOrders'
 import Order from '../components/orders/order'
 import Logo from '../images/svgs/prollc-logo.svg'
 import Loading from '../components/ui/loading'
+import favicon16 from "../images/favicon-16.png";
+import favicon32 from "../images/favicon-32.png";
 
 import '../styles/orders.scss'
 
@@ -44,9 +46,14 @@ const Orders = (props) => {
     }
   }
 
+  const faviconLinks = [
+    { rel: 'icon', type: 'image/png', sizes: '16x16', href: favicon16 },
+    { rel: 'icon', type: 'image/png', sizes: '32x32', href: favicon32 },
+  ]
+
   return (
     <div className='orders'>
-      <Helmet>
+      <Helmet link={faviconLinks}>
         <meta name='robots' content='noindex' />
       </Helmet>
       <div className='orders__nav-ctr'>
