@@ -10,7 +10,7 @@ const Order = (props) => {
   const [order, setOrder] = useState(null)
   const [loading, setLoading] = useState(true)
 
-  const { firebase, id } = props
+  const { firebase, id, setShowLogo } = props
 
   useEffect(() => {
     firebase.firestore().collection('orders').doc(id).get()
@@ -22,6 +22,11 @@ const Order = (props) => {
       })
       .catch(err => console.error(err))
   }, [firebase, id])
+
+  useEffect(() => {
+    setShowLogo(false)
+    return () => setShowLogo(true)
+  }, [])
 
   if (loading) {
     return (

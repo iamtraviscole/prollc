@@ -20,6 +20,7 @@ const Orders = (props) => {
   })
   const [loading, setLoading] = useState(true)
   const [resetPW, setResetPW] = useState(false)
+  const [showLogo, setShowLogo] = useState(true)
 
   const firebase = useFirebase()
 
@@ -51,13 +52,11 @@ const Orders = (props) => {
       <div className='orders__nav-ctr'>
         <nav className='orders__nav'>
           <div className='orders__left-nav-ctr'>
-            {props.location.pathname === '/orders' &&
-              <Link to='/' className='logo-link'><Logo /></Link>
-            }
-            {props.location.pathname !== '/orders' &&
-              <Link to='/orders' className='search-orders-link'>
-                Search Orders
-              </Link>
+            {showLogo
+              ? <Link to='/' className='logo-link'><Logo /></Link>
+              : <Link to='/orders' className='search-orders-link'>
+                  Search Orders
+                </Link>
             }
           </div>
           {user &&
@@ -88,9 +87,13 @@ const Orders = (props) => {
         ? <div className='orders__loading-ctr'><Loading /></div>
         : user
           ? <Router>
-            <AllOrders path='/orders' firebase={firebase} />
-            <Order path='/orders/:id' firebase={firebase} />
-          </Router>
+              <AllOrders path='/orders' firebase={firebase} />
+              <Order
+                path='/orders/:id'
+                firebase={firebase}
+                setShowLogo={setShowLogo}
+              />
+            </Router>
           : <OrdersLogin firebase={firebase} login={login} setLogin={setLogin} />
         }
       </div>
