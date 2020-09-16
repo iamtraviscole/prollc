@@ -68,8 +68,8 @@ const FAQ = (props) => {
     : <button onClick={handleShowAll}>Show All</button>
 
   return (
-    <Layout pageTitle='FAQ'>
-      <SEO title='FAQ' />
+    <Layout pageTitle='Preguntas Frecuentes'>
+      <SEO title='Preguntas Frecuentes' />
       <div className='faq'>
         <div className='faq__collapse-show-ctr'>
           {displayCollapseShow}

@@ -16,8 +16,8 @@ const Contact = (props) => {
   const [submitted, setSubmitted] = useState(false)
 
   return (
-    <Layout pageTitle='Contact'>
-      <SEO title='Contact' />
+    <Layout pageTitle='Contacto'>
+      <SEO title='Contacto' />
       <div className='contact'>
         <div className='contact__phone-ctr'>
           <p>How can we help?</p>

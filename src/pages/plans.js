@@ -10,8 +10,8 @@ import '../styles/plans.scss'
 
 const Plans = (props) => {
   return (
-    <Layout pageTitle='Plans'>
-      <SEO title='Plans' />
+    <Layout pageTitle='Planes'>
+      <SEO title='Planes' />
       <div className='plans'>
         <div className='plans__plan-outer-ctr'>
           <div className='plans__plan-ctr'>

@@ -7,8 +7,8 @@ import '../styles/services.scss'
 
 const Services = (props) => {
   return (
-    <Layout pageTitle='Services'>
-      <SEO title='Services' />
+    <Layout pageTitle='Servicios'>
+      <SEO title='Servicios' />
       <div className='services'>
       </div>
     </Layout>
