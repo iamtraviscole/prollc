@@ -30,13 +30,13 @@ const MobileNav = (props) => {
           <XIcon />
           <div className='mobileNav__modal-content'>
             <ul>
-              <li><Link to='/'>Home</Link></li>
-              <li><Link to='/plans'>Plans</Link></li>
-              <li><Link to='/services'>Services</Link></li>
-              <li><Link to='/about'>About</Link></li>
-              <li><Link to='/faq'>FAQ</Link></li>
-              <li><Link to='/resources'>Resources</Link></li>
-              <li><Link to='/contact'>Contact</Link></li>
+              <li><Link to='/'>Inicio</Link></li>
+              <li><Link to='/plans'>Planes</Link></li>
+              <li><Link to='/services'>Servicios</Link></li>
+              <li><Link to='/about'>Quiénes Somos</Link></li>
+              <li><Link to='/faq'>Preguntas Frecuentes</Link></li>
+              <li><Link to='/resources'>Recursos</Link></li>
+              <li><Link to='/contact'>Contacto</Link></li>
               <li><Link to='/blog'>Blog</Link></li>
             </ul>
           </div>
