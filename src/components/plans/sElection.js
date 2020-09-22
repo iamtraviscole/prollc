@@ -11,7 +11,7 @@ const SElection = (props) => {
   return (
     <div className='sElection'>
       <StepHeader
-        title='Would you like to make an S-Election?'
+        title='¿Deseas clasificar tu compañía como Corporación-S?'
         details={<>La Corporación S es una clasificación tributaria en la que la
         compañía opta por pasar los ingresos, pérdidas, deducciones y créditos a
         través de sus dueños, a efectos del impuesto federal.
@@ -43,7 +43,7 @@ const SElection = (props) => {
             onChange={handleChange}
            />
           <label htmlFor='sElection__input-yes'>
-            Yes
+            Sí
           </label>
         </div>
       </fieldset>

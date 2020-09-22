@@ -77,7 +77,6 @@ const Payment = (props) => {
           state: {paymentId: res.id}
         })
       } catch (error) {
-        console.error(error)
         let message = error.response && error.response.data.message
         setError(message)
         setSubmitting(false)
@@ -95,16 +94,16 @@ const Payment = (props) => {
     : <button type='button'
         onClick={handlePay}
         disabled={submitting}>
-        Pay and Complete Order
+        Pagar y Finalizar el Pedido
       </button>
 
   console.log(values)
 
   return (
     <div className='payment'>
-      <StepHeader title='Review and Pay' />
+      <StepHeader title='Resumen del Pedido y Pago' />
       <div className='payment__review-ctr'>
-        <h3>Contact Details</h3>
+        <h3>Información de Contacto</h3>
         <p>
           {values.contactDetails.firstName + ' ' +
           values.contactDetails.lastName}
@@ -113,21 +112,21 @@ const Payment = (props) => {
         <p>{values.contactDetails.phone}</p>
       </div>
       <div className='payment__price-ctr'>
-        <h3>Total Price</h3>
+        <h3>Precio Final</h3>
         <p>${calcPrice(values)}</p>
       </div>
       <div className='payment__card-ctr'>
-        <h2>Payment</h2>
+        <h2>Pago</h2>
         <div className='payment__input-ctr'>
-          <p>Card Number *</p>
+          <p>Número de tarjeta *</p>
           <CardNumberElement options={STRIPE_ELEMENT_OPTIONS}/>
         </div>
         <div className='payment__input-ctr'>
-          <p>Expiration *</p>
+          <p>Fecha de vencimiento *</p>
           <CardExpiryElement options={{...STRIPE_ELEMENT_OPTIONS, placeholder: 'MM / YY'}}/>
         </div>
         <div className='payment__input-ctr'>
-          <p>CVC *</p>
+          <p>CVC o código de seguridad *</p>
           <CardCvcElement options={{...STRIPE_ELEMENT_OPTIONS, placeholder: 'CVC'}}/>
         </div>
         <div className='payment__error'>

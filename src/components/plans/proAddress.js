@@ -10,7 +10,7 @@ const ProAddress = (props) => {
 
   return (
     <div className='proAddress'>
-      <StepHeader title='Principal Place of Business' />
+      <StepHeader title='Domicilio de la Compañía' />
       <fieldset>
         <div className='proAddress__input-ctr'>
           <input
@@ -22,7 +22,7 @@ const ProAddress = (props) => {
             onChange={handleChange}
            />
           <label htmlFor='proAddress__no'>
-            I already have an address for my company
+            Ya tengo un domicilio para la compañía
           </label>
         </div>
         <div className='proAddress__input-ctr'>
@@ -35,16 +35,16 @@ const ProAddress = (props) => {
             onChange={handleChange}
           />
           <label htmlFor='proAddress__yes'>
-            I want ProLLC to provide me with an address <span>( + $59 )</span>
+            Quiero que ProLLC me brinde una dirección profesional con correo virtual <span>(+ $59/mes)</span>
           </label>
         </div>
       </fieldset>
       {companyAddress.proAddress === 'No' &&
         <div className='proAddress__address-ctr'>
-          <h3>Your Company Address</h3>
+          <h3>Dirección de tu compañía</h3>
           <div className='proAddress__address-input-outer-ctr'>
             <div className='proAddress__address-input-ctr street'>
-              <label htmlFor='proAddress__address-input-street'>Street *</label>
+              <label htmlFor='proAddress__address-input-street'>Dirección *</label>
               <input
                 type='text'
                 id='proAddress__address-input-street'
@@ -56,7 +56,7 @@ const ProAddress = (props) => {
               </div>
             </div>
             <div className='proAddress__address-input-ctr suite'>
-              <label htmlFor='proAddress__address-input-suite'>Suite / Office / Apt</label>
+              <label htmlFor='proAddress__address-input-suite'>DPTO / Oficina / Suite</label>
               <input
                 type='text'
                 id='proAddress__address-input-suite'
@@ -68,7 +68,7 @@ const ProAddress = (props) => {
           </div>
           <div className='proAddress__address-input-outer-ctr'>
             <div className='proAddress__address-input-ctr'>
-              <label htmlFor='proAddress__address-input-city'>City *</label>
+              <label htmlFor='proAddress__address-input-city'>Ciudad *</label>
               <input
                 type='text'
                 id='proAddress__address-input-city'
@@ -78,7 +78,7 @@ const ProAddress = (props) => {
               />
             </div>
             <div className='proAddress__address-input-ctr'>
-              <label htmlFor='proAddress__address-input-state'>State *</label>
+              <label htmlFor='proAddress__address-input-state'>Estado *</label>
               <input
                 type='text'
                 id='proAddress__address-input-state'
@@ -90,7 +90,7 @@ const ProAddress = (props) => {
           </div>
           <div className='proAddress__address-input-outer-ctr'>
             <div className='proAddress__address-input-ctr zipcode'>
-              <label htmlFor='proAddress__address-input-zipcode'>Zipcode *</label>
+              <label htmlFor='proAddress__address-input-zipcode'>Código Postal *</label>
               <input
                 type='text'
                 id='proAddress__address-input-zipcode'
@@ -100,7 +100,7 @@ const ProAddress = (props) => {
               />
             </div>
             <div className='proAddress__address-input-ctr country'>
-              <label htmlFor='proAddress__address-input-country'>Country *</label>
+              <label htmlFor='proAddress__address-input-country'>País *</label>
               <input
                 type='text'
                 id='proAddress__address-input-country'

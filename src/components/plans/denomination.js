@@ -11,8 +11,8 @@ const Denomination = (props) => {
   return (
     <div className='denomination'>
       <StepHeader
-        title='Denomination'
-        details='How you identify the company as an LLC'
+        title='Denominación'
+        details='La denominación es la clasificación de tu compañía como LLC'
       />
       <div className='denomination__name-example'>
         {`${companyNames.name1} ${denomination}`}

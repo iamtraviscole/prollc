@@ -11,11 +11,11 @@ const CompanyNames = (props) => {
   return (
     <div className='companyNames'>
       <StepHeader
-        title='Company Names'
-        details='Subject to availability, order by preference'
+        title='Nombre de la Compañía'
+        details='Sujeto a disponibilidad, indicar por orden de preferencia'
       />
       <div className='companyNames__input-ctr'>
-        <label htmlFor='companyNames__input-name1'>Company Name 1 *</label>
+        <label htmlFor='companyNames__input-name1'>Nombre de la Compañía - Opción 1 *</label>
         <input
           type='text'
           id='companyNames__input-name1'
@@ -25,7 +25,7 @@ const CompanyNames = (props) => {
         />
       </div>
       <div className='companyNames__input-ctr'>
-        <label htmlFor='companyNames__input-name2'>Company Name 2 *</label>
+        <label htmlFor='companyNames__input-name2'>Nombre de la Compañía - Opción 2 *</label>
         <input
           type='text'
           id='companyNames__input-name2'
@@ -35,7 +35,7 @@ const CompanyNames = (props) => {
         />
       </div>
       <div className='companyNames__input-ctr'>
-        <label htmlFor='companyNames__input-name3'>Company Name 3 *</label>
+        <label htmlFor='companyNames__input-name3'>Nombre de la Compañía - Opción 3 *</label>
         <input
           type='text'
           id='companyNames__input-name3'

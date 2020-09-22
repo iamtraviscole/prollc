@@ -11,8 +11,8 @@ const EmployeeCount = (props) => {
   return (
     <div className='employeeCount'>
       <StepHeader
-        title='Employees'
-        details='Maximum number of employees expected in the next 12 months (enter 0 if none)'
+        title='Empleados'
+        details='Número máximo de empleados que espera tener en los próximos 12 meses (indique -0- si no espera tenerlos)'
       />
       <div className='employeeCount__input-ctr'>
         <input type='number'

@@ -12,7 +12,7 @@ const ProRegisteredAgent = (props) => {
     ? (
         <>
           <div className='proRegisteredAgent__details-input-ctr  name'>
-            <label htmlFor='proRegisteredAgent__details-input-first'>First Name *</label>
+            <label htmlFor='proRegisteredAgent__details-input-first'>Primer Nombre *</label>
             <input
               type='text'
               id='proRegisteredAgent__details-input-first'
@@ -22,7 +22,7 @@ const ProRegisteredAgent = (props) => {
             />
           </div>
           <div className='proRegisteredAgent__details-input-ctr name'>
-            <label htmlFor='proRegisteredAgent__details-input-middle'>Second Name</label>
+            <label htmlFor='proRegisteredAgent__details-input-middle'>Segundo Nombre</label>
             <input
               type='text'
               id='proRegisteredAgent__details-input-middle'
@@ -32,7 +32,7 @@ const ProRegisteredAgent = (props) => {
             />
           </div>
           <div className='proRegisteredAgent__details-input-ctr name'>
-            <label htmlFor='proRegisteredAgent__details-input-last'>Last Name *</label>
+            <label htmlFor='proRegisteredAgent__details-input-last'>Apellidos *</label>
             <input
               type='text'
               id='proRegisteredAgent__details-input-last'
@@ -46,7 +46,9 @@ const ProRegisteredAgent = (props) => {
     : (
         <div className='proRegisteredAgent__details-input-outer-ctr'>
           <div className='proRegisteredAgent__details-input-ctr  company'>
-            <label htmlFor='proRegisteredAgent__details-input-company-name'>Company Name *</label>
+            <label htmlFor='proRegisteredAgent__details-input-company-name'>
+              Nombre de la compañía *
+            </label>
             <input
               type='text'
               id='proRegisteredAgent__details-input-company-name'
@@ -60,7 +62,10 @@ const ProRegisteredAgent = (props) => {
 
   return (
     <div className='proRegisteredAgent'>
-      <StepHeader title='Registered Agent' />
+      <StepHeader
+        title='Agente Registrado'
+        details='El agente registrado es la persona encargada de recibir la correspondencia oficial del estado y judicial de los tribunales – nombramiento obligatorio.'
+      />
       <fieldset>
         <div className='proRegisteredAgent__input-ctr'>
           <input
@@ -72,7 +77,7 @@ const ProRegisteredAgent = (props) => {
             onChange={handleChange}
           />
           <label htmlFor='proRegisteredAgent__input-no'>
-            I have a Registered Agent already
+            Ya tengo un Agente Registrado
           </label>
         </div>
         <div className='proRegisteredAgent__input-ctr'>
@@ -85,13 +90,13 @@ const ProRegisteredAgent = (props) => {
             onChange={handleChange}
            />
           <label htmlFor='proRegisteredAgent__input-yes'>
-            I want ProLLC to be my Registered Agent ( FREE for 1 year )
+            Quiero que ProLLC sea mi agente registrado (Gratis por un año)
           </label>
         </div>
       </fieldset>
       {registeredAgent.proRegisteredAgent === 'No' &&
         <div className='proRegisteredAgent__details-ctr'>
-          <h3>Your Registered Agent details</h3>
+          <h3>Información del Agente Registrado</h3>
           <div className='proRegisteredAgent__details-corporate-ctr'>
             <input
               type='checkbox'
@@ -101,14 +106,16 @@ const ProRegisteredAgent = (props) => {
               checked={registeredAgent.corporateRegisteredAgent}
               value={registeredAgent.corporateRegisteredAgent}
             />
-            <label htmlFor='proRegisteredAgent__details-input-corporate'>My Registered Agent is a company</label>
+            <label htmlFor='proRegisteredAgent__details-input-corporate'>
+              Mi Agente Registrado es una compañía
+            </label>
           </div>
           <div className='proRegisteredAgent__details-input-outer-ctr'>
             {personOrCompanyName}
           </div>
           <div className='proRegisteredAgent__details-input-outer-ctr'>
             <div className='proRegisteredAgent__details-input-ctr street'>
-              <label htmlFor='proRegisteredAgent__details-input-street'>Street *</label>
+              <label htmlFor='proRegisteredAgent__details-input-street'>Dirección *</label>
               <input
                 type='text'
                 id='proRegisteredAgent__details-input-street'
@@ -118,7 +125,7 @@ const ProRegisteredAgent = (props) => {
               />
             </div>
             <div className='proRegisteredAgent__details-input-ctr suite'>
-              <label htmlFor='proRegisteredAgent__details-input-suite'>Suite / Office / Apt</label>
+              <label htmlFor='proRegisteredAgent__details-input-suite'>DPTO / Oficina / Suite</label>
               <input
                 type='text'
                 id='proRegisteredAgent__details-input-suite'
@@ -130,7 +137,7 @@ const ProRegisteredAgent = (props) => {
           </div>
           <div className='proRegisteredAgent__details-input-outer-ctr'>
             <div className='proRegisteredAgent__details-input-ctr'>
-              <label htmlFor='proRegisteredAgent__details-input-city'>City *</label>
+              <label htmlFor='proRegisteredAgent__details-input-city'>Ciudad *</label>
               <input
                 type='text'
                 id='proRegisteredAgent__details-input-city'
@@ -140,7 +147,7 @@ const ProRegisteredAgent = (props) => {
               />
             </div>
             <div className='proRegisteredAgent__details-input-ctr'>
-              <label htmlFor='proRegisteredAgent__details-input-state'>State *</label>
+              <label htmlFor='proRegisteredAgent__details-input-state'>Estado *</label>
               <input
                 type='text'
                 id='proRegisteredAgent__details-input-state'
@@ -152,7 +159,7 @@ const ProRegisteredAgent = (props) => {
           </div>
           <div className='proRegisteredAgent__details-input-outer-ctr'>
             <div className='proRegisteredAgent__details-input-ctr zipcode'>
-              <label htmlFor='proRegisteredAgent__details-input-zipcode'>Zipcode *</label>
+              <label htmlFor='proRegisteredAgent__details-input-zipcode'>Código Postal *</label>
               <input
                 type='text'
                 id='proRegisteredAgent__details-input-zipcode'
@@ -162,7 +169,7 @@ const ProRegisteredAgent = (props) => {
               />
             </div>
             <div className='proRegisteredAgent__details-input-ctr country'>
-              <label htmlFor='proRegisteredAgent__details-input-country'>Country *</label>
+              <label htmlFor='proRegisteredAgent__details-input-country'>País *</label>
               <input
                 type='text'
                 id='proRegisteredAgent__details-input-country'

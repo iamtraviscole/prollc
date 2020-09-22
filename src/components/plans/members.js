@@ -13,7 +13,7 @@ const Members = (props) => {
     const personName = (
       <>
         <div className='members__details-input-ctr  name'>
-          <label htmlFor='members__details-input-first'>First Name *</label>
+          <label htmlFor='members__details-input-first'>Primer Nombre *</label>
           <input
             type='text'
             id='members__details-input-first'
@@ -23,7 +23,7 @@ const Members = (props) => {
           />
         </div>
         <div className='members__details-input-ctr name'>
-          <label htmlFor='members__details-input-middle'>Second Name</label>
+          <label htmlFor='members__details-input-middle'>Segundo Nombre</label>
           <input
             type='text'
             id='members__details-input-middle'
@@ -33,7 +33,7 @@ const Members = (props) => {
           />
         </div>
         <div className='members__details-input-ctr name'>
-          <label htmlFor='members__details-input-last'>Last Name *</label>
+          <label htmlFor='members__details-input-last'>Apellidos *</label>
           <input
             type='text'
             id='members__details-input-last'
@@ -48,7 +48,7 @@ const Members = (props) => {
     const companyName = (
       <div className='members__details-input-outer-ctr'>
         <div className='members__details-input-ctr  company'>
-          <label htmlFor='members__details-input-company-name'>Company Name *</label>
+          <label htmlFor='members__details-input-company-name'>Nombre de la compañía *</label>
           <input
             type='text'
             id='members__details-input-company-name'
@@ -62,7 +62,7 @@ const Members = (props) => {
 
     memberDetailsBlocks.push(
       <div key={i} className='members__details-block'>
-        <h3>Member {i+1} details</h3>
+        <h3>Datos – Miembro {i+1}</h3>
         <div className='members__details-corporate-ctr'>
           <input
             type='checkbox'
@@ -72,7 +72,7 @@ const Members = (props) => {
             checked={members.memberDetails[i].corporateMember}
             value={members.memberDetails[i].corporateMember}
           />
-          <label htmlFor='members__details-input-corporate'> This member is a parent company</label>
+          <label htmlFor='members__details-input-corporate'>Este miembro es una persona jurídica</label>
         </div>
         <div className='members__details-input-outer-ctr'>
           {members.memberDetails[i].corporateMember
@@ -81,7 +81,7 @@ const Members = (props) => {
         </div>
         <div className='members__details-input-outer-ctr'>
           <div className='members__details-input-ctr street'>
-            <label htmlFor='members__details-input-street'>Street *</label>
+            <label htmlFor='members__details-input-street'>Dirección *</label>
             <input
               type='text'
               id='members__details-input-street'
@@ -91,7 +91,7 @@ const Members = (props) => {
             />
           </div>
           <div className='members__details-input-ctr suite'>
-            <label htmlFor='members__details-input-suite'>Suite / Office / Apt</label>
+            <label htmlFor='members__details-input-suite'>DPTO / Oficina / Suite</label>
             <input
               type='text'
               id='members__details-input-suite'
@@ -103,7 +103,7 @@ const Members = (props) => {
         </div>
         <div className='members__details-input-outer-ctr'>
           <div className='members__details-input-ctr'>
-            <label htmlFor='members__details-input-city'>City *</label>
+            <label htmlFor='members__details-input-city'>Ciudad *</label>
             <input
               type='text'
               id='members__details-input-city'
@@ -113,7 +113,7 @@ const Members = (props) => {
             />
           </div>
           <div className='members__details-input-ctr'>
-            <label htmlFor='members__details-input-state'>State *</label>
+            <label htmlFor='members__details-input-state'>Estado *</label>
             <input
               type='text'
               id='members__details-input-state'
@@ -125,7 +125,7 @@ const Members = (props) => {
         </div>
         <div className='members__details-input-outer-ctr'>
           <div className='members__details-input-ctr zipcode'>
-            <label htmlFor='members__details-input-zipcode'>Zipcode *</label>
+            <label htmlFor='members__details-input-zipcode'>Código Postal *</label>
             <input
               type='text'
               id='members__details-input-zipcode'
@@ -135,7 +135,7 @@ const Members = (props) => {
             />
           </div>
           <div className='members__details-input-ctr country'>
-            <label htmlFor='members__details-input-country'>Country *</label>
+            <label htmlFor='members__details-input-country'>País *</label>
             <input
               type='text'
               id='members__details-input-country'
@@ -152,12 +152,12 @@ const Members = (props) => {
   return (
     <div className='members'>
       <StepHeader
-        title='Members'
-        details='Members are owners of the company (can be individuals or parent companies)'
+        title='Miembros'
+        details='Los miembros son los dueños de la compañía'
       />
       <div className='members__count-ctr'>
         <div className='members__count-header-ctr'>
-          <h3>Number of members</h3>
+          <h3>¿Cuántos Miembros?</h3>
         </div>
         <select
           name='members.memberCount'

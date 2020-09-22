@@ -270,28 +270,28 @@ const CompletePlan = (props) => {
 
   const displayButtons = currentStep.component === Payment
     ? <>
-      <button type='button' onClick={handlePreviousClick}>Previous</button>
+      <button type='button' onClick={handlePreviousClick}>Anterior</button>
       </>
     : previousSteps.length > 0
       ? <>
-        <button type='button' onClick={handlePreviousClick}>Previous</button>
-        <button type='button' onClick={handleNextClick}>Next</button>
+        <button type='button' onClick={handlePreviousClick}>Anterior</button>
+        <button type='button' onClick={handleNextClick}>Siguiente</button>
         </>
-      : <button type='button' onClick={handleNextClick}>Next</button>
+      : <button type='button' onClick={handleNextClick}>Siguiente</button>
 
   console.log(formik.values)
 
   return (
-    <Layout pageTitle='Complete Plan'>
-      <SEO title='Complete Plan' />
+    <Layout pageTitle='Completo LLC'>
+      <SEO title='Completo LLC' />
       <div className='complete'>
         <div className='complete__top-ctr'>
           <div className='complete__progress-ctr'>
-            <p><span>Progress:</span>{Math.round((progress / 13) * 100)} %</p>
+            <p><span>Progreso:</span>{Math.round((progress / 13) * 100)} %</p>
           </div>
           <div className='complete__price-ctr'>
             <p>
-              <span>Price:</span>
+              <span>Precio:</span>
               ${calcPrice(formik.values)}
             </p>
           </div>

@@ -10,9 +10,12 @@ const ContactDetails = (props) => {
 
   return (
     <div className='contactDetails'>
-      <StepHeader title='Contact Details' />
+      <StepHeader
+        title='Representante'
+        details='A quién contactar acerca de esta constitución'
+      />
       <div className='contactDetails__input-ctr'>
-        <label htmlFor='contactDetails__input-first'>First Name *</label>
+        <label htmlFor='contactDetails__input-first'>Primer Nombre *</label>
         <input
           type='text'
           id='contactDetails__input-first'
@@ -22,7 +25,7 @@ const ContactDetails = (props) => {
         />
       </div>
       <div className='contactDetails__input-ctr'>
-        <label htmlFor='contactDetails__input-middle'>Second Name</label>
+        <label htmlFor='contactDetails__input-middle'>Segundo Nombre</label>
         <input
           type='text'
           id='contactDetails__input-middle'
@@ -32,7 +35,7 @@ const ContactDetails = (props) => {
         />
       </div>
       <div className='contactDetails__input-ctr'>
-        <label htmlFor='contactDetails__input-last'>Last Name *</label>
+        <label htmlFor='contactDetails__input-last'>Apellidos *</label>
         <input
           type='text'
           id='contactDetails__input-last'
@@ -42,7 +45,7 @@ const ContactDetails = (props) => {
         />
       </div>
       <div className='contactDetails__input-ctr'>
-        <label htmlFor='contactDetails__input-email'>Email *</label>
+        <label htmlFor='contactDetails__input-email'>Correo electrónico *</label>
         <input
           type='text'
           id='contactDetails__input-email'
@@ -52,7 +55,7 @@ const ContactDetails = (props) => {
         />
       </div>
       <div className='contactDetails__input-ctr'>
-        <label htmlFor='contactDetails__input-phone'>Phone *</label>
+        <label htmlFor='contactDetails__input-phone'>Teléfono *</label>
         <input
           type='text'
           id='contactDetails__input-phone'

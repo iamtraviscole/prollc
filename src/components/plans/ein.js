@@ -10,12 +10,15 @@ const CompanyNames = (props) => {
 
   return (
     <div className='ein'>
-      <StepHeader title='EIN' />
+      <StepHeader
+        title='Número de Identificación Tributaria'
+        details='EIN, por sus siglas en inglés'
+      />
       <div className='ein__details-input-outer-ctr'>
-        <h3>Responsible Party</h3>
-        <p>The individual who exercises ultimate effective control over the company</p>
+        <h3>Parte Responsable</h3>
+        <p>La parte responsable es la persona que en última instancia posee o controla la entidad o que ejerce el control efectivo final sobre la entidad.</p>
         <div className='ein__details-input-ctr name'>
-          <label htmlFor='ein__details-input-first'>First Name *</label>
+          <label htmlFor='ein__details-input-first'>Primer Nombre *</label>
           <input
             type='text'
             id='ein__details-input-first'
@@ -25,7 +28,7 @@ const CompanyNames = (props) => {
           />
         </div>
         <div className='ein__details-input-ctr name'>
-          <label htmlFor='ein__details-input-middle'>Second Name</label>
+          <label htmlFor='ein__details-input-middle'>Segundo Nombre</label>
           <input
             type='text'
             id='ein__details-input-middle'
@@ -35,7 +38,7 @@ const CompanyNames = (props) => {
           />
         </div>
         <div className='ein__details-input-ctr name'>
-          <label htmlFor='ein__details-input-last'>Last Name *</label>
+          <label htmlFor='ein__details-input-last'>Apellidos *</label>
           <input
             type='text'
             id='ein__details-input-last'
@@ -46,9 +49,9 @@ const CompanyNames = (props) => {
         </div>
       </div>
       <div className='ein__details-input-outer-ctr'>
-        <p className='ein__id-number'>If available, please enter one of the following identification numbers for the responsible party. You may leave both blank.</p>
+        <p className='ein__id-number'>Si te aplica, favor de brindar a continuación el número de seguro social o ITIN de la parte responsable.  Si no tienes dichos números, puede dejar ambas casillas en blanco.</p>
         <div className='ein__details-input-ctr id-num'>
-          <label htmlFor='ein__details-input-ssn'>SSN</label>
+          <label htmlFor='ein__details-input-ssn'>Número de Seguro Social</label>
           <input
             type='text'
             id='ein__details-input-ssn'
@@ -59,7 +62,7 @@ const CompanyNames = (props) => {
           />
         </div>
         <div className='ein__details-input-ctr id-num'>
-          <label htmlFor='ein__details-input-itin'>ITIN</label>
+          <label htmlFor='ein__details-input-itin'>Número ITIN</label>
           <input
             type='text'
             id='ein__details-input-itin'

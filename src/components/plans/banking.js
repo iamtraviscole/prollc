@@ -30,8 +30,8 @@ const Managers = (props) => {
 
   return (
     <div className='banking'>
-      <StepHeader title='Banking' />
-        <h3>Are you physically present in the US?</h3>
+      <StepHeader title='Banco' />
+        <h3>¿Esta usted físicamente en los EE.UU?</h3>
         <div className='banking__present-ctr'>
           <fieldset>
             <div className='banking__present-input-ctr'>
@@ -43,7 +43,7 @@ const Managers = (props) => {
                 checked={banking.presentInUS === 'Yes'}
                 onChange={handleChange}
                />
-              <label htmlFor='banking__present-input-yes'>Yes</label>
+              <label htmlFor='banking__present-input-yes'>Sí</label>
             </div>
             <div className='banking__present-input-ctr'>
               <input
@@ -71,6 +71,7 @@ const Managers = (props) => {
               <option>Bank of America</option>
               <option>Wells Fargo</option>
               <option>First Bank</option>
+              <option>Chase</option>
               <option>Other</option>
             </select>
             {displayOther}
@@ -105,7 +106,7 @@ const Managers = (props) => {
                   onChange={handleChange}
                  />
                 <label htmlFor='banking__other-options-input-virtual-bank'>
-                  Virtual Bank (+ $699 and requires $25,000 minimum deposit)
+                  Apertura en Banco Online (no aplica a venezolanos)
                 </label>
                 {/* TODO: details about virtual bank */}
               </div>
@@ -119,7 +120,7 @@ const Managers = (props) => {
                   onChange={handleChange}
                  />
                 <label htmlFor='banking__other-options-input-bank-service'>
-                  Bank Account Service (+ $1,100)
+                  Apertura en Banco Físico (+ $1,100.00)
                 </label>
                 {/* TODO: details about bank service */}
               </div>

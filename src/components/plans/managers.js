@@ -12,10 +12,10 @@ const Managers = (props) => {
   for (let i = 0; i < managers.managerCount && i < 4; i++ ) {
     managerDetailsBlocks.push(
       <div key={i} className='managers__details-block'>
-        <h3>Additional manager {i+1} details</h3>
+        <h3>Información del gerente {i+1}</h3>
         <div className='managers__details-input-outer-ctr'>
           <div className='managers__details-input-ctr  name'>
-            <label htmlFor='managers__details-input-first'>First Name *</label>
+            <label htmlFor='managers__details-input-first'>Primer Nombre *</label>
             <input
               type='text'
               id='managers__details-input-first'
@@ -25,7 +25,7 @@ const Managers = (props) => {
             />
           </div>
           <div className='managers__details-input-ctr name'>
-            <label htmlFor='managers__details-input-middle'>Second Name</label>
+            <label htmlFor='managers__details-input-middle'>Segundo Nombre</label>
             <input
               type='text'
               id='managers__details-input-middle'
@@ -35,7 +35,7 @@ const Managers = (props) => {
             />
           </div>
           <div className='managers__details-input-ctr name'>
-            <label htmlFor='managers__details-input-last'>Last Name *</label>
+            <label htmlFor='managers__details-input-last'>Apellidos *</label>
             <input
               type='text'
               id='managers__details-input-last'
@@ -47,7 +47,7 @@ const Managers = (props) => {
         </div>
         <div className='managers__details-input-outer-ctr'>
           <div className='managers__details-input-ctr street'>
-            <label htmlFor='managers__details-input-street'>Street *</label>
+            <label htmlFor='managers__details-input-street'>Dirección *</label>
             <input
               type='text'
               id='managers__details-input-street'
@@ -57,7 +57,7 @@ const Managers = (props) => {
             />
           </div>
           <div className='managers__details-input-ctr suite'>
-            <label htmlFor='managers__details-input-suite'>Suite / Office / Apt</label>
+            <label htmlFor='managers__details-input-suite'>DPTO / Oficina / Suite</label>
             <input
               type='text'
               id='managers__details-input-suite'
@@ -69,7 +69,7 @@ const Managers = (props) => {
         </div>
         <div className='managers__details-input-outer-ctr'>
           <div className='managers__details-input-ctr'>
-            <label htmlFor='managers__details-input-city'>City *</label>
+            <label htmlFor='managers__details-input-city'>Ciudad *</label>
             <input
               type='text'
               id='managers__details-input-city'
@@ -79,7 +79,7 @@ const Managers = (props) => {
             />
           </div>
           <div className='managers__details-input-ctr'>
-            <label htmlFor='managers__details-input-state'>State *</label>
+            <label htmlFor='managers__details-input-state'>Estado *</label>
             <input
               type='text'
               id='managers__details-input-state'
@@ -91,7 +91,7 @@ const Managers = (props) => {
         </div>
         <div className='managers__details-input-outer-ctr'>
           <div className='managers__details-input-ctr zipcode'>
-            <label htmlFor='managers__details-input-zipcode'>Zipcode *</label>
+            <label htmlFor='managers__details-input-zipcode'>Código Postal *</label>
             <input
               type='text'
               id='managers__details-input-zipcode'
@@ -101,7 +101,7 @@ const Managers = (props) => {
             />
           </div>
           <div className='managers__details-input-ctr country'>
-            <label htmlFor='managers__details-input-country'>Country *</label>
+            <label htmlFor='managers__details-input-country'>País *</label>
             <input
               type='text'
               id='managers__details-input-country'
@@ -140,18 +140,18 @@ const Managers = (props) => {
   return (
     <div className='managers'>
       <StepHeader
-        title='Managers'
-        details='Those in control of the company'
+        title='Gerentes'
+        details='Los gerentes son los que administran la compañía'
       />
       <div className='managers__member-ctr'>
-        <h3>Are any of these members also managers?</h3>
+        <h3>¿Algunos de estos miembros son gerentes?</h3>
         {displayMembers}
 
       </div>
       <div className='managers__count-ctr'>
         <div className='managers__count-header-ctr'>
-          <h3>If you have additional managers, please fill out their details below</h3>
-          <h4>Number of additional managers</h4>
+          <h3>Si tienes gerentes adicionales, favor de escribir su información a continuación</h3>
+          <h4>Número de gerentes adicionales</h4>
         </div>
         <select
           name='managers.managerCount'

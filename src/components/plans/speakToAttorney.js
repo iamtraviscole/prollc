@@ -10,7 +10,7 @@ const SpeakToAttorney = (props) => {
 
   return (
     <div className='speakToAttorney'>
-      <StepHeader title='Would you like to speak with an attorney?' />
+      <StepHeader title='¿Desea consultar con un abogado?' />
       <fieldset>
         <div className='speakToAttorney__input-ctr'>
           <input
@@ -22,7 +22,7 @@ const SpeakToAttorney = (props) => {
             onChange={handleChange}
            />
           <label htmlFor='speakToAttorney__input-yes'>
-            Yes ( included )
+            Sí (incluido)
           </label>
         </div>
         <div className='speakToAttorney__input-ctr'>
