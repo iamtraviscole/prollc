@@ -46,6 +46,19 @@ const SElection = (props) => {
             Sí
           </label>
         </div>
+        <div className='sElection__input-ctr'>
+          <input
+            type='radio'
+            name='sElection'
+            id='sElection__input-not-applicable'
+            value='No Aplica'
+            checked={sElection === 'No Aplica'}
+            onChange={handleChange}
+           />
+          <label htmlFor='sElection__input-not-applicable'>
+            No Aplica
+          </label>
+        </div>
       </fieldset>
     </div>
   )
