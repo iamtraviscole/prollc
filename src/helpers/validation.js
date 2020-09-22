@@ -120,7 +120,9 @@ export const proRegisteredAgent = (
 export const ein = (
   yup.object().shape({
     firstName: yup.string().required('first name required'),
-    lastName: yup.string().required('last name required')
+    lastName: yup.string().required('last name required'),
+    ssn: yup.string().max(9, 'SSN must be less than 9 characters'),
+    itin: yup.string().max(9, 'ITIN must be less than 9 characters')
   })
 )
 
