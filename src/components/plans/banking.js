@@ -80,22 +80,8 @@ const Managers = (props) => {
         }
         {banking.presentInUS === 'No' &&
           <>
-          <h3>Other options</h3>
           <div className='banking__other-options-ctr'>
             <fieldset>
-              <div className='banking__other-options-input-ctr'>
-                <input
-                  type='radio'
-                  name='banking.otherOptions'
-                  id='banking__other-options-input-none'
-                  value='None'
-                  checked={banking.otherOptions === 'None'}
-                  onChange={handleChange}
-                 />
-                <label htmlFor='banking__other-options-input-none'>
-                  None
-                </label>
-              </div>
               <div className='banking__other-options-input-ctr'>
                 <input
                   type='radio'
@@ -115,8 +101,8 @@ const Managers = (props) => {
                   type='radio'
                   name='banking.otherOptions'
                   id='banking__other-options-input-bank-service'
-                  value='Bank Account Service'
-                  checked={banking.otherOptions === 'Bank Account Service'}
+                  value='Physical Bank'
+                  checked={banking.otherOptions === 'Physical Bank'}
                   onChange={handleChange}
                  />
                 <label htmlFor='banking__other-options-input-bank-service'>
