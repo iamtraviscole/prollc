@@ -17,7 +17,7 @@ const Plans = (props) => {
           <div className='plans__plan-ctr'>
             <div className='plans__plan-price'>
               <span>starting at</span>
-              $74
+              $199
             </div>
             <div className='plans__plan-header'>
               <h2>Básico LLC</h2>
@@ -83,7 +83,7 @@ const Plans = (props) => {
           <div className='plans__plan-ctr'>
             <div className='plans__plan-price'>
               <span>starting at</span>
-              $164
+              $289
             </div>
             <div className='plans__plan-header'>
               <h2>Completo LLC</h2>
@@ -149,7 +149,7 @@ const Plans = (props) => {
           <div className='plans__plan-ctr'>
             <div className='plans__plan-price'>
               <span>starting at</span>
-              $374
+              $499
             </div>
             <div className='plans__plan-header'>
               <h2>Pro LLC</h2>

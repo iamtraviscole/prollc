@@ -1,9 +1,9 @@
 const calcPrice = (values) => {
   let basePrice
 
-  if (values.plan === 'Basic') basePrice = 74
-  if (values.plan === 'Complete') basePrice = 164
-  if (values.plan === 'Pro') basePrice = 374
+  if (values.plan === 'Basic') basePrice = 199
+  if (values.plan === 'Complete') basePrice = 289
+  if (values.plan === 'Pro') basePrice = 499
 
   let addons = {
     fileState: 0,
@@ -22,9 +22,7 @@ const calcPrice = (values) => {
   else addons.expedited = 0
 
   if (values.banking) {
-    if (values.banking.otherOptions === 'Virtual Bank') {
-      addons.banking = 699
-    } else if (values.banking.otherOptions === 'Bank Account Service') {
+    if (values.banking.otherOptions === 'Physical Bank') {
       addons.banking = 1100
     } else {
       addons.banking = 0

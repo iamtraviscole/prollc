@@ -1,8 +1,8 @@
 const calcPrice = (values) => {
   let price
-  if (values.plan === 'Basic') price = 74
-  if (values.plan === 'Complete') price = 164
-  if (values.plan === 'Pro') price = 374
+  if (values.plan === 'Basic') price = 199
+  if (values.plan === 'Complete') price = 289
+  if (values.plan === 'Pro') price = 499
 
   let prices = {
     fileState: {
@@ -11,7 +11,6 @@ const calcPrice = (values) => {
     proAddress: 59,
     expedited: 39,
     banking: {
-      virtualBank: 699,
       bankAccountService: 1100
     }
   }
@@ -23,9 +22,7 @@ const calcPrice = (values) => {
   if (values.expedited === 'Yes') price += prices.expedited
 
   if (values.banking) {
-    if (values.banking.otherOptions === 'Virtual Bank') {
-      price += prices.banking.virtualBank
-    } else if (values.banking.otherOptions === 'Bank Account Service') {
+    if (values.banking.otherOptions === 'Physical Bank') {
       price += prices.banking.bankAccountService
     }
   }
