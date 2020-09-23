@@ -30,7 +30,7 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Agente Registrado por un año
+              </span> Servicios de agente registrado gratis por un año
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
@@ -50,7 +50,7 @@ const Plans = (props) => {
             <div className='plans__plan-feature not-included'>
               <span className='plans__x-icon'>
                 <XIcon />
-              </span> Elección de la clasificación tributaria de S-Corp
+              </span> Elección de la clasificación tributaria de S-Corp, si aplica
             </div>
             <div className='plans__plan-feature not-included'>
               <span className='plans__x-icon'>
@@ -60,7 +60,7 @@ const Plans = (props) => {
             <div className='plans__plan-feature not-included'>
               <span className='plans__x-icon'>
                 <XIcon />
-              </span> Apertura de Cuenta Bancaria (presencia física necesaria)
+              </span> Apertura de Cuenta Bancaria (exclusiones aplican)
             </div>
             <div className='plans__plan-feature not-included'>
               <span className='plans__x-icon'>
@@ -96,7 +96,7 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Agente Registrado por un año
+              </span> Servicios de agente registrado gratis por un año
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
@@ -116,7 +116,7 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Elección de la clasificación tributaria de S-Corp
+              </span> Elección de la clasificación tributaria de S-Corp, si aplica
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
@@ -126,7 +126,7 @@ const Plans = (props) => {
             <div className='plans__plan-feature not-included'>
               <span className='plans__x-icon'>
                 <XIcon />
-              </span> Apertura de Cuenta Bancaria (presencia física necesaria)
+              </span> Apertura de Cuenta Bancaria (exclusiones aplican)
             </div>
             <div className='plans__plan-feature not-included'>
               <span className='plans__x-icon'>
@@ -162,7 +162,7 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Agente Registrado por un año
+              </span> Servicios de agente registrado gratis por un año
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
@@ -182,7 +182,7 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Elección de la clasificación tributaria de S-Corp
+              </span> Elección de la clasificación tributaria de S-Corp, si aplica
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
@@ -192,7 +192,7 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Apertura de Cuenta Bancaria (presencia física necesaria)
+              </span> Apertura de Cuenta Bancaria (exclusiones aplican)
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
