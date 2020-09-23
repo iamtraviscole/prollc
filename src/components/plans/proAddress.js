@@ -38,6 +38,17 @@ const ProAddress = (props) => {
             Quiero que ProLLC me brinde una dirección profesional con correo virtual <span>(+ $59/mes)</span>
           </label>
         </div>
+        <div className='proAddress__virtual-details'>
+          <h4>Dirección Profesional con Correo Virtual</h4>
+          <ul>
+            <li>Dirección Física</li>
+            <li>Correo Virtual</li>
+            <li>Imagen Profesional</li>
+            <li>Privado</li>
+            <li>Correo escaneado y enviado a tu correo electrónico</li>
+            <li>Sin contrato</li>
+          </ul>
+        </div>
       </fieldset>
       {companyAddress.proAddress === 'No' &&
         <div className='proAddress__address-ctr'>
