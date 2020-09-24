@@ -16,7 +16,7 @@ const Plans = (props) => {
         <div className='plans__plan-outer-ctr'>
           <div className='plans__plan-ctr'>
             <div className='plans__plan-price'>
-              <span>starting at</span>
+              <span>a partir de</span>
               $199
             </div>
             <div className='plans__plan-header'>
@@ -25,7 +25,7 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Escritura de Constitución
+              </span> Escritura de constitución
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
@@ -35,17 +35,17 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Soporte Correo Electrónico
+              </span> Soporte correo electrónico
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Servicio Rápido (documentos procesados en 15 días)
+              </span> Servicio rápido (documentos procesados en 15 días)
             </div>
             <div className='plans__plan-feature not-included'>
               <span className='plans__x-icon'>
                 <XIcon />
-              </span> Obtención del Número de Identificación Tributaria
+              </span> Obtención del número de identificación tributaria
             </div>
             <div className='plans__plan-feature not-included'>
               <span className='plans__x-icon'>
@@ -55,34 +55,34 @@ const Plans = (props) => {
             <div className='plans__plan-feature not-included'>
               <span className='plans__x-icon'>
                 <XIcon />
-              </span> Certificados de Membresía
+              </span> Certificados de membresía
             </div>
             <div className='plans__plan-feature not-included'>
               <span className='plans__x-icon'>
                 <XIcon />
-              </span> Apertura de Cuenta Bancaria (exclusiones aplican)
+              </span> Apertura de cuenta bancaria (exclusiones aplican)
             </div>
             <div className='plans__plan-feature not-included'>
               <span className='plans__x-icon'>
                 <XIcon />
-              </span> Acuerdo Operativo
+              </span> Acuerdo operativo
             </div>
             <div className='plans__plan-feature not-included'>
               <span className='plans__x-icon'>
                 <XIcon />
-              </span> Consulta Con Abogado – 30 minutos
+              </span> Consulta con abogado – 30 minutos
             </div>
             <div className='plans__plan-feature not-included'>
               <span className='plans__x-icon'>
-                <XIcon /></span> Resolución Bancaria
+                <XIcon /></span> Resolución bancaria
             </div>
-            <Link className='plans__select-btn' to='/plans/basic'>Select</Link>
+            <Link className='plans__select-btn' to='/plans/basic'>Seleccionar</Link>
           </div>
         </div>
         <div className='plans__plan-outer-ctr'>
           <div className='plans__plan-ctr'>
             <div className='plans__plan-price'>
-              <span>starting at</span>
+              <span>a partir de</span>
               $289
             </div>
             <div className='plans__plan-header'>
@@ -91,7 +91,7 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Escritura de Constitución
+              </span> Escritura de constitución
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
@@ -101,17 +101,17 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Soporte Telefónico y Correo Electrónico
+              </span> Soporte telefónico y correo electrónico
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Servicio Rápido (documentos procesados en 7 días)
+              </span> Servicio rápido (documentos procesados en 7 días)
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Obtención del Número de Identificación Tributaria
+              </span> Obtención del número de identificación tributaria
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
@@ -121,34 +121,34 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Certificados de Membresía
+              </span> Certificados de membresía
             </div>
             <div className='plans__plan-feature not-included'>
               <span className='plans__x-icon'>
                 <XIcon />
-              </span> Apertura de Cuenta Bancaria (exclusiones aplican)
+              </span> Apertura de cuenta bancaria (exclusiones aplican)
             </div>
             <div className='plans__plan-feature not-included'>
               <span className='plans__x-icon'>
                 <XIcon />
-              </span> Acuerdo Operativo
+              </span> Acuerdo operativo
             </div>
             <div className='plans__plan-feature not-included'>
               <span className='plans__x-icon'>
                 <XIcon />
-              </span> Consulta Con Abogado – 30 minutos
+              </span> Consulta con abogado – 30 minutos
             </div>
             <div className='plans__plan-feature not-included'>
               <span className='plans__x-icon'>
-                <XIcon /></span> Resolución Bancaria
+                <XIcon /></span> Resolución bancaria
             </div>
-            <Link className='plans__select-btn' to='/plans/complete'>Select</Link>
+            <Link className='plans__select-btn' to='/plans/complete'>Seleccionar</Link>
           </div>
         </div>
         <div className='plans__plan-outer-ctr'>
           <div className='plans__plan-ctr'>
             <div className='plans__plan-price'>
-              <span>starting at</span>
+              <span>a partir de</span>
               $499
             </div>
             <div className='plans__plan-header'>
@@ -157,7 +157,7 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Escritura de Constitución
+              </span> Escritura de constitución
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
@@ -167,17 +167,17 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Soporte Telefónico y Correo Electrónico
+              </span> Soporte telefónico y correo electrónico
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Servicio Pro (documentos presentados el mismo día)
+              </span> Servicio pro (documentos presentados el mismo día)
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Obtención del Número de Identificación Tributaria
+              </span> Obtención del número de identificación tributaria
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
@@ -187,28 +187,28 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Certificados de Membresía
+              </span> Certificados de membresía
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Apertura de Cuenta Bancaria (exclusiones aplican)
+              </span> Apertura de cuenta bancaria (exclusiones aplican)
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Acuerdo Operativo
+              </span> Acuerdo operativo
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Consulta Con Abogado – 30 minutos
+              </span> Consulta con abogado – 30 minutos
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
-                <CheckIcon /></span> Resolución Bancaria
+                <CheckIcon /></span> Resolución bancaria
             </div>
-            <Link className='plans__select-btn' to='/plans/pro'>Select</Link>
+            <Link className='plans__select-btn' to='/plans/pro'>Seleccionar</Link>
           </div>
         </div>
       </div>
