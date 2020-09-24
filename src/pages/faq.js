@@ -64,8 +64,8 @@ const FAQ = (props) => {
   }
 
   const displayCollapseShow = openCount > 0
-    ? <button onClick={handleCollapseAll}>Collapse All</button>
-    : <button onClick={handleShowAll}>Show All</button>
+    ? <button onClick={handleCollapseAll}>Desplegar Todo</button>
+    : <button onClick={handleShowAll}>Mostrar Todo</button>
 
   return (
     <Layout pageTitle='Preguntas Frecuentes'>
