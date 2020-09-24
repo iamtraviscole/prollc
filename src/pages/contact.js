@@ -20,7 +20,7 @@ const Contact = (props) => {
       <SEO title='Contacto' />
       <div className='contact'>
         <div className='contact__phone-ctr'>
-          <p>How can we help?</p>
+          <p>¿Cómo podemos ayudar?</p>
           <br />
           <h2>123-456-7890</h2>
         </div>
@@ -44,18 +44,18 @@ const Contact = (props) => {
                 <form onSubmit={props.handleSubmit}>
                   {submitted
                   ? <div className='contact__submit-success'>
-                      <p>Thank you! We will be in touch soon.</p>
+                      <p>¡Gracias! Nos veremos pronto.</p>
                     </div>
                   : <>
                       <Field
                         id='contact__name-input'
                         name='name'
-                        placeholder='name'
+                        placeholder='nombre'
                       />
                       <Field
                         id='contact__email-input'
                         name='email'
-                        placeholder='email *'
+                        placeholder='correo electrónic *'
                       />
                       <ErrorMessage name='email'>
                         {msg => <div className='contact__input-err'>{msg}</div>}
@@ -63,12 +63,12 @@ const Contact = (props) => {
                       <Field component='textarea'
                         id='contact__message-input'
                         name='message'
-                        placeholder='message *'
+                        placeholder='mensaje *'
                       />
                       <ErrorMessage name='message'>
                         {msg => <div className='contact__input-err'>{msg}</div>}
                       </ErrorMessage>
-                      <input type='submit' />
+                      <input type='submit' value='Enviar' />
                     </>
                   }
                 </form>
