@@ -35,7 +35,7 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Soporte correo electrónico
+              </span> Soporte - Correo electrónico
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
@@ -101,7 +101,7 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Soporte telefónico y correo electrónico
+              </span> Soporte - Telefónico y correo electrónico
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
@@ -167,7 +167,7 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Soporte telefónico y correo electrónico
+              </span> Soporte - Telefónico y correo electrónico
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
