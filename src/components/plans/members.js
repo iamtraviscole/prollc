@@ -8,6 +8,65 @@ const Members = (props) => {
   const { members } = props.formik.values
   const { handleChange, handleBlur } = props.formik
 
+  const handleCountChange = (e) => {
+    const count = +e.target.value
+
+    if (Number.isInteger(count)) {
+      // removes extra member details if user lowers the member count after filling out form for higher member count
+      // ex: user selects and fills out details for 3 members, then changes member count to 2
+      for (let i = 3; i > +count - 1; i--) {
+        members.memberDetails[i] = {
+          corporateMember: false,
+          companyName: '',
+          firstName: '',
+          secondName: '',
+          lastName: '',
+          street: '',
+          suite: '',
+          city: '',
+          state: '',
+          zipcode: '',
+          country: '',
+          manager: false
+        }
+      }
+    } else {
+      // removes all member details if '5+' member count selected
+      for (let i = 0; i < 4; i++) {
+        members.memberDetails[i] = {
+          corporateMember: false,
+          companyName: '',
+          firstName: '',
+          secondName: '',
+          lastName: '',
+          street: '',
+          suite: '',
+          city: '',
+          state: '',
+          zipcode: '',
+          country: '',
+          manager: false
+        }
+      }
+    }
+
+    handleChange(e)
+  }
+
+  const handleCorporateMemberChange = (e) => {
+    const member = members.memberDetails[e.target.dataset.memberIndex]
+
+    if (e.target.checked) {
+      member.firstName = ''
+      member.secondName = ''
+      member.lastName = ''
+    } else {
+      member.companyName = ''
+    }
+
+    handleChange(e)
+  }
+
   const memberDetailsBlocks = []
   for (let i = 0; i < members.memberCount && i < 4; i++ ) {
     const personName = (
@@ -68,9 +127,10 @@ const Members = (props) => {
             type='checkbox'
             id='members__details-input-corporate'
             name={`members.memberDetails[${i}].corporateMember`}
-            onChange={handleChange}
+            onChange={handleCorporateMemberChange}
             checked={members.memberDetails[i].corporateMember}
             value={members.memberDetails[i].corporateMember}
+            data-member-index={i}
           />
           <label htmlFor='members__details-input-corporate'>Este miembro es una persona jurídica</label>
         </div>
@@ -162,7 +222,7 @@ const Members = (props) => {
         <select
           name='members.memberCount'
           id='members__count'
-          onChange={handleChange}
+          onChange={handleCountChange}
           onBlur={handleBlur}
           value={members.memberCount}
         >
