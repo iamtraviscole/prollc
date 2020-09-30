@@ -97,7 +97,7 @@ const initialPlanValues = (plan) => {
       presentInUS: 'Yes',
       bank: '',
       bankOther: '',
-      otherOptions: 'Virtual Bank'
+      otherOptions: ''
     },
     speakToAttorney: 'Yes',
     expedited: 'No'
