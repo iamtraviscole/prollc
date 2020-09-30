@@ -6,7 +6,21 @@ import '../../styles/plans/proAddress.scss'
 
 const ProAddress = (props) => {
   const { companyAddress } = props.formik.values
-  const { handleChange } = props.formik
+  const { handleBlur } = props.formik
+
+  const handleChange = (e) => {
+    if (e.target.name === 'companyAddress.proAddress' &&
+    e.target.value === 'Yes') {
+      props.formik.setFieldValue('companyAddress.street', '')
+      props.formik.setFieldValue('companyAddress.suite', '')
+      props.formik.setFieldValue('companyAddress.city', '')
+      props.formik.setFieldValue('companyAddress.state', '')
+      props.formik.setFieldValue('companyAddress.zipcode', '')
+      props.formik.setFieldValue('companyAddress.country', '')
+    }
+
+    props.formik.handleChange(e)
+  }
 
   return (
     <div className='proAddress'>
