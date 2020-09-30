@@ -81,6 +81,7 @@ const Managers = (props) => {
               onBlur={props.handleBlur}
               value={banking.bank}
             >
+              <option value=''>Escoger Banco</option>
               <option>Bank of America</option>
               <option>Wells Fargo</option>
               <option>First Bank</option>
