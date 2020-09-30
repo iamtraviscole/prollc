@@ -128,6 +128,11 @@ export const ein = (
 
 export const banking = (
   yup.object().shape({
-    // TODO
+    bank: yup.string().required('banco necesario'),
+    bankOther: yup.string()
+      .when('bank', {
+        is: 'Otro',
+        then: yup.string().required('otro necesario')
+    })
   })
 )
