@@ -8,6 +8,45 @@ const Managers = (props) => {
   const { managers, members } = props.formik.values
   const { handleChange, handleBlur } = props.formik
 
+  const handleCountChange = (e) => {
+    const count = +e.target.value
+
+    if (Number.isInteger(count)) {
+      // removes extra manager details if user lowers the manager count after filling out form for higher manager count
+      // ex: user selects and fills out details for 3 managers, then changes manager count to 2
+      for (let i = 3; i > +count - 1; i--) {
+        managers.managerDetails[i] = {
+          firstName: '',
+          secondName: '',
+          lastName: '',
+          street: '',
+          suite: '',
+          city: '',
+          state: '',
+          zipcode: '',
+          country: ''
+        }
+      }
+    } else {
+      // removes all manager details if '5+' manager count selected
+      for (let i = 0; i < 4; i++) {
+        managers.managerDetails[i] = {
+          firstName: '',
+          secondName: '',
+          lastName: '',
+          street: '',
+          suite: '',
+          city: '',
+          state: '',
+          zipcode: '',
+          country: ''
+        }
+      }
+    }
+
+    handleChange(e)
+  }
+
   const managerDetailsBlocks = []
   for (let i = 0; i < managers.managerCount && i < 4; i++ ) {
     managerDetailsBlocks.push(
@@ -156,7 +195,7 @@ const Managers = (props) => {
         <select
           name='managers.managerCount'
           id='managers__count'
-          onChange={handleChange}
+          onChange={handleCountChange}
           onBlur={handleBlur}
           value={managers.managerCount}
         >
