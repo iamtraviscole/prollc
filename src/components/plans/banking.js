@@ -73,7 +73,7 @@ const Managers = (props) => {
         </div>
         {banking.presentInUS === 'Yes' &&
           <>
-          <h3>Choose bank</h3>
+          <h3>Escoger el banco de su preferencia</h3>
           <div className='banking__bank-ctr'>
             <select
               name='banking.bank'
@@ -107,7 +107,6 @@ const Managers = (props) => {
                 <label htmlFor='banking__other-options-input-virtual-bank'>
                   Apertura en Banco Online (no aplica a venezolanos)
                 </label>
-                {/* TODO: details about virtual bank */}
               </div>
               <div className='banking__other-options-input-ctr'>
                 <input
@@ -121,7 +120,6 @@ const Managers = (props) => {
                 <label htmlFor='banking__other-options-input-bank-service'>
                   Apertura en Banco Físico (+ $1,100.00)
                 </label>
-                {/* TODO: details about bank service */}
               </div>
             </fieldset>
           </div>
