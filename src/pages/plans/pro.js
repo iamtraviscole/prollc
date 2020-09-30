@@ -307,8 +307,8 @@ const ProPlan = (props) => {
   console.log(formik.values)
 
   return (
-    <Layout pageTitle='Pro Plan'>
-      <SEO title='Complete Plan' />
+    <Layout pageTitle='Pro LLC'>
+      <SEO title='Pro LLC' />
       <div className='pro'>
         <div className='pro__top-ctr'>
           <div className='pro__progress-ctr'>
