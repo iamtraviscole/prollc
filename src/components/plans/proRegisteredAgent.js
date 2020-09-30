@@ -6,7 +6,32 @@ import '../../styles/plans/proRegisteredAgent.scss'
 
 const ProRegisteredAgent = (props) => {
   const { registeredAgent } = props.formik.values
-  const { handleChange } = props.formik
+
+  const handleChange = (e) => {
+    if (e.target.name === 'registeredAgent.proRegisteredAgent' &&
+    e.target.value === 'Yes') {
+      props.formik.setFieldValue('registeredAgent.corporateRegisteredAgent', false)
+      props.formik.setFieldValue('registeredAgent.companyName', '')
+      props.formik.setFieldValue('registeredAgent.firstName', '')
+      props.formik.setFieldValue('registeredAgent.secondName', '')
+      props.formik.setFieldValue('registeredAgent.lastName', '')
+      props.formik.setFieldValue('registeredAgent.street', '')
+      props.formik.setFieldValue('registeredAgent.suite', '')
+      props.formik.setFieldValue('registeredAgent.city', '')
+      props.formik.setFieldValue('registeredAgent.state', '')
+      props.formik.setFieldValue('registeredAgent.zipcode', '')
+      props.formik.setFieldValue('registeredAgent.country', '')
+    }
+
+    if (e.target.name === 'registeredAgent.corporateRegisteredAgent' &&
+    e.target.checked) {
+      props.formik.setFieldValue('registeredAgent.firstName', '')
+      props.formik.setFieldValue('registeredAgent.secondName', '')
+      props.formik.setFieldValue('registeredAgent.lastName', '')
+    }
+
+    props.formik.handleChange(e)
+  }
 
   let personOrCompanyName = !registeredAgent.corporateRegisteredAgent
     ? (
