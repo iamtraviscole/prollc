@@ -8,6 +8,14 @@ const Industry = (props) => {
   const { industry } = props.formik.values
   const { handleChange, handleBlur } = props.formik
 
+  const handleOtherChange = (e) => {
+    if (e.target.value !== 'Otro') {
+      props.formik.setFieldValue('industry.other', '')
+    }
+
+    handleChange(e)
+  }
+
   const displayOther = industry.industry === 'Otro' ? (
       <div className='industry__other-ctr'>
         <input
@@ -26,7 +34,7 @@ const Industry = (props) => {
       <StepHeader title='Objeto' />
       <select
         name='industry.industry'
-        onChange={handleChange}
+        onChange={handleOtherChange}
         onBlur={handleBlur}
         value={industry.industry}
       >
