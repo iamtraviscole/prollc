@@ -26,7 +26,7 @@ const Order = (props) => {
   useEffect(() => {
     setShowLogo(false)
     return () => setShowLogo(true)
-  }, [])
+  }, [setShowLogo])
 
   if (loading) {
     return (
@@ -397,10 +397,19 @@ const Order = (props) => {
         <>
           <div className='order__details-group'>
             <h3>Banking</h3>
+            <div className='order__inner-header'>present in US</div>
             <p>{order.banking.presentInUS}</p>
+            <div className='order__inner-header'>bank</div>
             <p>{order.banking.bank}</p>
-            <p>{order.banking.bankOther}</p>
-            <p>{order.banking.otherOptions}</p>
+            {order.banking.bankOther &&
+              <>
+              <div className='order__inner-header'>bank other</div>
+              <p>{order.banking.bankOther}</p>
+              </>
+            }
+            {order.banking.presentInUs === 'No' &&
+              <p>{order.banking.otherOptions}</p>
+            }
           </div>
 
           <div className='order__details-group'>
