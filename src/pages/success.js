@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { navigate, Link } from 'gatsby'
+import { Helmet } from "react-helmet"
 
 import Layout from '../components/layout'
 
@@ -14,9 +15,11 @@ const Success = (props) => {
     }
   }, [])
 
-
   return (
     <Layout pageTitle='¡Éxito!'>
+      <Helmet>
+        <meta name='robots' content='noindex' />
+      </Helmet>
       <div className='success'>
         <div className='success__ctr'>
           <h1>¡Gracias por su orden!</h1>
