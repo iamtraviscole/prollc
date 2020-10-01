@@ -19,7 +19,7 @@ exports.handler = async (event, context, callback) => {
     })
     delete payment.client_secret
 
-    return {statusCode: 200,body: JSON.stringify({payment})}
+    return {statusCode: 200, body: JSON.stringify({payment})}
   } catch (error) {
     if (error.statusCode) {
       const { statusCode, message } = error
