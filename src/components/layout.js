@@ -26,7 +26,9 @@ const Layout = (props) => {
       {subheader}
       <main className='layout__main'>{props.children}</main>
       <footer className='layout__footer'>
-        © {new Date().getFullYear()}
+        <div className='layout__copyright'>
+          ProLLC © {new Date().getFullYear()}
+        </div>
       </footer>
     </div>
   )
