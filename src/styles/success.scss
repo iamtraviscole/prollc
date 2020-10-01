@@ -1,0 +1,23 @@
+.success {
+  text-align: center;
+
+  &__ctr {
+    > h1 {
+      margin-bottom: 5px;
+      color: var(--color-primary);
+    }
+
+    > p {
+      font-size: 18px;
+    }
+  }
+
+  &__contact-ctr {
+    margin-top: 25px;
+
+    > a {
+      color: var(--color-primary);
+    }
+  }
+
+}
