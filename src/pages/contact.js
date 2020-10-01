@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Formik, ErrorMessage, Field } from 'formik'
 import * as yup from 'yup'
+import axios from 'axios'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -8,9 +9,9 @@ import SEO from '../components/seo'
 import '../styles/contact.scss'
 
 const contactValidation = yup.object().shape({
-    email: yup.string().required('correo electrónico necesario').email('correo electrónico no válida'),
-    message: yup.string().required('mensaje necesario')
-  })
+  email: yup.string().required('correo electrónico necesario').email('correo electrónico no válida'),
+  message: yup.string().required('mensaje necesario')
+})
 
 const Contact = (props) => {
   const [submitted, setSubmitted] = useState(false)
@@ -32,14 +33,27 @@ const Contact = (props) => {
               message: ''
             }}
             onSubmit={async values => {
-              console.log('submit clicked')
-              setSubmitted(true)
+              const { name, email, message } = values
+
+              try {
+                const res = await axios.post(
+                  '/api/submitContactForm',
+                  {
+                    name,
+                    email,
+                    message
+                  }
+                )
+                setSubmitted(true)
+              } catch (error) {
+                console.error(error)
+              }
+
             }}
             validationSchema={contactValidation}
             validateOnMount={true}
           >
             {props => {
-              console.log(props)
               return (
                 <form onSubmit={props.handleSubmit}>
                   {submitted
