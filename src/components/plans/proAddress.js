@@ -6,7 +6,6 @@ import '../../styles/plans/proAddress.scss'
 
 const ProAddress = (props) => {
   const { companyAddress } = props.formik.values
-  const { handleBlur } = props.formik
 
   const handleChange = (e) => {
     if (e.target.name === 'companyAddress.proAddress' &&
