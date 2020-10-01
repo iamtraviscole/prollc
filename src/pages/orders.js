@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
 import useFirebase from '../hooks/useFirebase'
 import { Router } from '@reach/router'
-import { Helmet } from "react-helmet"
+import { Helmet } from 'react-helmet'
 
 import OrdersLogin from '../components/orders/ordersLogin'
 import AllOrders from '../components/orders/allOrders'
