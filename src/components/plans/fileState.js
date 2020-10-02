@@ -29,13 +29,26 @@ const FileState = (props) => {
           <input
             type='radio'
             name='fileState'
+            id='fileState__input-wyoming'
+            value='Wyoming'
+            checked={fileState === 'Wyoming'}
+            onChange={handleChange}
+          />
+          <label htmlFor='fileState__input-wyoming'>
+            Wyoming
+          </label>
+        </div>
+        <div className='fileState__input-ctr'>
+          <input
+            type='radio'
+            name='fileState'
             id='fileState__input-delaware'
             value='Delaware'
             checked={fileState === 'Delaware'}
             onChange={handleChange}
           />
           <label htmlFor='fileState__input-delaware'>
-            Delaware <span>( + $50 )</span>
+            Delaware <span>(+ $15)</span>
           </label>
         </div>
       </fieldset>
