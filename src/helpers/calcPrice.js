@@ -3,7 +3,7 @@ const calcPrice = (values) => {
 
   if (values.plan === 'Basic') basePrice = 199
   if (values.plan === 'Complete') basePrice = 289
-  if (values.plan === 'Pro') basePrice = 499
+  if (values.plan === 'Pro') basePrice = 479
 
   let addons = {
     fileState: 0,
@@ -12,7 +12,7 @@ const calcPrice = (values) => {
     banking: 0
   }
 
-  if (values.fileState === 'Delaware') addons.fileState = 50
+  if (values.fileState === 'Delaware') addons.fileState = 15
   else addons.fileState = 0
 
   if (values.companyAddress.proAddress === 'Yes') addons.proAddress = 59
