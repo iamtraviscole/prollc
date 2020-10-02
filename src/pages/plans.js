@@ -35,7 +35,7 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Soporte - Correo electrónico
+              </span> Soporte - Telefónico y correo electrónico
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
@@ -149,7 +149,7 @@ const Plans = (props) => {
           <div className='plans__plan-ctr'>
             <div className='plans__plan-price'>
               <span>a partir de</span>
-              $499
+              $479
             </div>
             <div className='plans__plan-header'>
               <h2>Pro LLC</h2>
