@@ -8,8 +8,8 @@ import '../styles/resources.scss'
 
 const Resources = (props) => {
   return (
-    <Layout pageTitle='Resources'>
-      <SEO title='Resources' />
+    <Layout pageTitle='Recursos'>
+      <SEO title='Recursos' />
       <div className='resources'>
         <div className='resources__resource-btns-ctr'>
           <Link to='/resources/companias-llc'>Compañías LLC</Link>
