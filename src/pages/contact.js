@@ -20,10 +20,17 @@ const Contact = (props) => {
     <Layout pageTitle='Contacto'>
       <SEO title='Contacto' />
       <div className='contact'>
-        <div className='contact__phone-ctr'>
-          <p>¿Cómo te podemos ayudar?</p>
-          <br />
-          <h2>123-456-7890</h2>
+        <div className='contact__left-ctr'>
+          <h2>¿Cómo te podemos ayudar?</h2>
+          <div className='contact__phone-ctr'>
+            <h3>123-456-7890</h3>
+          </div>
+          <div className='contact__address-ctr'>
+            <h3>Dirección</h3>
+            <p>1395 Brickell Avenue</p>
+            <p>Suite 800</p>
+            <p>Miami, FL 33134</p>
+          </div>
         </div>
         <div className='contact__form-ctr'>
           <Formik
@@ -89,6 +96,12 @@ const Contact = (props) => {
               )
             }}
           </Formik>
+        </div>
+        <div className='contact__bottom-address-ctr'>
+          <h3>Dirección</h3>
+          <p>1395 Brickell Avenue</p>
+          <p>Suite 800</p>
+          <p>Miami, FL 33134</p>
         </div>
       </div>
     </Layout>
