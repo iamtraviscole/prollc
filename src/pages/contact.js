@@ -36,7 +36,7 @@ const Contact = (props) => {
               const { name, email, message } = values
 
               try {
-                const res = await axios.post(
+                await axios.post(
                   '/api/submitContactForm',
                   {
                     name,
