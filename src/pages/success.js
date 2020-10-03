@@ -7,13 +7,12 @@ import Layout from '../components/layout'
 import '../styles/success.scss'
 
 const Success = (props) => {
-
+  
   useEffect(() => {
-    console.log('hello')
     if (!props.location.state || !props.location.state.paymentId) {
       navigate('/')
     }
-  }, [])
+  }, [props.location.state])
 
   return (
     <Layout pageTitle='¡Éxito!'>
@@ -22,7 +21,7 @@ const Success = (props) => {
       </Helmet>
       <div className='success'>
         <div className='success__ctr'>
-          <h1>¡Gracias por su orden!</h1>
+          <h1>¡Gracias por su pedido!</h1>
           <p>Nos pondremos en contacto con usted pronto</p>
           <br />
           <div className='success__contact-ctr'>
