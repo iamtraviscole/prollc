@@ -9,8 +9,8 @@ import SEO from '../components/seo'
 import '../styles/contact.scss'
 
 const contactValidation = yup.object().shape({
-  email: yup.string().required('correo electrónico necesario').email('correo electrónico no válida'),
-  message: yup.string().required('mensaje necesario')
+  email: yup.string().required('correo electrónico obligatorio').email('correo electrónico no válida'),
+  message: yup.string().required('mensaje obligatorio')
 })
 
 const Contact = (props) => {
