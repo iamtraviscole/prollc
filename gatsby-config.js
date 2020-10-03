@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `ProLLC`,
-    description: ``,
+    description: `¿Te atreves a comenzar la gran aventura de tu vida? Desde ProLLC te ayudamos a crear tu empresa en Estados Unidos, ampliando con ello el alcance de tu negocio, y llegando a nuevos mercados.`,
     url: `http://prollc.com`,
     keywords: [`prollc`, `llc`, `us`, `usa`, `register`, `register llc`]
   },
