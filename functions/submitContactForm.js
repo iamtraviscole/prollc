@@ -8,7 +8,7 @@ exports.handler = async (event, context, callback) => {
   const msg = {
     to: process.env.PROLLC_CONTACT_EMAIL,
     from: process.env.PROLLC_CONTACT_EMAIL,
-    subject: 'ProLLC Contact Form Submission',
+    subject: 'ProLLC Contact Form Submission from ' + email,
     html: `<p><b>Name:</b> ${name || ''}</p>
     <p><b>Email:</b> ${email}
     <p style="white-space: pre-wrap;"><b>Message:</b><br>${message}</p>`
