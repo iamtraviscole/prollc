@@ -40,6 +40,8 @@ const Payment = (props) => {
   const elements = useElements()
 
   const handlePay = async (e) => {
+    setSubmitting(true)
+
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       // only need to pass one element to card, stripe automatically grabs the
@@ -72,9 +74,25 @@ const Payment = (props) => {
         const db = firebase.firestore()
         db.collection('orders').add(orderDetails)
 
+        try {
+          await axios.post(
+            '/api/newOrderEmail',
+            {
+              firstName: values.contactDetails.firstName,
+              lastName: values.contactDetails.lastName,
+              email: values.contactDetails.email,
+              price: (payment.amount / 100),
+              paymentId: payment.id
+            }
+          )
+        } catch (error) {
+          console.error(error)
+          setSubmitting(false)
+        }
+
         navigate('/success', {
           replace: true,
-          state: {paymentId: res.id}
+          state: {paymentId: payment.id}
         })
       } catch (error) {
         let message = error.response && error.response.data.message
