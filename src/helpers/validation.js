@@ -35,10 +35,9 @@ export const companyNames = (
 export const industry = (
   yup.object().shape({
     industry: yup.string().required('industria obligatorio'),
-    other: yup.string()
-      .when('industry', {
-        is: 'Otro',
-        then: yup.string().required('otro obligatorio')
+    other: yup.string().when('industry', {
+      is: 'Otro',
+      then: yup.string().required('otro obligatorio')
     })
   })
 )
@@ -57,20 +56,17 @@ export const companyAddress = (
 
 export const memberDetails = (i) => (
   yup.object().shape({
-    companyName: yup.string()
-      .when('corporateMember', {
-        is: true,
-        then: yup.string().required(`nombre de compañía ${i + 1} obligatorio`)
+    companyName: yup.string().when('corporateMember', {
+      is: true,
+      then: yup.string().required(`nombre de compañía ${i + 1} obligatorio`)
     }),
-    firstName: yup.string()
-      .when('corporateMember', {
-        is: false,
-        then: yup.string().required(`primer nombre ${i + 1} obligatorio`)
+    firstName: yup.string().when('corporateMember', {
+      is: false,
+      then: yup.string().required(`primer nombre ${i + 1} obligatorio`)
     }),
-    lastName: yup.string()
-      .when('corporateMember', {
-        is: false,
-        then: yup.string().required(`apellidos ${i + 1} obligatorio`)
+    lastName: yup.string().when('corporateMember', {
+      is: false,
+      then: yup.string().required(`apellidos ${i + 1} obligatorio`)
     }),
     street: yup.string().required(`dirección ${i + 1} obligatorio`),
     city: yup.string().required(`ciudad ${i + 1} obligatorio`),
@@ -94,20 +90,17 @@ export const managerDetails = (i) => (
 
 export const proRegisteredAgent = (
   yup.object().shape({
-    companyName: yup.string()
-      .when('corporateRegisteredAgent', {
-        is: true,
-        then: yup.string().required('nombre de la compañía obligatorio')
+    companyName: yup.string().when('corporateRegisteredAgent', {
+      is: true,
+      then: yup.string().required('nombre de la compañía obligatorio')
     }),
-    firstName: yup.string()
-      .when('corporateRegisteredAgent', {
-        is: false,
-        then: yup.string().required('primer nombre obligatorio')
+    firstName: yup.string().when('corporateRegisteredAgent', {
+      is: false,
+      then: yup.string().required('primer nombre obligatorio')
     }),
-    lastName: yup.string()
-      .when('corporateRegisteredAgent', {
-        is: false,
-        then: yup.string().required('apellidos obligatorio')
+    lastName: yup.string().when('corporateRegisteredAgent', {
+      is: false,
+      then: yup.string().required('apellidos obligatorio')
     }),
     street: yup.string().required('dirección obligatorio'),
     city: yup.string().required('ciudad obligatorio'),
@@ -121,8 +114,16 @@ export const ein = (
   yup.object().shape({
     firstName: yup.string().required('primer nombre obligatorio'),
     lastName: yup.string().required('apellidos obligatorio'),
-    ssn: yup.string().length(9, 'Seguro Social debe tener 9 caracteres'),
-    itin: yup.string().length(9, 'ITIN debe tener 9 caracteres')
+    ssn: yup.string().test(
+      'ssn-empty-or-length',
+      'Seguro Social debe tener 9 caracteres',
+      val => val.length ? val.length === 9 : true
+    ),
+    itin: yup.string().test(
+      'itin-empty-or-length',
+      'ITIN debe tener 9 caracteres',
+      val => val.length ? val.length === 9 : true
+    )
   })
 )
 
