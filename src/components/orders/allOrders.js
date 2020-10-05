@@ -8,7 +8,7 @@ import '../../styles/orders/allOrders.scss'
 
 const AllOrders = (props) => {
   const [loading, setLoading] = useState(false)
-  const [searchFilter, setSearchFilter] = useState('Order ID')
+  const [searchFilter, setSearchFilter] = useState('Payment ID')
   const [searchQuery, setSearchQuery] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [searched, setSearched] = useState(false)
@@ -30,15 +30,8 @@ const AllOrders = (props) => {
       setLoading(true)
       const res = await ordersRef.where(filterField, '==', searchQuery).get()
       setSearchResults(res.docs.map(doc => {
-        return {id: doc.id, ...doc.data()}
+        return doc.data()
       }))
-      setLoading(false)
-    }
-
-    if (searchFilter === 'Order ID') {
-      setLoading(true)
-      const doc = searchQuery && await ordersRef.doc(searchQuery).get()
-      if (doc.exists) setSearchResults([{id: doc.id, ...doc.data()}])
       setLoading(false)
     }
 
@@ -52,16 +45,17 @@ const AllOrders = (props) => {
 
   }
 
+  console.log(searchResults)
+
   const displayResults = !searchResults.length && searched
     ? <div className='allOrders__results-not-found-ctr'>No orders found</div>
     : !searched
       ? ''
       : searchResults.map((order, i) => {
         return (
-          <Link key={order.id} to={`/orders/${order.id}`}>
+          <Link key={order.paymentId} to={`/orders/${order.paymentId}`}>
             <div className='allOrders__order-ctr' >
-              <h3>Order ID: <span>{order.id}</span></h3>
-              {/* <p>{order.id}</p> */}
+              <h3>Payment ID: <span>{order.paymentId}</span></h3>
               <p className='order-date'>
                 {
                   order.paymentTime
@@ -84,7 +78,6 @@ const AllOrders = (props) => {
               onChange={handleSearchFilterChange}
               onBlur={handleSearchFilterChange}
             >
-              <option value='Order ID'>Order ID</option>
               <option value='Payment ID'>Payment ID</option>
               <option value='Contact Email'>Contact Email</option>
             </select>

@@ -10,18 +10,25 @@ const Order = (props) => {
   const [order, setOrder] = useState(null)
   const [loading, setLoading] = useState(true)
 
-  const { firebase, id, setShowLogo } = props
+  const { firebase, paymentId, setShowLogo } = props
 
   useEffect(() => {
-    firebase.firestore().collection('orders').doc(id).get()
-      .then(res => {
-        const data = res.data()
-        if (data) setOrder({id: res.id, ...data})
-        else setOrder(null)
-        setLoading(false)
+    firebase.firestore().collection('orders')
+      .where('paymentId', '==', paymentId).limit(1).get()
+      .then(querySnapshot => {
+        if (!querySnapshot.empty) {
+          querySnapshot.forEach(doc => {
+            const data = doc.data()
+            if (data) setOrder(data)
+            else setOrder(null)
+            setLoading(false)
+          })
+        } else {
+          setOrder(null)
+          setLoading(false)
+        }
       })
-      .catch(err => console.error(err))
-  }, [firebase, id])
+  }, [firebase, paymentId])
 
   useEffect(() => {
     setShowLogo(false)
@@ -185,10 +192,6 @@ const Order = (props) => {
       </div>
 
       <div className='order__top-ctr'>
-        <div className='order__top-inline-group'>
-          <h1>ORDER ID</h1>
-          <p>{order.id}</p>
-        </div>
         <div className='order__top-inline-group'>
           <h1>PAYMENT ID</h1>
           <p>{order.paymentId}</p>

@@ -96,7 +96,7 @@ const Orders = (props) => {
           ? <Router>
               <AllOrders path='/orders' firebase={firebase} />
               <Order
-                path='/orders/:id'
+                path='/orders/:paymentId'
                 firebase={firebase}
                 setShowLogo={setShowLogo}
               />
