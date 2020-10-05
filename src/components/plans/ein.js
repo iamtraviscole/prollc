@@ -58,7 +58,6 @@ const CompanyNames = (props) => {
             name='ein.ssn'
             onChange={handleChange}
             value={ein.ssn}
-            disabled={ein.itin}
           />
         </div>
         <div className='ein__details-input-ctr id-num'>
@@ -69,7 +68,6 @@ const CompanyNames = (props) => {
             name='ein.itin'
             onChange={handleChange}
             value={ein.itin}
-            disabled={ein.ssn}
           />
         </div>
       </div>
