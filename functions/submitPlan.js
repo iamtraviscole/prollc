@@ -14,8 +14,8 @@ exports.handler = async (event, context, callback) => {
       amount: price,
       payment_method: id,
       confirm: true,
-      // TODO: send stripe receipt_email or send separate confirmation email
-      // with specific order details?
+      description: values.plan + ' Plan',
+      receipt_email: values.contactDetails.email
     })
     delete payment.client_secret
 
