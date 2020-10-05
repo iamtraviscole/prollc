@@ -6,8 +6,8 @@ exports.handler = async (event, context, callback) => {
   const { name, email, message } = JSON.parse(event.body)
 
   const msg = {
-    to: email,
-    from: 'iamtraviscole@gmail.com', // make this an .env var?
+    to: process.env.PROLLC_CONTACT_EMAIL,
+    from: process.env.PROLLC_CONTACT_EMAIL,
     subject: 'ProLLC Contact Form Submission',
     html: `<p><b>Name:</b> ${name || ''}</p>
     <p><b>Email:</b> ${email}
