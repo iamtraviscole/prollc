@@ -62,10 +62,10 @@ const Order = (props) => {
     const members = []
     for (let i = 0; i < +order.members.memberCount; i++) {
 
-      const memberName = memberDetails.corporateMember
+      const memberName = memberDetails[i].corporateMember
         ? <>
             <div className='order__inner-header'>company name</div>
-            <p>{memberDetails.companyName}</p>
+            <p>{memberDetails[i].companyName}</p>
           </>
         : <>
             <div className='order__inline-group'>
