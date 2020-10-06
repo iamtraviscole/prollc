@@ -1,4 +1,5 @@
 const path = require('path')
+const { createFilePath } = require('gatsby-source-filesystem')
 
 exports.onCreatePage = async ({ page, actions }) => {
   const { createPage } = actions
@@ -6,9 +7,20 @@ exports.onCreatePage = async ({ page, actions }) => {
   if (page.path.match(/^\/orders/)) {
     // page.matchPath is a special key that's used for matching pages
     // with corresponding routes only on the client
-    page.matchPath = "/orders/*"
+    page.matchPath = '/orders/*'
     // update the page
     createPage(page)
+  }
+}
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  let parentNode = getNode(node.parent)
+  if (node.internal.type === 'MarkdownRemark') {
+    if (parentNode.sourceInstanceName === 'blog') {
+      let value = createFilePath({ node, getNode })
+      value = value.replace(/\//g, '')
+      actions.createNodeField({ name: 'slug', node, value })
+    }
   }
 }
 
@@ -24,8 +36,10 @@ exports.createPages = async ({ actions, graphql }) => {
         edges {
           node {
             id
+            fields {
+              slug
+            }
             frontmatter {
-              path
               date
               title
             }
@@ -37,10 +51,11 @@ exports.createPages = async ({ actions, graphql }) => {
 
   if (!res.errors) {
     res.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      const { slug } = node.fields
       createPage({
-        path: node.frontmatter.path,
+        path: '/blog/' + slug,
         component: path.resolve('src/components/blog/blogPost.js'),
-        context: {},
+        context: {slug},
       })
     })
   }
