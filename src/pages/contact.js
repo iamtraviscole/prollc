@@ -23,7 +23,7 @@ const Contact = (props) => {
         <div className='contact__left-ctr'>
           <h2>¿Cómo te podemos ayudar?</h2>
           <div className='contact__phone-ctr'>
-            <h3>123-456-7890</h3>
+            <h3>305-906-0973</h3>
           </div>
           <div className='contact__address-ctr'>
             <h3>Dirección</h3>
