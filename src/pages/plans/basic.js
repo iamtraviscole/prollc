@@ -20,7 +20,7 @@ import ProRegisteredAgent from '../../components/plans/proRegisteredAgent'
 import Expedited from '../../components/plans/expedited'
 import Payment from '../../components/plans/payment'
 
-import '../../styles/plans/basic.scss'
+import '../../styles/plans/allPlans.scss'
 
 const BasicPlan = (props) => {
   const [currentStep, setCurrentStep] = useState({component: FileState})
@@ -240,7 +240,7 @@ const BasicPlan = (props) => {
   const CurrentStepComponent = currentStep.component
 
   const displayValidationErrors = validationErrors.map((error, i) => (
-    <p key={i} className='basic__error'>{error}</p>
+    <p key={i} className='allPlans__error'>{error}</p>
   ))
 
   const displayButtons = currentStep.component === Payment
@@ -277,27 +277,27 @@ const BasicPlan = (props) => {
   return (
     <Layout pageTitle='Básico LLC'>
       <SEO title='Básico LLC' />
-      <div className='basic'>
-        <div className='basic__top-ctr'>
-          <div className='basic__progress-ctr'>
+      <div className='allPlans'>
+        <div className='allPlans__top-ctr'>
+          <div className='allPlans__progress-ctr'>
             <p><span>Progreso:</span>{Math.round((progress / 11) * 100)} %</p>
           </div>
-          <div className='basic__price-ctr'>
+          <div className='allPlans__price-ctr'>
             <p>
               <span>Precio:</span>
               ${calcPrice(formik.values)}
             </p>
           </div>
         </div>
-        <form className='basic__form' onSubmit={formik.handleSubmit}>
+        <form className='allPlans__form' onSubmit={formik.handleSubmit}>
           <CurrentStepComponent
             formik={formik}
             submitting={submitting}
             setSubmitting={setSubmitting}
           />
-          <div className='basic__btn-ctr'>
+          <div className='allPlans__btn-ctr'>
             {validationErrors.length > 0 &&
-            <div className='basic__errors-ctr'>{displayValidationErrors}</div>}
+            <div className='allPlans__errors-ctr'>{displayValidationErrors}</div>}
             {displayButtons}
           </div>
         </form>

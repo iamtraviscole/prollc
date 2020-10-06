@@ -24,7 +24,7 @@ import SpeakToAttorney from '../../components/plans/speakToAttorney'
 import Expedited from '../../components/plans/expedited'
 import Payment from '../../components/plans/payment'
 
-import '../../styles/plans/pro.scss'
+import '../../styles/plans/allPlans.scss'
 
 const ProPlan = (props) => {
   const [currentStep, setCurrentStep] = useState({component: FileState})
@@ -291,7 +291,7 @@ const ProPlan = (props) => {
   const CurrentStepComponent = currentStep.component
 
   const displayValidationErrors = validationErrors.map((error, i) => (
-    <p key={i} className='pro__error'>{error}</p>
+    <p key={i} className='allPlans__error'>{error}</p>
   ))
 
   const displayButtons = currentStep.component === Payment
@@ -330,27 +330,27 @@ const ProPlan = (props) => {
   return (
     <Layout pageTitle='Pro LLC'>
       <SEO title='Pro LLC' />
-      <div className='pro'>
-        <div className='pro__top-ctr'>
-          <div className='pro__progress-ctr'>
+      <div className='allPlans'>
+        <div className='allPlans__top-ctr'>
+          <div className='allPlans__progress-ctr'>
             <p><span>Progreso:</span>{Math.round((progress / 15) * 100)} %</p>
           </div>
-          <div className='pro__price-ctr'>
+          <div className='allPlans__price-ctr'>
             <p>
               <span>Precio:</span>
               ${calcPrice(formik.values)}
             </p>
           </div>
         </div>
-        <form className='pro__form' onSubmit={formik.handleSubmit}>
+        <form className='allPlans__form' onSubmit={formik.handleSubmit}>
           <CurrentStepComponent
             formik={formik}
             submitting={submitting}
             setSubmitting={setSubmitting}
           />
-          <div className='pro__btn-ctr'>
+          <div className='allPlans__btn-ctr'>
             {validationErrors.length > 0 &&
-            <div className='pro__errors-ctr'>{displayValidationErrors}</div>}
+            <div className='allPlans__errors-ctr'>{displayValidationErrors}</div>}
             {displayButtons}
           </div>
         </form>
