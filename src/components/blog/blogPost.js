@@ -6,12 +6,12 @@ import Layout from '../layout'
 import '../../styles/blog/blogPost.scss'
 
 export const postQuery = graphql`
-  query BlogPost($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query BlogPost($slug: String!) {
+    markdownRemark(fields: {slug: {eq: $slug}}) {
+      id
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
-        path
         title
       }
     }
@@ -21,8 +21,6 @@ export const postQuery = graphql`
 const BlogPost = (props) => {
   const { markdownRemark } = props.data
   const { frontmatter, html } = markdownRemark
-
-  console.log(props)
 
   return (
     <Layout pageTitle='Blog Post'>
