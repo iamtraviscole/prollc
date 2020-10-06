@@ -1,7 +1,7 @@
 const Stripe = require('stripe')
 const calcPrice = require('./helpers/calcPrice.js')
 
-const stripe = new Stripe(process.env.STRIPE_SECRET)
+const stripe = new Stripe(process.env.GATSBY_STRIPE_SECRET)
 
 exports.handler = async (event, context, callback) => {
   const { id, values } = JSON.parse(event.body)
