@@ -45,8 +45,6 @@ const AllOrders = (props) => {
 
   }
 
-  console.log(searchResults)
-
   const displayResults = !searchResults.length && searched
     ? <div className='allOrders__results-not-found-ctr'>No orders found</div>
     : !searched

@@ -279,9 +279,7 @@ const ProPlan = (props) => {
 
   const formik = useFormik({
     initialValues: initialPlanValues('Pro'),
-    onSubmit: async values => {
-      console.log('submit clicked')
-    },
+    onSubmit: () => {}, // do nothing
     validationSchema: null,
     validateOnMount: false,
     validateOnChange: false,
@@ -324,8 +322,6 @@ const ProPlan = (props) => {
           onClick={handleNextClick}>
           Siguiente
         </button>
-
-  console.log(formik.values)
 
   return (
     <Layout pageTitle='Pro LLC'>

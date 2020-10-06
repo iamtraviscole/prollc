@@ -60,7 +60,6 @@ const Payment = (props) => {
             values: values
           }
         )
-        console.log('RES', res)
 
         const { payment } = res.data
 
@@ -99,7 +98,7 @@ const Payment = (props) => {
         setError(message)
         setSubmitting(false)
 
-        console.error('ERR', message)
+        console.error(message)
       }
     } else {
       setError(error.message)
@@ -114,8 +113,6 @@ const Payment = (props) => {
         disabled={submitting}>
         Pagar y Finalizar el Pedido
       </button>
-
-  console.log(values)
 
   return (
     <div className='payment'>
