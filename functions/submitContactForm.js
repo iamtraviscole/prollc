@@ -1,6 +1,6 @@
 const sgMail = require('@sendgrid/mail')
 
-sgMail.setApiKey(process.env.SENDGRID_KEY)
+sgMail.setApiKey(process.env.SENDGRID_MAIL)
 
 exports.handler = async (event, context, callback) => {
   const { name, email, message } = JSON.parse(event.body)

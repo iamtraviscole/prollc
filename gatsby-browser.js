@@ -11,7 +11,7 @@ import { loadStripe } from '@stripe/stripe-js'
 import './src/styles/global/reset.scss'
 import './src/styles/global/theme.scss'
 
-const stripePromise = loadStripe('pk_test_N38oukq70u09sWNagcxBIhdg')
+const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE)
 
 export const wrapRootElement = ({ element }) => (
   <Elements stripe={stripePromise}>{element}</Elements>
