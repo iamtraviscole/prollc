@@ -30,8 +30,8 @@ const STRIPE_ELEMENT_OPTIONS = {
 
 const Payment = (props) => {
   const { values } = props.formik
+  const { submitting, setSubmitting } = props
 
-  const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState(null)
 
   const firebase = useFirebase()

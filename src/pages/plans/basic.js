@@ -27,6 +27,7 @@ const BasicPlan = (props) => {
   const [previousSteps, setPreviousSteps] = useState([])
   const [validationErrors, setValidationErrors] = useState([])
   const [progress, setProgress] = useState(0)
+  const [submitting, setSubmitting] = useState(false)
 
   const handleNextClick = async (e) => {
     const setPrevious = () => {
@@ -244,14 +245,34 @@ const BasicPlan = (props) => {
 
   const displayButtons = currentStep.component === Payment
     ? <>
-      <button type='button' onClick={handlePreviousClick}>Anterior</button>
+      <button
+        type='button'
+        disabled={submitting}
+        onClick={handlePreviousClick}>
+        Anterior
+      </button>
       </>
     : previousSteps.length > 0
       ? <>
-        <button type='button' onClick={handlePreviousClick}>Anterior</button>
-        <button type='button' onClick={handleNextClick}>Siguiente</button>
+        <button
+          type='button'
+          disabled={submitting}
+          onClick={handlePreviousClick}>
+          Anterior
+        </button>
+        <button
+          type='button'
+          disabled={submitting}
+          onClick={handleNextClick}>
+          Siguiente
+        </button>
         </>
-      : <button type='button' onClick={handleNextClick}>Siguiente</button>
+      : <button
+          type='button'
+          disabled={submitting}
+          onClick={handleNextClick}>
+          Siguiente
+        </button>
 
   return (
     <Layout pageTitle='Básico LLC'>
@@ -269,7 +290,11 @@ const BasicPlan = (props) => {
           </div>
         </div>
         <form className='basic__form' onSubmit={formik.handleSubmit}>
-          <CurrentStepComponent formik={formik} />
+          <CurrentStepComponent
+            formik={formik}
+            submitting={submitting}
+            setSubmitting={setSubmitting}
+          />
           <div className='basic__btn-ctr'>
             {validationErrors.length > 0 &&
             <div className='basic__errors-ctr'>{displayValidationErrors}</div>}
