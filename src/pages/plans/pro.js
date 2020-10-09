@@ -324,8 +324,8 @@ const ProPlan = (props) => {
         </button>
 
   return (
-    <Layout pageTitle='Pro LLC'>
-      <SEO title='Pro LLC' />
+    <Layout pageTitle='ProLLC'>
+      <SEO title='ProLLC' />
       <div className='allPlans'>
         <div className='allPlans__top-ctr'>
           <div className='allPlans__progress-ctr'>

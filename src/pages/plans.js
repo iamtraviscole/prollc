@@ -152,7 +152,7 @@ const Plans = (props) => {
               $479
             </div>
             <div className='plans__plan-header'>
-              <h2>Pro LLC</h2>
+              <h2>ProLLC</h2>
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
