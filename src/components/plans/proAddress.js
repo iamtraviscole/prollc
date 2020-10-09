@@ -1,6 +1,7 @@
 import React from 'react'
 
 import StepHeader from './stepHeader'
+import CheckIcon from '../../images/svgs/check-icon.svg'
 
 import '../../styles/plans/proAddress.scss'
 
@@ -54,12 +55,12 @@ const ProAddress = (props) => {
         <div className='proAddress__virtual-details'>
           <h4>Dirección Profesional con Correo Virtual</h4>
           <ul>
-            <li>Dirección Física</li>
-            <li>Correo Virtual</li>
-            <li>Imagen Profesional</li>
-            <li>Privado</li>
-            <li>Correo escaneado y enviado a tu correo electrónico</li>
-            <li>Sin contrato</li>
+            <li><CheckIcon />Dirección Física</li>
+            <li><CheckIcon />Correo Virtual</li>
+            <li><CheckIcon />Imagen Profesional</li>
+            <li><CheckIcon />Privado</li>
+            <li><CheckIcon />Correo escaneado y enviado a tu correo electrónico</li>
+            <li><CheckIcon />Sin contrato</li>
           </ul>
         </div>
       </fieldset>

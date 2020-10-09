@@ -80,18 +80,25 @@
     float: left;
     text-align: left;
     padding: 10px;
-    border: 1px solid var(--color-border-primary-light);
+    border: 1px solid var(--color-primary);
     border-radius: 3px;
 
     > h4 {
       color: var(--color-primary);
-      font-size: 14px;
+      font-size: 16px;
       font-weight: bold;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
 
     > ul > li {
-      font-size: 12px;
+      font-size: 14px;
+      margin-top: 2px;
+
+      > svg {
+        margin-right: 6px;
+        width: 14px;
+        fill: var(--color-primary);
+      }
     }
   }
 
