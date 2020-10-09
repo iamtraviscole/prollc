@@ -8,7 +8,7 @@ const calcPrice = (values) => {
     fileState: {
       delaware: 15
     },
-    proAddress: 59,
+    proAddress: 39,
     expedited: 39,
     banking: {
       bankAccountService: 1100

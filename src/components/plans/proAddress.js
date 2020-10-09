@@ -48,7 +48,7 @@ const ProAddress = (props) => {
             onChange={handleChange}
           />
           <label htmlFor='proAddress__yes'>
-            Quiero que ProLLC me brinde una dirección profesional con correo virtual <span>(+ $59/mes)</span>
+            Quiero que ProLLC me brinde una dirección profesional con correo virtual <span>(+ $39/mes)</span>
           </label>
         </div>
         <div className='proAddress__virtual-details'>

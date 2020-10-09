@@ -15,7 +15,7 @@ const calcPrice = (values) => {
   if (values.fileState === 'Delaware') addons.fileState = 15
   else addons.fileState = 0
 
-  if (values.companyAddress.proAddress === 'Yes') addons.proAddress = 59
+  if (values.companyAddress.proAddress === 'Yes') addons.proAddress = 39
   else addons.proAddress = 0
 
   if (values.expedited === 'Yes') addons.expedited = 39
