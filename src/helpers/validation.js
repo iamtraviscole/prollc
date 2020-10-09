@@ -4,7 +4,7 @@ export const contactDetails = (
   yup.object().shape({
     firstName: yup.string().required('primer nombre obligatorio'),
     lastName: yup.string().required('apellidos obligatorio'),
-    email: yup.string().required('correo electrónico obligatorio').email('correo electrónico no válida'),
+    email: yup.string().trim().required('correo electrónico obligatorio').email('correo electrónico no válida'),
     phone: yup.string().required('teléfono obligatorio')
   })
 )
@@ -129,9 +129,11 @@ export const ein = (
 
 export const banking = (
   yup.object().shape({
-    bank: yup.string().required('banco obligatorio'),
-    bankOther: yup.string()
-      .when('bank', {
+    bank: yup.string().when('presentInUS', {
+        is: 'Yes',
+        then: yup.string().required('banco obligatorio')
+      }),
+    bankOther: yup.string().when('bank', {
         is: 'Otro',
         then: yup.string().required('otro obligatorio')
     })
