@@ -9,8 +9,8 @@ import AllOrders from '../components/orders/allOrders'
 import Order from '../components/orders/order'
 import Logo from '../images/svgs/prollc-logo.svg'
 import Loading from '../components/ui/loading'
-import favicon16 from "../images/favicon-16.png";
-import favicon32 from "../images/favicon-32.png";
+import favicon16 from '../images/favicon-16.png'
+import favicon32 from '../images/favicon-32.png'
 
 import '../styles/orders.scss'
 
@@ -27,11 +27,11 @@ const Orders = (props) => {
   const firebase = useFirebase()
 
   useEffect(() => {
-     if (!firebase) return
-     firebase.auth().onAuthStateChanged(user => {
-       user ? setUser(user.email) : setUser(null)
-       setLoading(false)
-     })
+    if (!firebase) return
+    firebase.auth().onAuthStateChanged(user => {
+    user ? setUser(user.email) : setUser(null)
+      setLoading(false)
+    })
   }, [firebase])
 
   const handleLogout = e => {
