@@ -80,7 +80,7 @@ const initialPlanValues = (plan) => {
       street: '',
       suite: '',
       city: '',
-      state: '',
+      state: 'Florida',
       zipcode: '',
       country: ''
     },

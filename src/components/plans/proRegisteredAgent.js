@@ -21,6 +21,8 @@ const ProRegisteredAgent = (props) => {
       props.formik.setFieldValue('registeredAgent.state', '')
       props.formik.setFieldValue('registeredAgent.zipcode', '')
       props.formik.setFieldValue('registeredAgent.country', '')
+    } else {
+      props.formik.setFieldValue('registeredAgent.state', props.formik.values.fileState)
     }
 
     if (e.target.name === 'registeredAgent.corporateRegisteredAgent' &&
@@ -102,7 +104,7 @@ const ProRegisteredAgent = (props) => {
             onChange={handleChange}
           />
           <label htmlFor='proRegisteredAgent__input-no'>
-            Ya tengo un Agente Registrado
+            Ya tengo un Agente Registrado (Agente Registrado en <b>{props.formik.values.fileState}</b> obligatorio)
           </label>
         </div>
         <div className='proRegisteredAgent__input-ctr'>
@@ -179,6 +181,7 @@ const ProRegisteredAgent = (props) => {
                 name='registeredAgent.state'
                 onChange={handleChange}
                 value={registeredAgent.state}
+                disabled={registeredAgent.proRegisteredAgent === 'No'}
               />
             </div>
           </div>

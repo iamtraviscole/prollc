@@ -6,7 +6,12 @@ import '../../styles/plans/fileState.scss'
 
 const FileState = (props) => {
   const { fileState } = props.formik.values
-  const { handleChange } = props.formik
+
+  const handleChange = (e) => {
+    props.formik.setFieldValue('registeredAgent.state', e.target.value)
+
+    props.formik.handleChange(e)
+  }
 
   return (
     <div className='fileState'>
