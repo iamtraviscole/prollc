@@ -172,7 +172,7 @@ const Plans = (props) => {
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
                 <CheckIcon />
-              </span> Servicio pro (documentos presentados el mismo día)
+              </span> Servicio pro (documentos procesados en 3 días)
             </div>
             <div className='plans__plan-feature'>
               <span className='plans__check-icon'>
