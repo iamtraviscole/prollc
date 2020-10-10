@@ -89,3 +89,9 @@ p {
     font-weight: bold;
   }
 }
+
+label {
+  > b {
+    font-weight: bold;
+  }
+}
