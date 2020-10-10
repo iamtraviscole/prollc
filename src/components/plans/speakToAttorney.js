@@ -10,7 +10,7 @@ const SpeakToAttorney = (props) => {
 
   return (
     <div className='speakToAttorney'>
-      <StepHeader title='¿Desea consultar con un abogado?' />
+      <StepHeader title='¿Deseas consultar con un abogado?' />
       <fieldset>
         <div className='speakToAttorney__input-ctr'>
           <input

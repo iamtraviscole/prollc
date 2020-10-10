@@ -44,7 +44,7 @@ const Managers = (props) => {
   return (
     <div className='banking'>
       <StepHeader title='Banco' />
-        <h3>¿Esta usted físicamente en los EE.UU?</h3>
+        <h3>¿Estás usted físicamente en los EE.UU?</h3>
         <div className='banking__present-ctr'>
           <fieldset>
             <div className='banking__present-input-ctr'>
@@ -73,7 +73,7 @@ const Managers = (props) => {
         </div>
         {banking.presentInUS === 'Yes' &&
           <>
-          <h3>Escoger el banco de su preferencia</h3>
+          <h3>Escoger el banco de tu preferencia</h3>
           <div className='banking__bank-ctr'>
             <select
               name='banking.bank'

@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 import '../styles/success.scss'
 
 const Success = (props) => {
-  
+
   useEffect(() => {
     if (!props.location.state || !props.location.state.paymentId) {
       navigate('/')
@@ -21,11 +21,11 @@ const Success = (props) => {
       </Helmet>
       <div className='success'>
         <div className='success__ctr'>
-          <h1>¡Gracias por su pedido!</h1>
-          <p>Nos pondremos en contacto con usted pronto</p>
+          <h1>¡Gracias por tu pedido!</h1>
+          <p>Nos pondremos en contacto contigo pronto</p>
           <br />
           <div className='success__contact-ctr'>
-            Si tiene alguna pregunta, por favor <Link to='/contact'>contáctenos</Link>
+            Si tienes alguna pregunta, por favor <Link to='/contact'>contáctenos</Link>
           </div>
         </div>
       </div>
