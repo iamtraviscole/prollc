@@ -40,7 +40,10 @@ const Layout = (props) => {
         <div className='layout__whatsApp-outer-ctr'>
           <div className='layout__whatsApp-inner-ctr'>
             <img src={whatsAppIcon} height='25' alt='WhatsApp Icon'></img>
-            <p>1.305.906.0973</p>
+            <br />
+            <a href='https://wa.me/13059060973' target='_blank' rel='noreferrer noopener'>
+              1.305.906.0973
+            </a>
           </div>
         </div>
         <div className='layout__copyright'>
