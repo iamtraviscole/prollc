@@ -49,7 +49,7 @@ const CompanyNames = (props) => {
         </div>
       </div>
       <div className='ein__details-input-outer-ctr'>
-        <p className='ein__id-number'>Si te aplica, favor de brindar a continuación el número de seguro social o ITIN de la parte responsable.  Si no tienes dichos números, puede dejar ambas casillas en blanco.</p>
+        <p className='ein__id-number'>Si te aplica, favor de brindar a continuación el número de Seguro Social o ITIN de la parte responsable.  Si no tienes dichos números, puede dejar ambas casillas en blanco.</p>
         <div className='ein__details-input-ctr id-num'>
           <label htmlFor='ein__details-input-ssn'>Número de Seguro Social</label>
           <input
