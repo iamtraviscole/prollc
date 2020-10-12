@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import StepHeader from './stepHeader'
 
 import '../../styles/plans/members.scss'
 
 const Members = (props) => {
-  const { members } = props.formik.values
+  const { members, companyAddress } = props.formik.values
   const { handleChange, handleBlur } = props.formik
+
+  const [useCompanyAddress, setUseCompanyAddress] = useState({
+    0: false,
+    1: false,
+    2: false,
+    3: false
+  })
 
   const handleCountChange = (e) => {
     const count = +e.target.value
@@ -21,6 +28,7 @@ const Members = (props) => {
           firstName: '',
           secondName: '',
           lastName: '',
+          proAddress: false,
           street: '',
           suite: '',
           city: '',
@@ -39,6 +47,7 @@ const Members = (props) => {
           firstName: '',
           secondName: '',
           lastName: '',
+          proAddress: false,
           street: '',
           suite: '',
           city: '',
@@ -62,6 +71,45 @@ const Members = (props) => {
       member.lastName = ''
     } else {
       member.companyName = ''
+    }
+
+    handleChange(e)
+  }
+
+  const handleMemberCompanyAddress = (e) => {
+    const memberIndex = e.target.dataset.memberIndex
+    const member = members.memberDetails[memberIndex]
+
+    if (!useCompanyAddress[memberIndex]) {
+      member.street = companyAddress.street
+      member.suite = companyAddress.suite
+      member.city = companyAddress.city
+      member.state = companyAddress.state
+      member.zipcode = companyAddress.zipcode
+      member.country = companyAddress.country
+
+      setUseCompanyAddress({...useCompanyAddress, [memberIndex]: true})
+    }
+  }
+
+  const handleAddressChange = (e) => {
+    const memberIndex = e.target.dataset.memberIndex
+
+    setUseCompanyAddress({...useCompanyAddress, [memberIndex]: false})
+
+    handleChange(e)
+  }
+
+  const handleProAddressChange = (e) => {
+    const member = members.memberDetails[e.target.dataset.memberIndex]
+
+    if (e.target.checked) {
+      member.street = ''
+      member.suite = ''
+      member.city = ''
+      member.state = ''
+      member.zipcode = ''
+      member.country = ''
     }
 
     handleChange(e)
@@ -132,79 +180,116 @@ const Members = (props) => {
             value={members.memberDetails[i].corporateMember}
             data-member-index={i}
           />
-          <label htmlFor='members__details-input-corporate'>Este miembro es una persona jurídica</label>
+          <label htmlFor='members__details-input-corporate'>
+            Este miembro es una persona jurídica
+          </label>
         </div>
         <div className='members__details-input-outer-ctr'>
           {members.memberDetails[i].corporateMember
             ? companyName
             : personName}
         </div>
-        <div className='members__details-input-outer-ctr'>
-          <div className='members__details-input-ctr street'>
-            <label htmlFor='members__details-input-street'>Dirección *</label>
-            <input
-              type='text'
-              id='members__details-input-street'
-              name={`members.memberDetails[${i}].street`}
-              onChange={handleChange}
-              value={members.memberDetails[i].street}
-            />
+        {companyAddress.proAddress === 'No'
+          ? <div className='members__use-company-address-btn-ctr'>
+              <button
+                type='button'
+                onClick={handleMemberCompanyAddress}
+                data-member-index={i}
+              >
+                Usar la dirección de tu compañía
+              </button>
+            </div>
+          : <div className='members__use-pro-address-ctr'>
+              <input
+                type='checkbox'
+                id={`members__details-${i}-input-proAddress`}
+                name={`members.memberDetails[${i}].proAddress`}
+                onChange={handleProAddressChange}
+                checked={members.memberDetails[i].proAddress}
+                value={members.memberDetails[i].proAddress}
+                data-member-index={i}
+              />
+              <label htmlFor={`members__details-${i}-input-proAddress`}>
+                Usar la dirección brindada por ProLLC
+              </label>
+            </div>
+        }
+        {!members.memberDetails[i].proAddress &&
+          <>
+          <div className='members__details-input-outer-ctr'>
+            <div className='members__details-input-ctr street'>
+              <label htmlFor='members__details-input-street'>Dirección *</label>
+              <input
+                type='text'
+                id='members__details-input-street'
+                name={`members.memberDetails[${i}].street`}
+                onChange={handleAddressChange}
+                value={members.memberDetails[i].street}
+                data-member-index={i}
+              />
+            </div>
+            <div className='members__details-input-ctr suite'>
+              <label htmlFor='members__details-input-suite'>DPTO / Oficina / Suite</label>
+              <input
+                type='text'
+                id='members__details-input-suite'
+                name={`members.memberDetails[${i}].suite`}
+                onChange={handleAddressChange}
+                value={members.memberDetails[i].suite}
+                data-member-index={i}
+              />
+            </div>
           </div>
-          <div className='members__details-input-ctr suite'>
-            <label htmlFor='members__details-input-suite'>DPTO / Oficina / Suite</label>
-            <input
-              type='text'
-              id='members__details-input-suite'
-              name={`members.memberDetails[${i}].suite`}
-              onChange={handleChange}
-              value={members.memberDetails[i].suite}
-            />
+          <div className='members__details-input-outer-ctr'>
+            <div className='members__details-input-ctr'>
+              <label htmlFor='members__details-input-city'>Ciudad *</label>
+              <input
+                type='text'
+                id='members__details-input-city'
+                name={`members.memberDetails[${i}].city`}
+                onChange={handleAddressChange}
+                value={members.memberDetails[i].city}
+                data-member-index={i}
+              />
+            </div>
+            <div className='members__details-input-ctr'>
+              <label htmlFor='members__details-input-state'>Estado *</label>
+              <input
+                type='text'
+                id='members__details-input-state'
+                name={`members.memberDetails[${i}].state`}
+                onChange={handleAddressChange}
+                value={members.memberDetails[i].state}
+                data-member-index={i}
+              />
+            </div>
           </div>
-        </div>
-        <div className='members__details-input-outer-ctr'>
-          <div className='members__details-input-ctr'>
-            <label htmlFor='members__details-input-city'>Ciudad *</label>
-            <input
-              type='text'
-              id='members__details-input-city'
-              name={`members.memberDetails[${i}].city`}
-              onChange={handleChange}
-              value={members.memberDetails[i].city}
-            />
+          <div className='members__details-input-outer-ctr'>
+            <div className='members__details-input-ctr zipcode'>
+              <label htmlFor='members__details-input-zipcode'>Código Postal *</label>
+              <input
+                type='text'
+                id='members__details-input-zipcode'
+                name={`members.memberDetails[${i}].zipcode`}
+                onChange={handleAddressChange}
+                value={members.memberDetails[i].zipcode}
+                data-member-index={i}
+              />
+            </div>
+            <div className='members__details-input-ctr country'>
+              <label htmlFor='members__details-input-country'>País *</label>
+              <input
+                type='text'
+                id='members__details-input-country'
+                name={`members.memberDetails[${i}].country`}
+                onChange={handleAddressChange}
+                value={members.memberDetails[i].country}
+                data-member-index={i}
+              />
+            </div>
           </div>
-          <div className='members__details-input-ctr'>
-            <label htmlFor='members__details-input-state'>Estado *</label>
-            <input
-              type='text'
-              id='members__details-input-state'
-              name={`members.memberDetails[${i}].state`}
-              onChange={handleChange}
-              value={members.memberDetails[i].state}
-            />
-          </div>
-        </div>
-        <div className='members__details-input-outer-ctr'>
-          <div className='members__details-input-ctr zipcode'>
-            <label htmlFor='members__details-input-zipcode'>Código Postal *</label>
-            <input
-              type='text'
-              id='members__details-input-zipcode'
-              name={`members.memberDetails[${i}].zipcode`}
-              onChange={handleChange}
-              value={members.memberDetails[i].zipcode}
-            />
-          </div>
-          <div className='members__details-input-ctr country'>
-            <label htmlFor='members__details-input-country'>País *</label>
-            <input
-              type='text'
-              id='members__details-input-country'
-              name={`members.memberDetails[${i}].country`}
-              onChange={handleChange}
-              value={members.memberDetails[i].country}
-            />
-          </div>
-        </div>
+          </>
+        }
       </div>
     )
   }

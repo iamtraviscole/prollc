@@ -6,7 +6,7 @@ import CheckIcon from '../../images/svgs/check-icon.svg'
 import '../../styles/plans/proAddress.scss'
 
 const ProAddress = (props) => {
-  const { companyAddress } = props.formik.values
+  const { companyAddress, members, managers } = props.formik.values
 
   const handleChange = (e) => {
     if (e.target.name === 'companyAddress.proAddress' &&
@@ -17,6 +17,13 @@ const ProAddress = (props) => {
       props.formik.setFieldValue('companyAddress.state', '')
       props.formik.setFieldValue('companyAddress.zipcode', '')
       props.formik.setFieldValue('companyAddress.country', '')
+    } else {
+      members.memberDetails.forEach(memberDetail => {
+        memberDetail.proAddress = false
+      })
+      managers.managerDetails.forEach(managerDetail => {
+        managerDetail.proAddress = false
+      })
     }
 
     props.formik.handleChange(e)

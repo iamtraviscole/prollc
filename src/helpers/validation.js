@@ -68,11 +68,26 @@ export const memberDetails = (i) => (
       is: false,
       then: yup.string().required(`apellidos ${i + 1} obligatorio`)
     }),
-    street: yup.string().required(`dirección ${i + 1} obligatorio`),
-    city: yup.string().required(`ciudad ${i + 1} obligatorio`),
-    state: yup.string().required(`estado ${i + 1} obligatorio`),
-    zipcode: yup.string().required(`código postal ${i + 1} obligatorio`),
-    country: yup.string().required(`país ${i + 1} obligatorio`)
+    street: yup.string().when('proAddress', {
+      is: false,
+      then: yup.string().required(`dirección ${i + 1} obligatorio`)
+    }),
+    city: yup.string().when('proAddress', {
+      is: false,
+      then: yup.string().required(`ciudad ${i + 1} obligatorio`)
+    }),
+    state: yup.string().when('proAddress', {
+      is: false,
+      then: yup.string().required(`estado ${i + 1} obligatorio`)
+    }),
+    zipcode: yup.string().when('proAddress', {
+      is: false,
+      then: yup.string().required(`código postal ${i + 1} obligatorio`)
+    }),
+    country: yup.string().when('proAddress', {
+      is: false,
+      then: yup.string().required(`país ${i + 1} obligatorio`)
+    })
   })
 )
 
@@ -80,11 +95,26 @@ export const managerDetails = (i) => (
   yup.object().shape({
     firstName: yup.string().required(`primer nombre ${i + 1} obligatorio`),
     lastName: yup.string().required(`apellidos ${i + 1} obligatorio`),
-    street: yup.string().required(`dirección ${i + 1} obligatorio`),
-    city: yup.string().required(`ciudad ${i + 1} obligatorio`),
-    state: yup.string().required(`estado ${i + 1} obligatorio`),
-    zipcode: yup.string().required(`código postal ${i + 1} obligatorio`),
-    country: yup.string().required(`país ${i + 1} obligatorio`)
+    street: yup.string().when('proAddress', {
+      is: false,
+      then: yup.string().required(`dirección ${i + 1} obligatorio`)
+    }),
+    city: yup.string().when('proAddress', {
+      is: false,
+      then: yup.string().required(`ciudad ${i + 1} obligatorio`)
+    }),
+    state: yup.string().when('proAddress', {
+      is: false,
+      then: yup.string().required(`estado ${i + 1} obligatorio`)
+    }),
+    zipcode: yup.string().when('proAddress', {
+      is: false,
+      then: yup.string().required(`código postal ${i + 1} obligatorio`)
+    }),
+    country: yup.string().when('proAddress', {
+      is: false,
+      then: yup.string().required(`país ${i + 1} obligatorio`)
+    })
   })
 )
 

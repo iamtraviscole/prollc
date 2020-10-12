@@ -19,7 +19,8 @@
   }
 
   &__details-block {
-    margin-top: 50px;
+    margin: 50px auto 0 auto;
+    max-width: 615px;
   }
 
   &__details-input-outer-ctr {
@@ -82,11 +83,39 @@
     font-size: 14px;
     margin-bottom: 25px;
   }
+
+  &__use-company-address-btn-ctr {
+    text-align: left;
+    margin: 10px 0;
+
+    > button {
+      font-size: 11px;
+      padding: 5px;
+      color: var(--color-primary);
+      border: 1px solid var(--color-primary);
+      border-radius: 3px;
+    }
+  }
+
+  &__use-pro-address-ctr {
+    text-align: left;
+    margin: 10px 0;
+    font-weight: 300;
+    font-size: 14px;
+
+    > input {
+      margin-right: 5px;
+    }
+  }
 }
 
 
   @media (max-width: 750px) {
     .members {
+
+      &__details-block {
+        max-width: 250px;
+      }
 
       &__details-input-outer-ctr {
         margin: 0 auto;
