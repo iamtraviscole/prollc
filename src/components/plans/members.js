@@ -173,14 +173,14 @@ const Members = (props) => {
         <div className='members__details-corporate-ctr'>
           <input
             type='checkbox'
-            id='members__details-input-corporate'
+            id={`members__details-${i}-input-corporate`}
             name={`members.memberDetails[${i}].corporateMember`}
             onChange={handleCorporateMemberChange}
             checked={members.memberDetails[i].corporateMember}
             value={members.memberDetails[i].corporateMember}
             data-member-index={i}
           />
-          <label htmlFor='members__details-input-corporate'>
+          <label htmlFor={`members__details-${i}-input-corporate`}>
             Este miembro es una persona jurídica
           </label>
         </div>
