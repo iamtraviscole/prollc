@@ -21,7 +21,7 @@
 
       &:before {
         content: '- ';
-        font-weight: 700;
+        font-weight: bold;
       }
     }
 
@@ -37,7 +37,7 @@
     margin-bottom: 25px;
 
     th {
-      font-weight: 700;
+      font-weight: bold;
     }
   }
 }
