@@ -117,10 +117,10 @@ const Order = (props) => {
             <br />
             <div className='order__inner-header'>zipcode</div>
             <p>{memberDetails[i].zipcode}</p>
-            <div className='order__inner-header'>manager</div>
-            <p>{memberDetails[i].manager ? 'Yes' : 'No'}</p>
             </>
           }
+          <div className='order__inner-header'>manager</div>
+          <p>{memberDetails[i].manager ? 'Yes' : 'No'}</p>
         </div>
       )
     }
@@ -262,7 +262,7 @@ const Order = (props) => {
 
       <div className='order__details-group'>
         <h3>Industry</h3>
-        {order.industry.industry === 'Other'
+        {order.industry.industry === 'Otro'
           ? <p>{order.industry.other}</p>
           : <p>{order.industry.industry}</p>
         }
