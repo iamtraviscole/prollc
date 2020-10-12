@@ -89,32 +89,38 @@ const Order = (props) => {
           <div className='order__inner-header'>corporate member</div>
           <p>{memberDetails[i].corporateMember ? 'Yes' : 'No'}</p>
           {memberName}
-          <div className='order__inline-group'>
-            <div className='order__inner-header'>street</div>
-            <p>{memberDetails[i].street}</p>
-          </div>
-          <div className='order__inline-group'>
-            <div className='order__inner-header'>suite</div>
-            <p>{memberDetails[i].suite || '-'}</p>
-          </div>
-          <br />
-          <div className='order__inline-group'>
-            <div className='order__inner-header'>city</div>
-            <p>{memberDetails[i].city}</p>
-          </div>
-          <div className='order__inline-group'>
-            <div className='order__inner-header'>state</div>
-            <p>{memberDetails[i].state}</p>
-          </div>
-          <div className='order__inline-group'>
-            <div className='order__inner-header'>country</div>
-            <p>{memberDetails[i].country}</p>
-          </div>
-          <br />
-          <div className='order__inner-header'>zipcode</div>
-          <p>{memberDetails[i].zipcode}</p>
-          <div className='order__inner-header'>manager</div>
-          <p>{memberDetails[i].manager ? 'Yes' : 'No'}</p>
+          <div className='order__inner-header'>pro address</div>
+          <p>{memberDetails[i].proAddress ? 'Yes' : 'No'}</p>
+          {!memberDetails[i].proAddress &&
+            <>
+            <div className='order__inline-group'>
+              <div className='order__inner-header'>street</div>
+              <p>{memberDetails[i].street}</p>
+            </div>
+            <div className='order__inline-group'>
+              <div className='order__inner-header'>suite</div>
+              <p>{memberDetails[i].suite || '-'}</p>
+            </div>
+            <br />
+            <div className='order__inline-group'>
+              <div className='order__inner-header'>city</div>
+              <p>{memberDetails[i].city}</p>
+            </div>
+            <div className='order__inline-group'>
+              <div className='order__inner-header'>state</div>
+              <p>{memberDetails[i].state}</p>
+            </div>
+            <div className='order__inline-group'>
+              <div className='order__inner-header'>country</div>
+              <p>{memberDetails[i].country}</p>
+            </div>
+            <br />
+            <div className='order__inner-header'>zipcode</div>
+            <p>{memberDetails[i].zipcode}</p>
+            <div className='order__inner-header'>manager</div>
+            <p>{memberDetails[i].manager ? 'Yes' : 'No'}</p>
+            </>
+          }
         </div>
       )
     }
@@ -144,30 +150,36 @@ const Order = (props) => {
             <p>{managerDetails[i].lastName}</p>
           </div>
           <br />
-          <div className='order__inline-group'>
-            <div className='order__inner-header'>street</div>
-            <p>{managerDetails[i].street}</p>
-          </div>
-          <div className='order__inline-group'>
-            <div className='order__inner-header'>suite</div>
-            <p>{managerDetails[i].suite || '-'}</p>
-          </div>
-          <br />
-          <div className='order__inline-group'>
-            <div className='order__inner-header'>city</div>
-            <p>{managerDetails[i].city}</p>
-          </div>
-          <div className='order__inline-group'>
-            <div className='order__inner-header'>state</div>
-            <p>{managerDetails[i].state}</p>
-          </div>
-          <div className='order__inline-group'>
-            <div className='order__inner-header'>country</div>
-            <p>{managerDetails[i].country}</p>
-          </div>
-          <br />
-          <div className='order__inner-header'>zipcode</div>
-          <p>{managerDetails[i].zipcode}</p>
+          <div className='order__inner-header'>pro address</div>
+          <p>{managerDetails[i].proAddress ? 'Yes' : 'No'}</p>
+          {!managerDetails[i].proAddress &&
+            <>
+            <div className='order__inline-group'>
+              <div className='order__inner-header'>street</div>
+              <p>{managerDetails[i].street}</p>
+            </div>
+            <div className='order__inline-group'>
+              <div className='order__inner-header'>suite</div>
+              <p>{managerDetails[i].suite || '-'}</p>
+            </div>
+            <br />
+            <div className='order__inline-group'>
+              <div className='order__inner-header'>city</div>
+              <p>{managerDetails[i].city}</p>
+            </div>
+            <div className='order__inline-group'>
+              <div className='order__inner-header'>state</div>
+              <p>{managerDetails[i].state}</p>
+            </div>
+            <div className='order__inline-group'>
+              <div className='order__inner-header'>country</div>
+              <p>{managerDetails[i].country}</p>
+            </div>
+            <br />
+            <div className='order__inner-header'>zipcode</div>
+            <p>{managerDetails[i].zipcode}</p>
+            </>
+          }
         </div>
       )
     }
