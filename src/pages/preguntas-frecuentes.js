@@ -92,7 +92,7 @@ const FAQ = (props) => {
               frente a los individuos que operan por cuenta propia.
             </p>
             <p>
-              <Link to='/resources/companias-llc'>
+              <Link to='/recursos/companias-llc'>
                 Descubre aquí todos los detalles sobre las Compañías LLC.
               </Link>
             </p>
@@ -124,7 +124,7 @@ const FAQ = (props) => {
               Los miembros de la LLC son sus dueños.
             </p>
             <p>
-              <Link to='/resources/companias-llc'>
+              <Link to='/recursos/companias-llc'>
                 Tienes más información sobre las compañías LLC en nuestra web.
               </Link>
             </p>
@@ -157,7 +157,7 @@ const FAQ = (props) => {
               obligaciones de la persona.
             </p>
             <p>
-              <Link to='/resources/llc-vs-corporacion'>
+              <Link to='/recursos/llc-vs-corporacion'>
                 Descubre aquí todos los detalles sobre las diferencias entre LLC
                 y corporación.
               </Link>
@@ -342,7 +342,7 @@ const FAQ = (props) => {
               Todo ello con una asistencia a medida y en tiempo récord.
             </p>
             <p>
-              <Link to='/services'>
+              <Link to='/servicios'>
               Visita nuestro apartado sobre el servicio ProLLC para más información.
               </Link>
             </p>

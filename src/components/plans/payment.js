@@ -89,7 +89,7 @@ const Payment = (props) => {
           setSubmitting(false)
         }
 
-        navigate('/success', {
+        navigate('/exito', {
           replace: true,
           state: {paymentId: payment.id}
         })

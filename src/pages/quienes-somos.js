@@ -91,7 +91,7 @@ const About = (props) => {
         </p>
 
         <div className='about__btn-ctr'>
-          <Link to='/services'><button>Ver servicios de ProLLC</button></Link>
+          <Link to='/servicios'><button>Ver servicios de ProLLC</button></Link>
         </div>
 
       </div>

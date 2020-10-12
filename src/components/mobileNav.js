@@ -31,12 +31,12 @@ const MobileNav = (props) => {
           <div className='mobileNav__modal-content'>
             <ul>
               <li><Link to='/'>Inicio</Link></li>
-              <li><Link to='/plans'>Planes</Link></li>
-              <li><Link to='/services'>Servicios</Link></li>
-              <li><Link to='/about'>Quiénes Somos</Link></li>
-              <li><Link to='/faq'>Preguntas Frecuentes</Link></li>
-              <li><Link to='/resources'>Recursos</Link></li>
-              <li><Link to='/contact'>Contacto</Link></li>
+              <li><Link to='/planes'>Planes</Link></li>
+              <li><Link to='/servicios'>Servicios</Link></li>
+              <li><Link to='/quienes-somos'>Quiénes Somos</Link></li>
+              <li><Link to='/preguntas-frecuentes'>Preguntas Frecuentes</Link></li>
+              <li><Link to='/recursos'>Recursos</Link></li>
+              <li><Link to='/contacto'>Contacto</Link></li>
               <li><Link to='/blog'>Blog</Link></li>
             </ul>
           </div>

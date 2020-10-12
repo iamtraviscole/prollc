@@ -76,7 +76,7 @@ const Plans = (props) => {
               <span className='plans__x-icon'>
                 <XIcon /></span> Resolución bancaria
             </div>
-            <Link className='plans__select-btn' to='/plans/basic'>Seleccionar</Link>
+            <Link className='plans__select-btn' to='/planes/basico'>Seleccionar</Link>
           </div>
         </div>
         <div className='plans__plan-outer-ctr'>
@@ -142,7 +142,7 @@ const Plans = (props) => {
               <span className='plans__x-icon'>
                 <XIcon /></span> Resolución bancaria
             </div>
-            <Link className='plans__select-btn' to='/plans/complete'>Seleccionar</Link>
+            <Link className='plans__select-btn' to='/planes/completo'>Seleccionar</Link>
           </div>
         </div>
         <div className='plans__plan-outer-ctr'>
@@ -208,7 +208,7 @@ const Plans = (props) => {
               <span className='plans__check-icon'>
                 <CheckIcon /></span> Resolución bancaria
             </div>
-            <Link className='plans__select-btn' to='/plans/pro'>Seleccionar</Link>
+            <Link className='plans__select-btn' to='/planes/pro'>Seleccionar</Link>
           </div>
         </div>
       </div>

@@ -34,7 +34,7 @@ const Home = (props) => {
           <div className='index__intro-ctr'>
             <div className='index__intro-inner-ctr'>
               <h1>Tu primer paso hacia el sueño americano</h1>
-                <Link className='index__view-plans-link' to='/plans'>Ver Planes</Link>
+                <Link className='index__view-plans-link' to='/planes'>Ver Planes</Link>
             </div>
           </div>
         </BackgroundImage>
@@ -58,7 +58,7 @@ const Home = (props) => {
             empresa cumple con todas las formalidades de constitución, todo ello
             por un precio muy asequible.
           </p>
-          <Link className='index__view-about-link' to='/about'>Lee más</Link>
+          <Link className='index__view-about-link' to='/quienes-somos'>Lee más</Link>
         </div>
         <div className='index__plans-ctr'>
           <h2>Planes</h2>
@@ -126,7 +126,7 @@ const Home = (props) => {
                   <span className='plans__x-icon'>
                     <XIcon /></span> Resolución bancaria
                 </div>
-                <Link className='plans__select-btn' to='/plans/basic'>Seleccionar</Link>
+                <Link className='plans__select-btn' to='/planes/basico'>Seleccionar</Link>
               </div>
             </div>
             <div className='plans__plan-outer-ctr'>
@@ -192,7 +192,7 @@ const Home = (props) => {
                   <span className='plans__x-icon'>
                     <XIcon /></span> Resolución bancaria
                 </div>
-                <Link className='plans__select-btn' to='/plans/complete'>Seleccionar</Link>
+                <Link className='plans__select-btn' to='/planes/completo'>Seleccionar</Link>
               </div>
             </div>
             <div className='plans__plan-outer-ctr'>
@@ -258,7 +258,7 @@ const Home = (props) => {
                   <span className='plans__check-icon'>
                     <CheckIcon /></span> Resolución bancaria
                 </div>
-                <Link className='plans__select-btn' to='/plans/pro'>Seleccionar</Link>
+                <Link className='plans__select-btn' to='/planes/pro'>Seleccionar</Link>
               </div>
             </div>
           </div>

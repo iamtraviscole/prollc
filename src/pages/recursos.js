@@ -12,24 +12,24 @@ const Resources = (props) => {
       <SEO title='Recursos' />
       <div className='resources'>
         <div className='resources__resource-btns-ctr'>
-          <Link to='/resources/companias-llc'>Compañías LLC</Link>
-          <Link to='/resources/llc-vs-corporacion'>LLC vs. Corporación</Link>
-          <Link to='/resources/s-corp'>S-Corp</Link>
-          <Link to='/resources/ein'>EIN</Link>
-          <Link to='/resources/la-clasificacion-tributaria-de-tu-llc'>
+          <Link to='/recursos/companias-llc'>Compañías LLC</Link>
+          <Link to='/recursos/llc-vs-corporacion'>LLC vs. Corporación</Link>
+          <Link to='/recursos/s-corp'>S-Corp</Link>
+          <Link to='/recursos/ein'>EIN</Link>
+          <Link to='/recursos/la-clasificacion-tributaria-de-tu-llc'>
             La clasificación tributaria de tu LLC
           </Link>
-          <Link to='/resources/constituir-tu-empresa-en-los-estados-unidos'>
+          <Link to='/recursos/constituir-tu-empresa-en-los-estados-unidos'>
             Ventajas de constituir tu empresa en los Estados Unidos
           </Link>
-          <Link to='/resources/por-que-delaware'>
+          <Link to='/recursos/por-que-delaware'>
             ¿Por qué constituir tu LLC en Delaware?
           </Link>
-          <Link to='/resources/por-que-florida'>
+          <Link to='/recursos/por-que-florida'>
             ¿Por qué constituir tu LLC en Florida?
           </Link>
-          <Link to='/resources/el-acuerdo-operativo'>El Acuerdo Operativo</Link>
-          <Link to='/resources/agente-registrado'>Agente Registrado</Link>
+          <Link to='/recursos/el-acuerdo-operativo'>El Acuerdo Operativo</Link>
+          <Link to='/recursos/agente-registrado'>Agente Registrado</Link>
         </div>
       </div>
     </Layout>
