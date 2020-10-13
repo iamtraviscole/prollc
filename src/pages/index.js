@@ -90,7 +90,7 @@ const Home = (props) => {
                 <div className='plans__plan-feature'>
                   <span className='plans__check-icon'>
                     <CheckIcon />
-                  </span> Servicio rápido (documentos procesados en 15 días)
+                  </span> Servicio básico (documentos procesados en 15 días)
                 </div>
                 <div className='plans__plan-feature not-included'>
                   <span className='plans__x-icon'>
@@ -120,7 +120,7 @@ const Home = (props) => {
                 <div className='plans__plan-feature not-included'>
                   <span className='plans__x-icon'>
                     <XIcon />
-                  </span> Consulta con abogado – 30 minutos
+                  </span> Consulta con abogado – 15 minutos
                 </div>
                 <div className='plans__plan-feature not-included'>
                   <span className='plans__x-icon'>
@@ -186,7 +186,7 @@ const Home = (props) => {
                 <div className='plans__plan-feature not-included'>
                   <span className='plans__x-icon'>
                     <XIcon />
-                  </span> Consulta con abogado – 30 minutos
+                  </span> Consulta con abogado – 15 minutos
                 </div>
                 <div className='plans__plan-feature not-included'>
                   <span className='plans__x-icon'>
@@ -222,7 +222,7 @@ const Home = (props) => {
                 <div className='plans__plan-feature'>
                   <span className='plans__check-icon'>
                     <CheckIcon />
-                  </span> Servicio pro (documentos presentados el mismo día)
+                  </span> Servicio pro (documentos procesados en 3 días)
                 </div>
                 <div className='plans__plan-feature'>
                   <span className='plans__check-icon'>
@@ -252,7 +252,7 @@ const Home = (props) => {
                 <div className='plans__plan-feature'>
                   <span className='plans__check-icon'>
                     <CheckIcon />
-                  </span> Consulta con abogado – 30 minutos
+                  </span> Consulta con abogado – 15 minutos
                 </div>
                 <div className='plans__plan-feature'>
                   <span className='plans__check-icon'>
