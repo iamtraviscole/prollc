@@ -41,13 +41,12 @@
     }
   }
 
-  &__about-ctr {
+  &__why-prollc-ctr {
     max-width: 840px;
     margin: 50px auto;
     padding: 25px;
     border: 1px solid var(--color-border-primary-light);
     border-radius: 3px;
-    text-align: center;
 
     > h2 {
       text-align: center;
@@ -56,9 +55,13 @@
       font-size: 32px;
     }
 
-    > p {
-      margin-bottom: 15px;
-      text-align: left;
+    > ol {
+      list-style-type: decimal;
+      margin-left: 20px;
+
+      > li {
+        margin-bottom: 15px;
+      }
     }
   }
 

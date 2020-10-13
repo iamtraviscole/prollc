@@ -38,27 +38,14 @@ const Home = (props) => {
             </div>
           </div>
         </BackgroundImage>
-        <div className='index__about-ctr'>
-          <h2>Quiénes Somos</h2>
-          <p>Llevas años soñando con emprender, con crear tu propia empresa o
-            negocio, y Estados Unidos, la tierra de las oportunidades, te resulta
-            el lugar idóneo para desempeñar tu actividad.
-          </p>
-          <p>¡Deja de soñar y pasa a la acción! <b>Crear tu empresa en EE.UU.</b> es más
-            fácil de lo que pensabas, y estás en el sitio correcto para iniciar tu
-            andadura empresarial.
-          </p>
-          <p>
-            <b>ProLLC</b> es un proyecto que surge gracias a personas como tú, que buscan
-            información en español sobre temas mercantiles, particularmente sobre
-            los trámites de constitución de compañías LLC (sociedad de
-            responsabilidad limitada, en español). Nuestro propósito es
-            proporcionarte toda la información que necesitas antes de decidirte a
-            crear tu LLC y acompañarte en su constitución, asegurándonos que tu
-            empresa cumple con todas las formalidades de constitución, todo ello
-            por un precio muy asequible.
-          </p>
-          <Link className='index__view-about-link' to='/quienes-somos'>Lee más</Link>
+        <div className='index__why-prollc-ctr'>
+          <h2>¿Por qué crear tu empresa con ProLLC?</h2>
+          <ol>
+            <li>Porque somos la primera web fundada y gestionada por abogados que se centra en ayudar al emprendedor hispanohablante a constituir su LLC en Estados Unidos.</li>
+            <li>Porque con nuestra ayuda podrás constituir tu empresa desde la comodidad de tu casa, sin tener que desplazarte a los EE.UU.</li>
+            <li>Porque te guiaremos en relación con todos los trámites que debes cumplimentar a la hora de la constituir tu compañía LLC, incluyendo la obtención del número de identificación tributaria y la apertura de cuenta bancaria; y te ayudaremos a que los completes a tiempo y con la completa seguridad de que todo se realizó conforme a las normas mercantiles vigentes.</li>
+            <li>Porque te ofrecemos un servicio especializado; estarás hablando con una persona competente en este campo y no con un vendedor.</li>
+          </ol>
         </div>
         <div className='index__plans-ctr'>
           <h2>Planes</h2>
