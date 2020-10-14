@@ -7,7 +7,7 @@ import '../styles/resource.scss'
 
 const Resource = (props) => {
   return (
-    <Layout pageTitle='Resource'>
+    <Layout pageTitle='Recurso'>
       <SEO title={props.seoTitle} />
       <div className='resource'>
         {props.children}
