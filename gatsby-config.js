@@ -34,15 +34,12 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Lato`,
-            variants: [`300`, `400`, `700`]
-          },
+          `Lato\:300,400,700`,
         ],
-      },
+      }
     },
     `gatsby-plugin-netlify-cms`,
   ],
