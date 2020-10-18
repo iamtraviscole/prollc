@@ -1,13 +1,11 @@
 .mobileNav {
 
   &__nav-btn {
+    cursor: pointer;
 
-    > button {
-
-      > svg {
-        display: block;
-        height: 25px;
-      }
+    > svg {
+      display: block;
+      height: 25px;
     }
   }
 

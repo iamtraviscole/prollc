@@ -22,7 +22,7 @@ const MobileNav = (props) => {
     <div className='mobileNav'>
       {!showModal &&
         <div className='mobileNav__nav-btn'>
-          <button onClick={handleModal}><NavIcon /></button>
+          <NavIcon onClick={handleModal}/>
         </div>
       }
       {showModal &&
