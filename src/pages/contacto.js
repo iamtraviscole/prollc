@@ -5,6 +5,7 @@ import axios from 'axios'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import whatsAppIcon from '../images/whatsapp-icon.png'
 
 import '../styles/contact.scss'
 
@@ -23,7 +24,11 @@ const Contact = (props) => {
         <div className='contact__left-ctr'>
           <h2>¿Cómo te podemos ayudar?</h2>
           <div className='contact__phone-ctr'>
-            <h3>305-906-0973</h3>
+            <img src={whatsAppIcon} height='18' alt='WhatsApp Icon'></img>
+            <br />
+            <a href='https://wa.me/13059060973' target='_blank' rel='noreferrer noopener'>
+              1.305.906.0973
+            </a>
           </div>
           <div className='contact__address-ctr'>
             <h3>Dirección</h3>
