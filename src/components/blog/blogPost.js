@@ -11,7 +11,7 @@ export const postQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMM D, Y")
         title
       }
     }

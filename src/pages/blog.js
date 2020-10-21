@@ -1,6 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import { Link } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/layout'
 
@@ -19,7 +18,7 @@ export const postsQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "MMM D, Y")
             title
           }
           excerpt(pruneLength: 200, format: HTML)
@@ -41,12 +40,10 @@ const Blog = (props) => {
         <div className='blog__post-ctr'>
           <div className='blog__title-ctr'>
             <h1>{frontmatter.title}</h1>
+          </div>
+          <div className='blog__date-ctr'>
             <p>{frontmatter.date}</p>
           </div>
-          <div
-            className='blog__excerpt'
-            dangerouslySetInnerHTML={{ __html: edge.node.excerpt }}
-          />
         </div>
       </Link>
     )
