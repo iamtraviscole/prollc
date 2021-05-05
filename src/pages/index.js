@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import XIcon from '../images/svgs/x-icon.svg'
 import CheckIcon from '../images/svgs/check-icon.svg'
+import IntroVideo from '../images/intro-video.mp4'
 
 import '../styles/index.scss'
 
@@ -38,14 +39,21 @@ const Home = (props) => {
             </div>
           </div>
         </BackgroundImage>
+        <div className='index__intro-video-ctr'>
+          <video controls>
+            <source src={IntroVideo} type="video/mp4" />
+          </video>
+        </div>
         <div className='index__why-prollc-ctr'>
-          <h2>¿Por qué crear tu empresa con ProLLC?</h2>
-          <ol>
-            <li>Porque somos la primera web fundada y gestionada por abogados que se centra en ayudar al emprendedor hispanohablante a constituir su LLC en Estados Unidos.</li>
-            <li>Porque con nuestra ayuda podrás constituir tu empresa desde la comodidad de tu casa, sin tener que desplazarte a los EE.UU.</li>
-            <li>Porque te guiaremos en relación con todos los trámites que debes cumplimentar a la hora de la constituir tu compañía LLC, incluyendo la obtención del número de identificación tributaria y la apertura de cuenta bancaria; y te ayudaremos a que los completes a tiempo y con la completa seguridad de que todo se realizó conforme a las normas mercantiles vigentes.</li>
-            <li>Porque te ofrecemos un servicio especializado; estarás hablando con una persona competente en este campo y no con un vendedor.</li>
-          </ol>
+          <div className='index__why-prollc-inner-ctr'>
+            <h2>¿Por qué crear tu empresa con ProLLC?</h2>
+            <ol>
+              <li>Porque somos la primera web fundada y gestionada por abogados que se centra en ayudar al emprendedor hispanohablante a constituir su LLC en Estados Unidos.</li>
+              <li>Porque con nuestra ayuda podrás constituir tu empresa desde la comodidad de tu casa, sin tener que desplazarte a los EE.UU.</li>
+              <li>Porque te guiaremos en relación con todos los trámites que debes cumplimentar a la hora de la constituir tu compañía LLC, incluyendo la obtención del número de identificación tributaria y la apertura de cuenta bancaria; y te ayudaremos a que los completes a tiempo y con la completa seguridad de que todo se realizó conforme a las normas mercantiles vigentes.</li>
+              <li>Porque te ofrecemos un servicio especializado; estarás hablando con una persona competente en este campo y no con un vendedor.</li>
+            </ol>
+          </div>
         </div>
         <div className='index__plans-ctr'>
           <h2>Planes</h2>
