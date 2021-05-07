@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/media-has-caption */
+
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
